@@ -15,3 +15,7 @@ for file in $cwd/desktop/*; do
 done
 
 sudo ln -s $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
+
+for font in $cwd/fonts/*; do
+    sudo ln -s $file /usr/share/fonts/$(basename $font)
+done
