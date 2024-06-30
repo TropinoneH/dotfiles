@@ -248,6 +248,7 @@ for_window [class="feh"] floating enable
 for_window [class="Tlp-UI"] floating enable
 for_window [class="steamwebhelper"] floating enable
 for_window [class="dolphin"] floating enable
+for_window [class="vlc"] floating enable
 # i3-gaps
 # smart_gaps off
 gaps inner 4
