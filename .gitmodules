@@ -1,0 +1,9 @@
+[submodule "zsh"]
+	path = zsh
+	url = git@github.com:TropinoneH/zsh-configuration.git
+[submodule "config/wezterm"]
+	path = config/wezterm
+	url = git@github.com:TropinoneH/wezterm-configuration.git
+[submodule "config/nvim"]
+	path = config/nvim
+	url = git@github.com:TropinoneH/nvim-configuration.git
