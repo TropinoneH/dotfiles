@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=RustRover
+Comment=Coding with Rust
+GenericName=Text Editor
+Exec=/usr/local/applications/jetbrains/rustrover/bin/rustrover.sh
+Icon=/usr/local/applications/jetbrains/rustrover/bin/rustrover.svg
+Type=Application
+Terminal=false
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=jetbrains;rustrover;

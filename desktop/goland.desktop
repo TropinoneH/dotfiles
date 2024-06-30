@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=GoLand
+Comment=Coding with golang
+GenericName=Text Editor
+Exec=/usr/local/applications/jetbrains/goland/bin/goland.sh
+Icon=/usr/local/applications/jetbrains/goland/bin/goland.svg
+Type=Application
+Terminal=false
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=jetbrains;goland;

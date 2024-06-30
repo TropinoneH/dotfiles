@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=IntellIj
+Comment=Coding with Java
+GenericName=Text Editor
+Exec=/usr/local/applications/jetbrains/intellij/bin/idea.sh
+Icon=/usr/local/applications/jetbrains/intellij/bin/idea.svg
+Type=Application
+Terminal=false
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=jetbrains;intellij;java;
