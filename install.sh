@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cwd=$(dirname "$0")
+cwd=$HOME/dotfiles
+echo $cwd
 for file in $cwd/config/*; do
     ln -s "$file" $HOME/.config/$(basename $file)
 done
@@ -16,6 +17,4 @@ done
 
 sudo ln -s $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
 
-for font in $cwd/fonts/*; do
-    sudo ln -s $file /usr/share/fonts/$(basename $font)
-done
+sudo cp $cwd/fonts/* /usr/share/fonts/
