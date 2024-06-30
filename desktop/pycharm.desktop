@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=PyCharm
+Comment=Coding with python
+GenericName=Text Editor
+Exec=/usr/local/applications/jetbrains/pycharm/bin/pycharm.sh
+Icon=/usr/local/applications/jetbrains/pycharm/bin/pycharm.svg
+Type=Application
+Terminal=false
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=jetbrains;pycharm;
