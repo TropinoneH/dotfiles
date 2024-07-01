@@ -19,11 +19,12 @@ texts[shutdown]="shutdown"
 
 declare -A icons
 # icons[lockscreen]="\uf023"
-icons[logout]="󰍃"
-icons[suspend]="󰏦"
-icons[hibernate]=""
-icons[reboot]="󰑓"
-icons[shutdown]="⏻"
+icons[logout]=" "
+icons[suspend]=" "
+# icons[hibernate]=""
+icons[hibernate]=" "
+icons[reboot]=" "
+icons[shutdown]=" "
 icons[cancel]="\u00d7"
 
 declare -A actions
@@ -99,7 +100,7 @@ echo -e "\0no-custom\x1ftrue"
 echo -e "\0markup-rows\x1ftrue"
 
 if [ -z "${selection+x}" ]; then
-    echo -e "\0prompt\x1f⏻"
+    echo -e "\0prompt\x1f"
     for entry in "${show[@]}"; do
         echo -e "${messages[$entry]}\0icon\x1f${icons[$entry]}"
     done
