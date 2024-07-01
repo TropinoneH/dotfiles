@@ -1,4 +1,4 @@
-sleep 2s
+sleep 5s
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --output HDMI-0 --left-of eDP-1-1 --auto
