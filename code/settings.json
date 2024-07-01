@@ -1,0 +1,154 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "launch": {
+        "configurations": []
+    },
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.autoClosingQuotes": "always",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "--shell-escape",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdf->bib->pdf->pdf",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "json.schemas": [],
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "ctrl-click",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 15,
+    "workbench.editor.enablePreview": false,
+    "security.workspace.trust.banner": "always",
+    "security.workspace.trust.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "latex-workshop.bind.enter.key": false,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "editor.fontFamily": "'CodeNewRoman Nerd Font Mono', 'monospace', monospace",
+    "jupyter.askForKernelRestart": false,
+    "window.zoomLevel": 1,
+    "terminal.external.linuxExec": "wezterm",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "terminal.integrated.fontFamily": "'CodeNewRoman Nerd Font Mono', 'monospace', monospace",
+    "accessibility.signalOptions": {
+        "volume": 0
+    },
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "window.menuBarVisibility": "toggle",
+    "oneDarkPro.markdownStyle": false,
+    "workbench.colorCustomizations": {
+        "[One Dark Pro Darker]": {
+            "terminal.background": "#1b1b25",
+            "sideBar.background": "#1b1b25",
+            "focusBorder": "#16161e",
+            "activityBar.background": "#16161e",
+            "editor.background": "#1b1b25",
+            "button.background": "#16161e",
+            "widget.shadow": "#16161e",
+            "selection.background": "#343746",
+            "descriptionForeground": "#F8F8F2",
+            "errorForeground": "#F8F8F2",
+            "icon.foreground": "#F8F8F2",
+            "window.activeBorder": "#16161e",
+            "window.inactiveBorder": "#16161e",
+            "editorGroup.border": "#302e31",
+            "editorGroup.dropBackground": "#16161e",
+            "editorGroupHeader.noTabsBackground": "#16161e",
+            "editorGroupHeader.tabsBackground": "#16161e",
+            "editorGroupHeader.tabsBorder": "#16161e",
+            "editorGroupHeader.border": "#1b1b25",
+            "editorGroup.emptyBackground": "#1b1b25",
+            "editorGroup.focusedEmptyBorder": "#16161e",
+            "tab.activeBackground": "#1b1b25",
+            "tab.unfocusedActiveBackground": "#1b1b25",
+            "tab.activeForeground": "#fff",
+            "tab.inactiveForeground": "#F8F8F2",
+            "tab.inactiveBackground": "#16161e",
+            "tab.unfocusedInactiveBackground": "#16161e",
+            "editorPane.background": "#16161e",
+            "foreground": "#F8F8F2",
+            "sideBar.border": "#302e31",
+            "sideBarSectionHeader.background": "#16161e",
+            "editorWidget.background": "#16161e",
+            "editorSuggestWidget.background": "#16161e",
+            "editorWidget.foreground": "#F8F8F2",
+            "sideBar.foreground": "#F8F8F2",
+            "list.activeSelectionBackground": "#16161e",
+            "list.activeSelectionForeground": "#fff",
+            "list.inactiveSelectionBackground": "#16161e",
+            "list.inactiveSelectionForeground": "#F8F8F2",
+            "textLink.foreground": "#F8F8F2",
+            "statusBar.background": "#16161e",
+            "statusBar.noFolderBackground": "#16161e",
+            "statusBar.debuggingBackground": "#16161e",
+            "statusBarItem.remoteBackground": "#16161e",
+            "statusBarItem.remoteForeground": "#fff"
+        }
+    }
+}
