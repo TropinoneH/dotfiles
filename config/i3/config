@@ -262,7 +262,6 @@ exec --no-startup-id dunst
 # exec --no-startup-id bash ~/.config/i3/gummy.sh
 # exec --no-startup-id gummy start
 exec --no-startup-id bash ~/.config/i3/mon.sh
-exec --no-startup-id feh --bg-fill ~/Pictures/崩坏/我要把所有叫我希尔的人全鲨了/IMG_1720.PNG
 #exec_always --no-startup-id  sh ~/.config/i3/start.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id fcitx
