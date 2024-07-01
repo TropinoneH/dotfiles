@@ -249,6 +249,7 @@ for_window [class="Tlp-UI"] floating enable
 for_window [class="steamwebhelper"] floating enable
 for_window [class="dolphin"] floating enable
 for_window [class="vlc"] floating enable
+
 # i3-gaps
 # smart_gaps off
 gaps inner 4
@@ -271,3 +272,4 @@ exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 exec --no-startup-id "greenclip daemon"
 
 exec --no-startup-id "sudo mount -t cifs //10.19.130.227/share_folder/zhaochf /mnt/YilanNas -o user=common,password=YILAN123"
+exec --no-startup-id '~/.config/i3/mount.sh'
