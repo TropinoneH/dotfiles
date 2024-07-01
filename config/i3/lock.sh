@@ -2,7 +2,8 @@
 
 blank='#00000000'  # blank
 #background='#1A6785FF'
-background='#2e3440'
+# background='#2e3440'
+background='#2e344055'
 foreground='#D8DEE9FF'  # text
 
 primary='#4c566a'  # default
@@ -33,7 +34,7 @@ i3lock \
     \
     --separator-color=$primary \
     \
-    --verif-color=$foreground \
+    --verif-color=$verifying \
     --wrong-color=$foreground \
     --time-color=$foreground \
     --date-color=$foreground \
@@ -46,12 +47,12 @@ i3lock \
     --wrong-align=0 \
     --modif-align=0 \
     \
-    --blur 30 \
     --indicator \
     --keylayout 2 \
     \
     --verif-text="" \
     --wrong-text=""
+    # --blur 30 \
 # --clock               \
 # --timestr="%H:%M:%S"  \
 # --line-uses-inside       \

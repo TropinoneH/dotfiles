@@ -149,7 +149,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 
 #bindsym $mod+l exec --no-startup-id "betterlockscreen --lock"
-bindsym $mod+l exec --no-startup-id "sh ~/.config/i3/lock.sh"
+bindsym $mod+l exec --no-startup-id "~/.config/i3/lock.sh"
 bindsym $mod+Shift+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
 
 # Take a full screenshot store in file
@@ -257,7 +257,7 @@ gaps outer 4
 
 # local config file
 # startup applications
-exec --no-startup-id xautolock -time 5 -locker '~/.config/i3/lock.sh'
+exec --no-startup-id xautolock -time 10 -locker '~/.config/i3/lock.sh'
 exec --no-startup-id dunst
 # exec --no-startup-id bash ~/.config/i3/gummy.sh
 # exec --no-startup-id gummy start
