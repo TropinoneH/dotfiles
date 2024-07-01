@@ -9,4 +9,4 @@ sudo pacman -S lolcat fd fzf ripgrep tree unzip lazygit cmatrix btop neofetch ex
 git clone git@github.com:tldr-pages/tldr ~/.cache/tldr
 
 # use npm
-sudo npm install -g n nrm figlet pnpm yarn vue
+sudo npm install -g n nrm figlet pnpm yarn vue prettier

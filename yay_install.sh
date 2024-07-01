@@ -53,7 +53,7 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # yay install
-yay -S google-chrome optimus-manager optimus-manager-qt networkmanager-dmenu-git rofi-bluetooth-git mailspring rofi-greenclip notion-app-electron todesk visual-studio-code-bin
+yay -S google-chrome optimus-manager optimus-manager-qt networkmanager-dmenu-git rofi-bluetooth-git mailspring rofi-greenclip notion-app-electron todesk visual-studio-code-bin clang-format-all-git
 
 sudo pacman -Rs i3lock
 yay -S i3lock-color
