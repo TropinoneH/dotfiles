@@ -18,6 +18,6 @@ done
 sudo ln -sf $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
 
 sudo cp $cwd/fonts/* /usr/share/fonts/
-sudo cp $cwd/nord-theme /usr/share/themes/
+sudo cp $cwd/nord-theme /usr/share/themes/ -r
 
-ln -sf $cwd/Xresources ~/.Xresources
+# ln -sf $cwd/Xresources ~/.Xresources
