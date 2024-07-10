@@ -50,8 +50,8 @@ i3lock \
     --indicator \
     --keylayout 2 \
     \
-    --verif-text="" \
-    --wrong-text=""
+    --verif-text="Verifying..." \
+    --wrong-text="Wrong!"
     # --blur 30 \
 # --clock               \
 # --timestr="%H:%M:%S"  \
