@@ -42,4 +42,4 @@ cyan = '#8FBCBB'
 white = '#ECEFF4'
 
 [env]
-WINIT_X11_SCALE_FACTOR = "1.5"
+WINIT_X11_SCALE_FACTOR = "2"
