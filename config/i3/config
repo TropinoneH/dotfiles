@@ -150,7 +150,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 #bindsym $mod+l exec --no-startup-id "betterlockscreen --lock"
 bindsym $mod+l exec --no-startup-id "~/.config/i3/lock.sh"
-bindsym $mod+Shift+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
+bindsym $mod+Shift+l exec --no-startup-id "~/.config/rofi/powermenu/powermenu"
+
 # music mpd with rofi
 bindsym $mod+m exec --no-startup-id "~/.config/rofi/mpd/mpd"
 
