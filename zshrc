@@ -7,6 +7,9 @@ alias webstorm="$AppFolder/jetbrains/webstorm/bin/webstorm.sh"
 alias intellij="$AppFolder/jetbrains/intellij/bin/intellij.sh"
 alias goland="$AppFolder/jetbrains/goland/bin/goland.sh"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 source $HOME/.zsh/load-config.zsh
 
 # Welcome message
@@ -20,18 +23,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/TropinoneH/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/TropinoneH/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/TropinoneH/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/TropinoneH/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
 # <<< conda initialize <<<
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -f "/home/TropinoneH/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/home/TropinoneH/miniconda3/etc/profile.d/conda.sh"
+else
+    export PATH="/home/TropinoneH/miniconda3/bin:$PATH"
+fi
