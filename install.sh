@@ -21,3 +21,5 @@ sudo cp $cwd/fonts/* /usr/share/fonts/
 sudo cp $cwd/nord-theme /usr/share/themes/ -r
 
 # ln -sf $cwd/Xresources ~/.Xresources
+ln -sf $cwd/mpd $HOME/.config/mpd
+ln -sf $cwd/ncmpcpp $HOME/.config/ncmpcpp

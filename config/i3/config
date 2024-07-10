@@ -151,6 +151,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 #bindsym $mod+l exec --no-startup-id "betterlockscreen --lock"
 bindsym $mod+l exec --no-startup-id "~/.config/i3/lock.sh"
 bindsym $mod+Shift+l exec --no-startup-id "sh ~/.config/rofi/powermenu.sh"
+# music mpd with rofi
+bindsym $mod+m exec --no-startup-id "~/.config/rofi/mpd/mpd"
 
 # Take a full screenshot store in file
 
@@ -265,7 +267,7 @@ exec --no-startup-id bash ~/.config/i3/mon.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
-#exec_always --no-startup-id copyq
+exec --no-startup-id mpd
 
 exec --no-startup-id "greenclip daemon"
 
