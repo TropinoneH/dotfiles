@@ -46,23 +46,26 @@ hide_edge_borders both
 popup_during_fullscreen smart
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id "wezterm start --always-new-process"
 # use ranger as filemanager
 bindsym $mod+e exec --no-startup-id "alacritty -T ranger -e ranger"
+# use ncmpcpp as music player
+bindsym $mod+p exec --no-startup-id "alacritty -T ncmpcpp -e ncmpcpp"
 # start wezterm(for ssh)
-bindsym $mod+t exec --no-startup-id "wezterm start --always-new-process"
+bindsym $mod+t exec --no-startup-id alacritty
 # start neovide
 bindsym $mod+Shift+n exec --no-startup-id neovide
 # drun
-bindsym $mod+w exec --no-startup-id "rofi -show drun -no-default-config -config ~/.config/rofi/config.rasi"
+bindsym $mod+w exec --no-startup-id "rofi -show drun -no-default-config -config ~/.config/rofi/config.rasi -dpi 1"
+bindsym $mod+Shift+w exec --no-startup-id "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi -dpi 1"
 # bluetooth
-bindsym $mod+b exec --no-startup-id "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi"
+bindsym $mod+b exec --no-startup-id "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi -dpi 1"
 # switching window
-bindsym $mod+Tab exec --no-startup-id "rofi -show window -no-default-config -config ~/.config/rofi/config.rasi"
+bindsym $mod+Tab exec --no-startup-id "rofi -show window -no-default-config -config ~/.config/rofi/config.rasi -dpi 1"
 # network
-bindsym $mod+n exec --no-startup-id "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi"
+bindsym $mod+n exec --no-startup-id "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi -dpi 1"
 # clipboadr
-bindsym $mod+v exec --no-startup-id " rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -no-default-config -config ~/.config/rofi/config.rasi"
+bindsym $mod+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -no-default-config -config ~/.config/rofi/config.rasi -dpi 1"
 
 # show_marks yes
 
@@ -158,6 +161,7 @@ bindsym $mod+m exec --no-startup-id "~/.config/rofi/mpd/mpd"
 # Take a full screenshot store in file
 
 bindsym $mod+Shift+p exec --no-startup-id "flameshot gui"
+bindsym Print exec --no-startup-id "flameshot gui"
 # volume
 bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
@@ -215,6 +219,7 @@ client.placeholder      #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
 client.background       #F8F8F2
 
 for_window [class="Alacritty" title="ranger"] floating enable
+for_window [class="Alacritty" title="ncmpcpp"] floating enable
 for_window [class="xdman-Main"] floating enable
 for_window [class="java-lang-Thread"] floating enable
 for_window [class="VirtualBox Manager"] floating enable
