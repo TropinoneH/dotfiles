@@ -7,3 +7,6 @@
 [submodule "config/nvim"]
 	path = config/nvim
 	url = git@github.com:TropinoneH/nvim-configuration.git
+[submodule "config/fastfetch"]
+	path = config/fastfetch
+	url = git@github.com:TropinoneH/fastfetch-configuration.git
