@@ -14,7 +14,7 @@ open = [
     { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 extract = [
-    { run = 'ark "$1"', desc = "Use ark to extract", for = "unix" },
+    { run = 'ark -d -a "$1"', desc = "Use ark to extract", for = "unix" },
     { run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
 play = [
@@ -50,7 +50,7 @@ rules = [
     { mime = "application/x-bzip2", use = ["extract"] },
     { mime = "application/x-7z-compressed", use = ["extract"] },
     { mime = "application/x-rar", use = ["extract"] },
-    { mime = "application/xz", use = ["extract"] },
+    { mime = "application/x-xz", use = ["extract"] },
 
     { mime = "application/pdf", use = ["pdf"] },
 
