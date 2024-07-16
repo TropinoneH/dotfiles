@@ -4,6 +4,7 @@
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces",
+        "custom/window-name",
         "mpd"
     ],
     "modules-center": [
@@ -22,7 +23,13 @@
     ],
     "custom/arch": {
         "format": "  ",
+        "tooltip": false,
         "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi"
+    },
+    "custom/window-name": {
+        "format": "<b>{}</b>",
+        "interval": 1,
+        "exec": "hyprctl activewindow | grep class | awk '{print $2}'"
     },
     "mpd": {
         "server": "127.0.0.1",
@@ -148,18 +155,5 @@
         "critical-threshold": 80,
         "format": "<span foreground='#5d73ca'></span> {temperatureC}°C",
         "on-click": "kitty -o initial_window_width=80c -o initial_window_height=24c -T btop btop"
-    },
-    "custom/playerctl": {
-        "format": "{icon}  <span>{}</span>",
-        "return-type": "json",
-        "max-length": 55,
-        "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-        "on-click-middle": "playerctl previous",
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl next",
-        "format-icons": {
-            "Paused": "<span foreground='#bb9af7'></span>",
-            "Playing": "<span foreground='#bb9af7'></span>"
-        }
     }
 }
