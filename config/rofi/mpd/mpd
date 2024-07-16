@@ -31,6 +31,28 @@ active=''
 urgent=''
 # Repeat
 if [[ ${status} == *"repeat: on"* ]]; then
+    if [[ ${status} == *"single: on"* ]]; then
+        active="-a 4"
+        option_5="󰑘"
+    elif [[ ${status} == *"single: off"* ]]; then
+        active="-a 4"
+        option_5=""
+    else
+        option_5=" Parsing Error"
+    fi
+elif [[ ${status} == *"repeat: off"* ]]; then
+    if [[ ${status} == *"single: off"* ]]; then
+        urgent="-u 4"
+    elif [[ ${status} == *"single: on"* ]]; then
+        active="-a 4"
+        option_5="󰲡"
+    else
+        option_5=" Parsing Error"
+    fi
+else
+    option_5=" Parsing Error"
+fi
+if [[ ${status} == *"repeat: on"* ]]; then
     active="-a 4"
 elif [[ ${status} == *"repeat: off"* ]]; then
     urgent="-u 4"
@@ -74,7 +96,19 @@ run_cmd() {
     elif [[ "$1" == '--opt4' ]]; then
         mpc -q next
     elif [[ "$1" == '--opt5' ]]; then
-        mpc -q repeat
+        if [[ ${status} == *"repeat: off"* ]]; then
+            if [[ ${status} == *"single: off"* ]]; then
+                mpc -q repeat
+            elif [[ ${status} == *"single: on"* ]]; then
+                mpc -q single
+            fi
+        elif [[ ${status} == *"repeat: on"* ]]; then
+            if [[ ${status} == *"single: off"* ]]; then
+                mpc -q single
+            elif [[ ${status} == *"single: on"* ]]; then
+                mpc -q repeat
+            fi
+        fi
     elif [[ "$1" == '--opt6' ]]; then
         mpc -q random
     fi
