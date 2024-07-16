@@ -1,0 +1,165 @@
+{
+    "layer": "top",
+    "height": 10,
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+        "mpd"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "memory",
+        "cpu",
+        "temperature",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "network",
+        "bluetooth",
+        "tray"
+    ],
+    "custom/arch": {
+        "format": "  ",
+        "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi"
+    },
+    "mpd": {
+        "server": "127.0.0.1",
+        "port": 6600,
+        "on-click": "~/.config/rofi/mpd/mpd",
+        "format": "{stateIcon} {artist} - {title}  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
+        }
+    },
+    "clock": {
+        "format": "<span color='#b69bf1'> </span>{:%b-%d %a %H:%M}",
+        "format-alt": "<span foreground='#b69bf1'> </span><span>{:%Y/%B/%d %a %I:%M %p}</span>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "backlight": {
+        "device": "amdgpu_b10",
+        "format": "<span color='#d9b172'>{icon}</span> {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "bluetooth": {
+        "format": "<span color='#0087bd'></span>",
+        "format-disabled": "󰂳",
+        "format-connected": "<span color='#0087bd'>󰂱</span> {num_connections}",
+        "tooltip-format": " {device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+        "tooltip": true,
+        "on-click": "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi"
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "<span color='#90cdfa'> </span>{essid}({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "<span color='#ff005f'>󰖪 </span>No Network",
+        "on-click": "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi"
+    },
+    "battery": {
+        "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-charging": "<span color='#a8cd76'></span> {capacity}%"
+    },
+    "pulseaudio": {
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "<span color='#f7768e'></span> {volume}%",
+        "format-muted": "<span color='#f7768e'> mute</span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "奔",
+                "墳"
+            ]
+        },
+        "on-click-right": "pavucontrol-qt"
+    },
+    "memory": {
+        "format": "<span foreground='#9ece6a'></span> {}%",
+        "on-click": "kitty -o initial_window_width=80c -o initial_window_height=24c -T btop btop"
+    },
+    "tray": {
+        "icon-size": 20,
+        "reverse-direction": true,
+        "spacing": 6
+    },
+    "cpu": {
+        "format": "<span foreground='#ff005f'></span>  {usage}%",
+        "on-click": "kitty -o initial_window_width=80c -o initial_window_height=24c -T btop btop"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "<span foreground='#5d73ca'></span> {temperatureC}°C",
+        "on-click": "kitty -o initial_window_width=80c -o initial_window_height=24c -T btop btop"
+    },
+    "custom/playerctl": {
+        "format": "{icon}  <span>{}</span>",
+        "return-type": "json",
+        "max-length": 55,
+        "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click-middle": "playerctl previous",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "format-icons": {
+            "Paused": "<span foreground='#bb9af7'></span>",
+            "Playing": "<span foreground='#bb9af7'></span>"
+        }
+    }
+}
