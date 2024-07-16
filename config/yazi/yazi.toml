@@ -1,0 +1,59 @@
+[manager]
+show_hidden = true
+show_symlink = true
+linemode = "none"
+
+[opener]
+edit = [
+    { run = 'neovide "$@"', orphan = true, for = "unix" },
+    { run = 'code "%*"', orphan = true, for = "windows" },
+]
+open = [
+    { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+    { run = 'open "$@"', desc = "Open", for = "macos" },
+    { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+]
+extract = [
+    { run = 'ark "$1"', desc = "Use ark to extract", for = "unix" },
+    { run = 'unar "%1"', desc = "Extract here", for = "windows" },
+]
+play = [
+    { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+    { run = 'mpv "%1"', orphan = true, for = "windows" },
+    { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
+]
+image = [{ run = 'feh "$@"', desc = "feh", for = "unix" }]
+markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
+pdf = [{ run = 'okular "$@"', orphan = true, desc = "pdf viewer" }]
+
+[open]
+rules = [
+    # { name = "*/", use = [
+    #     "edit",
+    #     "open",
+    # ] },
+
+    { name = "*.md", use = ["markdown"] },
+    { mime = "text/*", use = ["edit"] },
+    { mime = "image/*", use = ["image", "open"] },
+    { mime = "video/*", use = ["play"] },
+    { mime = "audio/*", use = ["play"] },
+    { mime = "inode/x-empty", use = ["edit"] },
+
+    { mime = "application/json", use = ["edit"] },
+    { mime = "*/javascript", use = ["edit"] },
+
+    { mime = "application/zip", use = ["extract"] },
+    { mime = "application/gzip", use = ["extract"] },
+    { mime = "application/x-tar", use = ["extract"] },
+    { mime = "application/x-bzip", use = ["extract"] },
+    { mime = "application/x-bzip2", use = ["extract"] },
+    { mime = "application/x-7z-compressed", use = ["extract"] },
+    { mime = "application/x-rar", use = ["extract"] },
+    { mime = "application/xz", use = ["extract"] },
+
+    { mime = "application/pdf", use = ["pdf"] },
+
+
+    # { mime = "*", use = ["open"] },
+]

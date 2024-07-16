@@ -1,0 +1,34 @@
+[manager]
+prepend_keymap = [
+    { on = [
+        "<C-h>",
+    ], run = "hidden toggle", desc = "Toggle hidden files" },
+    { on = [
+        "<Home>",
+    ], run = "cd ~", desc = "Go to the home directory" },
+    { on = [
+        "<F1>",
+    ], run = "help", desc = "Open help" },
+    { on = [
+        "z",
+    ], run = "plugin fzf", desc = "Jump to a directory, or reveal a file using fzf" },
+]
+
+[tasks]
+prepend_keymap = [
+    { on = [
+        "<F1>",
+    ], run = "help", desc = "Open help" },
+    { on = [
+        "q",
+    ], run = "close", desc = "Hide the task manager" },
+]
+
+[input]
+prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
+
+[select]
+prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
+
+[completion]
+prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
