@@ -8,7 +8,7 @@ done
 
 ln -sf $cwd/zsh $HOME/.zsh
 ln -sf $cwd/zshrc $HOME/.zshrc
-ln -sf $cwd/xprofile $HOME/.xprofile
+sudo ln -sf $cwd/profile /etc/profile.d/env_path.sh
 ln -sf $cwd/p10k.zsh $HOME/.p10k.zsh
 
 for file in $cwd/desktop/*; do
@@ -18,8 +18,5 @@ done
 sudo ln -sf $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
 
 sudo cp $cwd/fonts/* /usr/share/fonts/
-sudo cp $cwd/nord-theme /usr/share/themes/ -r
 
-# ln -sf $cwd/Xresources ~/.Xresources
-ln -sf $cwd/mpd $HOME/.config/mpd
-ln -sf $cwd/ncmpcpp $HOME/.config/ncmpcpp
+mkdir ~/.config/mpd/playlists
