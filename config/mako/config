@@ -1,25 +1,25 @@
-sort=-time                             ; 排序方式
-layer=overlay                          ; 显示层级
-background-color=#2e34407f             ; 背景颜色
-width=420                              ; 通知宽度
-height=120                             ; 通知高度
-border-size=3                          ; 边框宽度
-border-color=#99c0d0                   ; 边框颜色
-border-radius=12                       ; 圆角半径
-icons=0                                ; 是否启用图标
-max-icon-size=64                       ; 图标大小
-default-timeout=5000                   ; 超时时间
-ignore-timeout=0                       ; 忽略超时时间
-;font="CodeNewRoman Nerd Font Mono" 14  ; 字体
-margin=12                              ; 通知的外边距
-padding=12,20                          ; 通知的内边距
+sort=-time
+layer=overlay
+background-color=#2e34407f
+width=420
+height=120
+border-size=3
+border-color=#99c0d0
+border-radius=12
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+font="CodeNewRoman Nerd Font Mono" 14
+margin=12
+padding=12,20
 
-[urgency=low]                          ; 低紧急度
+[urgency=low]
 border-color=#cccccc
 
-[urgency=normal]                       ; 正常紧急度
+[urgency=normal]
 border-color=#99c0d0
 
-[urgency=critical]                     ; 高紧急度
+[urgency=critical]
 border-color=#bf616a
 default-timeout=0
