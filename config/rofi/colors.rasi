@@ -1,10 +1,28 @@
-/* colors */
-
 * {
-  al:  #00000000;
-  bg:  #1b1b25;
-  se:  #282a36;
-  fg:  #dedede;
-  ac:  #16161e;
-  br:  #343746;
+    active-background: #434C5E;
+    active-foreground: #bac2de;
+    normal-background: #2E3440;
+    normal-foreground: #a6adc8;
+    urgent-background: #81A1C1;
+    urgent-foreground: #D8DEE9;
+
+    alternate-active-background: #74c7ec;
+    alternate-active-foreground: #D6CBD5;
+    alternate-normal-background: #030508;
+    alternate-normal-foreground: #D6CBD5;
+    alternate-urgent-background: #030508;
+    alternate-urgent-foreground: #D6CBD5;
+
+    selected-active-background: #2E3440;
+    selected-active-foreground: #D8DEE9;
+    selected-normal-background: #BCADBB;
+    selected-normal-foreground: #D6CBD5;
+    selected-urgent-background: #81A1C1;
+    selected-urgent-foreground: #D6CBD5;
+
+    background-color: #030508;
+    background: rgba(0,0,0,0.7);
+    foreground: #DEDEDE;
+    border-color: #343746;
 }
+

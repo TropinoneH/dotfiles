@@ -1,0 +1,10 @@
+@import "~/.config/rofi/config.rasi"
+
+inputbar {
+    chindren: ["entry", "dummy"];
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+}
