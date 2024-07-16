@@ -63,6 +63,7 @@ window#waybar {
 #network,
 #battery,
 #bluetooth,
+#custom-window-name,
 #mpd,
 #tray,
 #custom-playerctl {
