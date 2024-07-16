@@ -20,3 +20,6 @@ sudo ln -sf $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
 sudo cp $cwd/fonts/* /usr/share/fonts/
 
 mkdir ~/.config/mpd/playlists
+
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Dark"
