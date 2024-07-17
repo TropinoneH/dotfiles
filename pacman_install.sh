@@ -3,7 +3,7 @@
 # firmware
 sudo pacman -S mesa pulseaudio-bluetooth bluedevil alsa-utils sof-firmware plasma-framework5 libmpdclient wezterm bbswitch acpi
 
-sudo pacman -S lolcat fd fzf ripgrep tree unzip lazygit cmatrix btop fastfetch exa yazi dolphin xautolock grim arandr xclip iwd net-tools tldr wget neovide npm firefox gnome-keyring ncmpcpp mpd mpc libevent gnome-keyring bat okular brightnessctl mako feh go rust pavucontrol-qt wlroots
+sudo pacman -S lolcat fd fzf ripgrep tree unzip lazygit cmatrix btop fastfetch exa yazi dolphin xautolock grim arandr xclip iwd net-tools tldr wget neovide npm firefox gnome-keyring ncmpcpp mpd mpc libevent gnome-keyring bat okular brightnessctl mako feh go rustup pavucontrol-qt wlroots hypridle
 
 # font
 sudo pacman -S ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
@@ -13,3 +13,13 @@ git clone git@github.com:tldr-pages/tldr ~/.cache/tldr
 
 # use npm
 sudo npm install -g n nrm figlet pnpm yarn vue prettier
+
+# rust
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+rustup run --install stable cargo
+rustup default stable
+
+cargo install cmd-wrapped
+cargo install tree-sitter-cli
+cargo install wpaperd

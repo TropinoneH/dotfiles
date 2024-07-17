@@ -1,0 +1,10 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "ascending"
+
+[any]
+path = "~/.config/hypr/bg/IMG_1720.PNG"
+
+# [DP-3]
+# path = "/home/danyspin97/Wallpapers"
