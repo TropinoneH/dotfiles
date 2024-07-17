@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 10,
+    "height": 37,
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces",
