@@ -17,9 +17,14 @@ padding=12,20
 [urgency=low]
 border-color=#cccccc
 
+[mode=locked]
+layer=top
+
 [urgency=normal]
 border-color=#99c0d0
 
 [urgency=critical]
 border-color=#bf616a
 default-timeout=0
+
+# vim: se ft=dosini:
