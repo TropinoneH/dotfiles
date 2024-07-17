@@ -92,9 +92,6 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "terminal.integrated.fontFamily": "'CodeNewRoman Nerd Font Mono', 'monospace', monospace",
-    "accessibility.signalOptions": {
-        "volume": 0
-    },
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
