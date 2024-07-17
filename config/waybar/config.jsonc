@@ -29,17 +29,31 @@
     "custom/window-name": {
         "format": "<b>{}</b>",
         "interval": 1,
-        "exec": "hyprctl activewindow | grep class | awk '{print $2}'"
+        "exec": "hyprctl activewindow | grep class | awk '{print $2}'",
+        "tooltip-format": ""
     },
     "mpd": {
         "server": "127.0.0.1",
         "port": 6600,
         "on-click": "~/.config/rofi/mpd/mpd",
-        "format": "{stateIcon} {artist} - {title}  ",
+        "format": "{stateIcon} {artist} - {title}  {repeatIcon}{singleIcon}{consumeIcon}{randomIcon}",
         "format-disconnected": "Disconnected  ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "format-stopped": "Stopped ",
         "unknown-tag": "N/A",
         "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            //"off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
         "state-icons": {
             "paused": "",
             "playing": ""
@@ -83,7 +97,8 @@
             "",
             "",
             ""
-        ]
+        ],
+        "tooltip": false
     },
     "bluetooth": {
         "format": "<span color='#0087bd'></span>",
@@ -137,6 +152,16 @@
             ]
         },
         "on-click-right": "pavucontrol-qt"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5
     },
     "memory": {
         "format": "<span foreground='#9ece6a'></span> {}%",
