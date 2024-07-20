@@ -24,3 +24,8 @@ mkdir -p ~/.config/mpd/playlists
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Dark"
 gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Ice"
+gsettings set org.gnome.desktop.interface icon-theme "Tela-dark"
+
+# time
+timedatectl set-local-rtc true
+sudo hwclock -s
