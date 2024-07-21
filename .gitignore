@@ -4,3 +4,4 @@ config/i3/mount.sh
 /config/mpd/playlists
 /config/mpd/database
 /config/hypr/bg
+/config/ncmpcpp/lyrics
