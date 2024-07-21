@@ -63,7 +63,7 @@ window#waybar {
 #network,
 #battery,
 #bluetooth,
-#custom-window-name,
+#window,
 #mpd,
 #tray,
 #custom-playerctl {
@@ -73,7 +73,7 @@ window#waybar {
   /* margin-top: 15px; */
   padding-left: 9px;
   padding-right: 9px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 #backlight,
