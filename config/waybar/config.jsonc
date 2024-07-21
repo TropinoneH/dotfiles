@@ -24,7 +24,8 @@
     "custom/arch": {
         "format": "  ",
         "tooltip": false,
-        "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi"
+        "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi",
+        "on-click-right": "~/.config/rofi/powermenu/powermenu"
     },
     "custom/window-name": {
         "format": "<b>{}</b>",
@@ -64,8 +65,8 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format-icons": {
             "1": "",
             "2": "",
