@@ -133,15 +133,15 @@
     },
     "network": {
         "interface": "wlan0",
+        "interval": 5,
         "format": "{ifname}",
         "format-wifi": "<span color='#90cdfa'></span>",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "format-disconnected": "<span color='#ff005f'>󰖪 </span>No Network",
-        "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "tooltip-format-wifi": "{ifname} {essid}({signalStrength}%)  {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{ifname} {essid}({signalStrength}%)  {ipaddr}/{cidr}\r               ⬆{bandwidthUpBits} ⬇{bandwidthDownBits}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "on-click": "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi",
+        "on-click": "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi"
     },
     "battery": {
         "format": "<span color='#a8cd76'>{icon}</span> {capacity}%",
