@@ -22,4 +22,4 @@ rustup default stable
 
 cargo install cmd-wrapped
 cargo install tree-sitter-cli
-cargo install wpaperd
+cargo install wpaperd wpaperctl
