@@ -24,6 +24,8 @@
     "custom/arch": {
         "format": "  ",
         "tooltip": false,
+        "on-scroll-up": "wpaperctl previous",
+        "on-scroll-down": "wpaperctl next",
         "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi",
         "on-click-right": "~/.config/rofi/powermenu/powermenu"
     },
