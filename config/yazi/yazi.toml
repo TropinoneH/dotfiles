@@ -24,7 +24,9 @@ play = [
 ]
 image = [{ run = 'feh "$@"', desc = "feh", for = "unix" }]
 markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
-pdf = [{ run = 'okular "$@"', orphan = true, desc = "pdf viewer" }]
+pdf = [
+    { run = 'okular "$@"', orphan = true, for = "unix", desc = "pdf viewer" },
+]
 
 [open]
 rules = [
