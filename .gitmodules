@@ -10,3 +10,6 @@
 [submodule "config/fastfetch"]
 	path = config/fastfetch
 	url = git@github.com:TropinoneH/fastfetch-configuration.git
+[submodule "config/tmux"]
+	path = config/tmux
+	url = git@github.com:TropinoneH/tmux-configuration.git
