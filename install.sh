@@ -29,3 +29,6 @@ gsettings set org.gnome.desktop.interface icon-theme "Tela-dark"
 # time
 timedatectl set-local-rtc true
 sudo hwclock -s
+
+# bat theme
+bat cache --build
