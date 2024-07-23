@@ -4,6 +4,7 @@
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces",
+        "wlr/taskbar",
         "hyprland/window",
         "mpd"
     ],
@@ -29,12 +30,6 @@
         "on-scroll-down": "wpaperctl next",
         "on-click": "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi"
     },
-    "custom/window-name": {
-        "format": "<b>{}</b>",
-        "interval": 1,
-        "exec": "hyprctl activewindow | grep class | awk '{print $2}'",
-        "tooltip-format": ""
-    },
     "custom/powermenu": {
         "format": "<span color='#f7768e'>⏻</span>",
         "tooltip": false,
@@ -57,12 +52,34 @@
             "9": "",
             "10": ""
         },
+        "persistent-workspaces": {
+            "eDP-1": [
+                10
+            ],
+            "HDMI-A-1": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+            ]
+        },
         "move-to-monitor": true
     },
     "hyprland/window": {
         "max-length": 10,
         "separate-outputs": true,
         "format": "{class}"
+    },
+    "wlr/taskbar": {
+        "all-outputs": false,
+        "tooltip-format": "{name} - {title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     "mpd": {
         "server": "127.0.0.1",
@@ -137,11 +154,10 @@
         "on-click": "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi"
     },
     "network": {
-        "interface": "wlan0",
         "interval": 5,
         "format": "{ifname}",
         "format-wifi": "<span color='#90cdfa'></span>",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "<span color='#90cdfa'></span>",
         "format-disconnected": "<span color='#ff005f'>󰖪 </span>No Network",
         "format-linked": "{ifname} (No IP) ",
         "tooltip-format-wifi": "{ifname} {essid}({signalStrength}%)  {ipaddr}/{cidr}\r               ⬆{bandwidthUpBits} ⬇{bandwidthDownBits}",

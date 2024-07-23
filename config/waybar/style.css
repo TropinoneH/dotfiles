@@ -13,17 +13,6 @@ window#waybar {
   background: transparent;
 }
 
-#workspaces {
-  border-radius: 10px;
-  background-color: #191a24;
-  color: #c0caf5;
-  /* margin-top: 15px; */
-  margin-right: 5px;
-  padding-top: 1px;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
 #custom-arch {
   border-radius: 10px;
   background-color: #191a24;
@@ -37,6 +26,18 @@ window#waybar {
   margin-left: 15px;
 }
 
+#taskbar,
+#workspaces {
+  border-radius: 10px;
+  background-color: #191a24;
+  color: #c0caf5;
+  /* margin-top: 15px; */
+  margin-right: 5px;
+  padding-top: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 #workspaces button {
   background: #191a24;
   color: #c0caf5;
@@ -44,6 +45,10 @@ window#waybar {
 
 #workspaces button.active {
   color: #2ac3de;
+}
+
+#taskbar button.active {
+  background-color: #404150;
 }
 
 #cpu,
