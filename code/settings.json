@@ -136,7 +136,7 @@
             "editorSuggestWidget.background": "#16161e",
             "editorWidget.foreground": "#F8F8F2",
             "sideBar.foreground": "#F8F8F2",
-            "list.activeSelectionBackground": "#16161e",
+            "list.activeSelectionBackground": "#343746",
             "list.activeSelectionForeground": "#fff",
             "list.inactiveSelectionBackground": "#16161e",
             "list.inactiveSelectionForeground": "#F8F8F2",
