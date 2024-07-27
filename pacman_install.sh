@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # firmware
-sudo pacman -S mesa pulseaudio-bluetooth bluedevil alsa-utils sof-firmware plasma-framework5 libmpdclient wezterm acpi xdg-desktop-portal-hyprland qt6ct cifs-utils gvfs-smb
+sudo pacman -S mesa pulseaudio-bluetooth bluedevil alsa-utils sof-firmware plasma-framework5 libmpdclient wezterm acpi xdg-desktop-portal-hyprland qt6ct cifs-utils gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb
 
 sudo pacman -S lolcat fd fzf ripgrep unzip lazygit cmatrix btop fastfetch exa yazi dolphin xautolock grim xclip iwd net-tools tldr wget neovide npm firefox gnome-keyring ncmpcpp mpd mpc libevent gnome-keyring bat okular brightnessctl mako feh go rustup pavucontrol-qt wlroots hypridle imagemagick
 
