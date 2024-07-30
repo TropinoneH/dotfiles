@@ -108,7 +108,7 @@
             "paused": "",
             "playing": ""
         },
-        "tooltip-format": "MPD (connected)",
+        "tooltip-format": "MPD (connected)\r{title} - {artist}",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "clock": {
