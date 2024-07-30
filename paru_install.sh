@@ -7,17 +7,15 @@ go env -w GO111MODULE=on
 go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 
-git clone https://aur.archlinux.org/yay.git
-cd yay || exit
-makepkg -si
-cd .. || exit
-
-# use exa as alternative
-# git clone https://aur.archlinux.org/logo-ls.git
-# cd logo-ls || exit
-# sed -i "s/'go'//g'" PKGBUILD
+# git clone https://aur.archlinux.org/yay.git
+# cd yay || exit
 # makepkg -si
 # cd .. || exit
+
+git clone https://aur.archlinux.org/paru.git
+cd paru || exit
+makepkg -si
+cd .. || exit
 
 git clone https://aur.archlinux.org/fcitx-sogoupinyin.git
 cd fcitx-sogoupinyin || exit
@@ -53,5 +51,5 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # yay install
-yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic
-yay -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip rofi-calc-git
+paru -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic
+paru -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip rofi-calc-git
