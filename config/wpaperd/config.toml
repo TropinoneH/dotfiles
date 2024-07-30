@@ -4,7 +4,7 @@ mode = "center"
 sorting = "ascending"
 
 [any]
-path = "~/.config/hypr/bg/bg"
+path = "~/.config/hypr/bg/bg/IMG_2639.JPG"
 
 # [DP-3]
 # path = "/home/danyspin97/Wallpapers"
