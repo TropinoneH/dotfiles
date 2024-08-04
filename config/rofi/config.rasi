@@ -14,7 +14,7 @@ configuration {
     me-select-entry:     "MouseSecondary";
     me-accept-entry:     "MousePrimary";
     window-format:       "{w} · {c} · {t}";
-	font: "CodeNewRoman Nerd Font Mono Bold 12";
+	font:                "CodeNewRoman Nerd Font Mono Bold 12";
 }
 
 /* ---- Load wallust colors ---- */
@@ -48,7 +48,7 @@ window {
 
     // Style Values
     width:               50%;
-    background-color:    @background;
+    background-image:    url("~/.config/rofi/IMG_2531.PNG", height);
 }
 
 /* ----- Main Box ----- */
@@ -57,7 +57,7 @@ mainbox {
     enabled:             true;
     orientation:         vertical;
     children:            [ "inputbar", "listbox" ];
-    background-color:    transparent;
+    background-color:    @background;
 }
 
 
@@ -70,7 +70,6 @@ inputbar {
     border-radius:       25px;
     orientation:         horizontal;
     children:            ["entry", "dummy", "mode-switcher" ];
-    // background-image:            url("~/others/JaKooLit/config/rofi/.current_wallpaper", width);
 }
 
 /* ---- Entry input ---- */
@@ -209,7 +208,7 @@ element-text {
     cursor:              inherit;
     vertical-align:      0.5;
     horizontal-align:    0.0;
-    font:	"CodeNewRoman Nerd Font Mono Bold 14";
+    font:                "CodeNewRoman Nerd Font Mono Bold 14";
 }
 
 /* ---- Message ---- */
