@@ -22,6 +22,7 @@
 
     background-color: #030508;
     background: rgba(0,0,0,0.7);
+    light-background: rgba(0,0,0,0.4);
     foreground: #DEDEDE;
     border-color: #343746;
 }
