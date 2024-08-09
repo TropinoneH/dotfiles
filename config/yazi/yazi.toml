@@ -29,6 +29,9 @@ markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
 pdf = [
     { run = 'okular "$@"', orphan = true, for = "unix", desc = "pdf viewer" },
 ]
+office = [
+    { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice" },
+]
 
 [open]
 rules = [
@@ -38,6 +41,12 @@ rules = [
     # ] },
 
     { name = "*.md", use = ["markdown"] },
+    { name = "*.xls", use = ["office"] },
+    { name = "*.xlsx", use = ["office"] },
+    { name = "*.doc", use = ["office"] },
+    { name = "*.docx", use = ["office"] },
+    { name = "*.ppt", use = ["office"] },
+    { name = "*.pptx", use = ["office"] },
     { mime = "text/*", use = ["edit"] },
     { mime = "image/*", use = ["image", "open"] },
     { mime = "video/*", use = ["play"] },
