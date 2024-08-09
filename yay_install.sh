@@ -53,5 +53,5 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # yay install
-yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic
+yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic onlyoffice-bin
 yay -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip rofi-calc-git
