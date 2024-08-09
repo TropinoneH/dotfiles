@@ -147,5 +147,6 @@
             "statusBarItem.remoteBackground": "#16161e",
             "statusBarItem.remoteForeground": "#fff"
         }
-    }
+    },
+    "terminal.integrated.inheritEnv": false
 }
