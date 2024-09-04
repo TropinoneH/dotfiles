@@ -7,11 +7,6 @@ go env -w GO111MODULE=on
 go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 
-# git clone https://aur.archlinux.org/yay.git
-# cd yay || exit
-# makepkg -si
-# cd .. || exit
-
 git clone https://aur.archlinux.org/paru.git
 cd paru || exit
 makepkg -si
@@ -35,11 +30,7 @@ git checkout 0ba2ff0
 makepkg -si
 cd .. || exit
 
-git clone https://aur.archlinux.org/typora.git
-cd typora || exit
-sed -i "s/pkgver=[0-9]\.[0-9]\.[0-9]/pkgver=1.6.6/g" PKGBUILD
-sed -i "s/sha512sums=('[0-9a-z]*'/sha512sums=('SKIP'/" PKGBUILD
-makepkg -si
+paru -S typora
 cd ~/Documents/go || exit
 rm -rf ElectronInjector
 git clone git@github.com:Yoshino-s/ElectronInjector.git
@@ -50,6 +41,31 @@ cd /usr/share/typora/resources/app.asar.unpacked || exit
 sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
-# yay install
-paru -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic onlyoffice-bin
-paru -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip rofi-calc-git
+# web browser
+paru -S --noconfirm google-chrome
+# email client
+paru -S --noconfirm mailspring
+# notion: note and collaboration
+paru -S --noconfirm notion-app-electron
+# IDE
+paru -S --noconfirm visual-studio-code-bin
+# code formatter
+paru -S --noconfirm clang-format-all-git
+# image protocol
+paru -S --noconfirm ueberzugpp
+# music wave visualizer
+paru -S --noconfirm cava
+# screen recorder
+paru -S --noconfirm slurp-git
+# wechat
+paru -S --noconfirm wechat-universal-bwrap
+# music player
+paru -S --noconfirm yesplaymusic
+# office
+paru -S --noconfirm onlyoffice-bin
+# rofi
+paru -S --noconfirm rofi-wayland
+paru -S --noconfirm rofi-bluetooth-git
+paru -S --noconfirm networkmanager-dmenu-git
+paru -S --noconfirm rofi-greenclip
+paru -S --noconfirm rofi-calc-git
