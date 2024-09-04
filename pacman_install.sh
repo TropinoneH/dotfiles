@@ -91,6 +91,8 @@ sudo pacman -S --noconfirm imagemagick
 sudo pacman -S --noconfirm hyprlock
 # ssh file system
 sudo pacman -S --noconfirm sshfs
+# shell
+sudo pacman -S --noconfirm fish
 
 # python env
 sudo pacman -S --noconfirm python-neovim
