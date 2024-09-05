@@ -34,7 +34,7 @@ sudo pacman -S --noconfirm lolcat
 # better find
 sudo pacman -S --noconfirm fd fzf ripgrep
 # uncompress
-sudo pacman -S --noconfirm unzip ark
+sudo pacman -S --noconfirm unzip unrar ark
 # git gui
 sudo pacman -S --noconfirm lazygit
 # toys
