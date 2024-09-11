@@ -3,6 +3,7 @@
 
 
 format = """
+[╭─ ](#7e726d)\
 $os\
 $username\
 $localip\
@@ -21,6 +22,7 @@ $nodejs\
 $python\
 $rust\
 $package
+[╰─ ](#7e726d)\
 $character
 """
 
@@ -35,8 +37,8 @@ $time
 [c]
 symbol = " "
 format = "[$symbol($version(-$name))]($style) "
-detect_extensions = [ "c", "h", "cpp", "hpp", "cu" ]
-detect_files = [ "Makefile", "CMakeLists.txt" ]
+detect_extensions = ["c", "h", "cpp", "hpp", "cu"]
+detect_files = ["Makefile", "CMakeLists.txt"]
 
 [cmake]
 format = "[cmake($symbol$version)]($style) "
