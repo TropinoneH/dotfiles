@@ -3,7 +3,8 @@
 
 
 format = """
-[╭─ ](#7e726d)\
+[╭─](#7e726d)\
+$sudo\
 $os\
 $username\
 $localip\
@@ -22,7 +23,7 @@ $nodejs\
 $python\
 $rust\
 $package
-[╰─ ](#7e726d)\
+[╰─](#7e726d)\
 $character
 """
 
@@ -44,8 +45,10 @@ detect_files = ["Makefile", "CMakeLists.txt"]
 format = "[cmake($symbol$version)]($style) "
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✖](bold red)"
+# success_symbol = "[➜](bold green)"
+# error_symbol = "[✖](bold red)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
 
 [cmd_duration]
 format = "[◄ took](dimmed) [$duration](bold yellow) "
@@ -129,7 +132,7 @@ format = "[$symbol($version)]($style) "
 
 [os]
 disabled = false
-format = "$symbol "
+format = " $symbol "
 [os.symbols]
 Alpaquita = "[](#FF0080)"
 Alpine = "[](#0D2149)"
@@ -186,6 +189,12 @@ format = "[$symbol($version)]($style) "
 [rust]
 symbol = "󱘗 "
 format = "[$symbol($version)]($style) "
+
+[sudo]
+format = "[$symbol]($style)"
+style = "bold italic bright-purple"
+symbol = "⋈┈"
+disabled = false
 
 [time]
 style = "#96e3a1 dimmed"
