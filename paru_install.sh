@@ -41,6 +41,8 @@ cd /usr/share/typora/resources/app.asar.unpacked || exit
 sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
+# firmware
+paru -S --noconfirm upd72020x-fw
 # web browser
 paru -S --noconfirm google-chrome
 # latex
