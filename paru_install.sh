@@ -47,6 +47,8 @@ paru -S --noconfirm upd72020x-fw
 paru -S --noconfirm google-chrome
 # latex
 paru -S miktex-git
+# color picker
+paru -S --noconfirm hyprpicker
 # email client
 paru -S --noconfirm mailspring
 # notion: note and collaboration
