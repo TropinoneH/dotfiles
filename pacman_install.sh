@@ -96,6 +96,8 @@ sudo pacman -S --noconfirm hyprlock
 sudo pacman -S --noconfirm sshfs
 # shell
 sudo pacman -S --noconfirm fish
+# calculator
+sudo pacman -S -- noconfirm qalculate-qt
 
 # python env
 sudo pacman -S --noconfirm python-neovim
