@@ -43,6 +43,8 @@ cd ~/Downloads/pkgs/pacman || exit
 
 # web browser
 paru -S --noconfirm google-chrome
+# latex
+paru -S miktex-git
 # email client
 paru -S --noconfirm mailspring
 # notion: note and collaboration

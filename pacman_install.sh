@@ -83,6 +83,7 @@ sudo pacman -S --noconfirm feh
 # code
 sudo pacman -S --noconfirm go
 sudo pacman -S --noconfirm rustup
+sudo pacman -S --noconfirm jdk8-openjdk jdk17-openjdk
 # audio
 sudo pacman -S --noconfirm pavucontrol-qt
 # auto lock
