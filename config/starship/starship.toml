@@ -22,17 +22,15 @@ $lua\
 $nodejs\
 $python\
 $rust\
-$package
-[╰─](#7e726d)\
-$character
-"""
-
-right_format = """
+$package\
+$fill\
 $cmd_duration\
 $conda\
 $container\
 $docker_context\
 $time
+[╰─](#7e726d)\
+$character
 """
 
 [c]
@@ -80,6 +78,10 @@ format = "[$symbol $context]($style) "
 [dotnet]
 symbol = "•NET "
 format = "[$symbol$version( $tfm)]($style) "
+
+[fill]
+symbol = "─"
+style = "#7e726d"
 
 [git_branch]
 symbol = ""
