@@ -27,6 +27,8 @@ sudo pacman -S --noconfirm libevent gnome-keyring
 sudo pacman -S --noconfirm wlroots
 # brightness control
 sudo pacman -S --noconfirm brightnessctl
+# man page
+sudo pacman -S --noconfirm man-db
 
 # software
 # colorize
