@@ -2,8 +2,9 @@ import { monitors } from "../utils/hyprlandData.js"
 
 const Hyprland = await Service.import("hyprland")
 
-const clickCloseRegion = ({ name, expand = true, fillMonitor = "" }) => {
-    return Widget.EventBox({
+const clickCloseRegion = ({ name, expand = true, fillMonitor = "" }) =>
+    Widget.EventBox({
+        className: "click-close-region",
         child: Widget.Box({
             expand: expand,
             css: `
@@ -17,6 +18,5 @@ const clickCloseRegion = ({ name, expand = true, fillMonitor = "" }) => {
                 App.closeWindow(name)
             }),
     })
-}
 
 export default clickCloseRegion

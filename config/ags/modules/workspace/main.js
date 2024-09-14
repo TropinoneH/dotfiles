@@ -10,12 +10,13 @@ const overviewContent = await (async () => {
 export default () =>
     PopupWidget({
         name: "overview",
+        className: "overview",
         anchor: ["top", "bottom", "right", "left"],
         keymode: "on-demand",
         child: Widget.Box({
             vertical: true,
             children: [
-                clickCloseRegion({ name: "overview", expand: false }),
+                clickCloseRegion({ name: "overview" }),
                 Widget.Box({
                     children: [
                         clickCloseRegion({ name: "overview" }),

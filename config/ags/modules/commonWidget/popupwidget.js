@@ -9,6 +9,7 @@ export default ({
 }) =>
     Widget.Window({
         name,
+        className: "popup-widget",
         visible: false,
         layer: "overlay",
         keymode: "exclusive",
