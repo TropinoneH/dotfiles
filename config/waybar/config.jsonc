@@ -32,7 +32,7 @@
     "custom/powermenu": {
         "format": "<span color='#f7768e'>⏻</span>",
         "tooltip": false,
-        "on-click": "~/.config/rofi/powermenu/powermenu"
+        "on-click": "wlogout"
     },
     "hyprland/workspaces": {
         "format": "{icon}",

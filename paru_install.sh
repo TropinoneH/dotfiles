@@ -69,6 +69,8 @@ paru -S --noconfirm wechat-universal-bwrap
 paru -S --noconfirm yesplaymusic
 # office
 paru -S --noconfirm onlyoffice-bin
+# wlogout
+paru -S --noconfirm wlogout-git
 # rofi
 paru -S --noconfirm rofi-wayland
 paru -S --noconfirm rofi-bluetooth-git
