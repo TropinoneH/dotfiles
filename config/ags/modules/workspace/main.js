@@ -11,7 +11,6 @@ export default () =>
     PopupWidget({
         name: "overview",
         anchor: ["top", "bottom", "right", "left"],
-        visible: true,
         keymode: "on-demand",
         child: Widget.Box({
             vertical: true,
