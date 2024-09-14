@@ -1,0 +1,38 @@
+.overview {
+    color: #d8dee9;
+}
+
+.overview-window {
+    margin-top: 2.7rem;
+}
+
+.overview-tasks {
+    padding: 0.3rem;
+    border-radius: 0.75rem;
+}
+
+.overview-tasks-workspace {
+    margin: 0.3rem;
+    border: 0.15rem solid #4c566a;
+    border-radius: 0.75rem;
+    background: #323b4d;
+    padding: 0;
+}
+
+.overview-tasks-window {
+    border-radius: 0.75rem;
+    border: 0.1rem solid #81a1c1;
+    background: rgba(0.34, 0.37, 0.48, 0.5);
+}
+
+.overview-tasks-window:hover,
+.overview-tasks-window:focus,
+.overview-tasks-window:active,
+.overview-tasks-window-selected {
+    border: 0.3rem solid #5e81ac;
+    background: rgba(0.34, 0.37, 0.48, 0.1);
+}
+
+.overview-tasks-window-dragging {
+    opacity: 0.2;
+}

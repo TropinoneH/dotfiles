@@ -1,0 +1,7 @@
+@import "./overview.css";
+@import "./clickCloseRegion.css";
+@import "./bar.css";
+
+* {
+    font-family: "CodeNewRoman Nerd Font Mono";
+}

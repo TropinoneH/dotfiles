@@ -1,10 +1,8 @@
-import { COMPILED_STYLE_DIR, handleStyle } from "./userConfigs.js"
+import "./userConfigs.js"
 import Workspace from "./modules/workspace/main.js"
-
-handleStyle(true)
-
-App.applyCss(`${COMPILED_STYLE_DIR}/style.css`)
+import Bar from "./modules/bar/main.js"
 
 App.config({
+    style: "./styles/index.css",
     windows: [Workspace()],
 })
