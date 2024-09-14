@@ -5,3 +5,5 @@ config/i3/mount.sh
 /config/mpd/database
 /config/hypr/bg
 /config/ncmpcpp/lyrics
+.idea
+.vscode
