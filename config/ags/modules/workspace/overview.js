@@ -3,7 +3,7 @@ import OverviewRow from "./overviewRow.js"
 const Hyprland = await Service.import("hyprland")
 const overviewTick = Variable(false)
 
-export default (monitor = Hyprland.active.monitor.id) => {
+export default () => {
     const clientMap = new Map()
     return Widget.Revealer({
         revealChild: true,
@@ -22,7 +22,6 @@ export default (monitor = Hyprland.active.monitor.id) => {
                     },
                     overviewTick,
                     clientMap,
-                    monitor,
                 ),
             ),
         }),

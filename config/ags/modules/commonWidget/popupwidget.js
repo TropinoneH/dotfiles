@@ -1,18 +1,10 @@
 const Hyprland = await Service.import("hyprland")
 
-export default ({
-    name,
-    child,
-    showClassName = "",
-    hideClassName = "",
-    ...props
-}) =>
+export default ({ name, child, showClassName = "", hideClassName = "", ...props }) =>
     Widget.Window({
         name,
-        className: "popup-widget",
         visible: false,
         layer: "overlay",
-        keymode: "exclusive",
         ...props,
 
         child: Widget.Box({
@@ -36,8 +28,7 @@ export default ({
                 .hook(
                     App,
                     (self, className, visible) => {
-                        if (className === self.name && !visible)
-                            self.monitor = Hyprland.active.monitor.id
+                        if (visible && className == self.name) self.monitor = Hyprland.active.monitor.id
                     },
                     "window-toggled",
                 )
