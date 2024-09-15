@@ -92,6 +92,13 @@ export default (
                 }),
             }),
         ],
+        setup: self => self.hook(Hyprland.active.monitor, (self) => {
+            overviewMonitor = Hyprland.active.monitor.id
+            self.css = `
+                    min-width: ${1 + Math.round(monitors[overviewMonitor].width * userConfigs.overview.scale)}px;
+                    min-height: ${1 + Math.round(monitors[overviewMonitor].height * userConfigs.overview.scale)}px;
+                `
+        })
     })
     const offset = Math.floor((Hyprland.active.workspace.id - 1) / NUM_OF_WORKSPACES_SHOWN) * NUM_OF_WORKSPACES_SHOWN
     fixed.attribute.put(WorkspaceNumber({ index: offset + index }), 0, 0)

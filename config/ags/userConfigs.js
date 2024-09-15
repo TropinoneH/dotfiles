@@ -14,6 +14,9 @@ const userConfigs = {
             Code: "visual-studio-code",
             "pavucontrol-qt": "pavucontrol",
             "": "image-missing",
+            "Google-chrome": "google-chrome",
+            "io.github.Qalculate.qalculate-qt": "qalculate",
+            "io.github.Qalculate.qalculate-gtk": "qalculate",
         },
         regexSubstitutions: [
             {

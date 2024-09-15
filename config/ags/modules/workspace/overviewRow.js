@@ -15,10 +15,9 @@ export default (
     { startWorkspace, workspaces, windowName = "overview" },
     /**@type{ReturnType<typeof Variable<boolean>>}*/ overviewTick,
     /**@type{Map}*/ clientMap,
-    /**@type{number}*/ monitor,
 ) =>
     Widget.Box({
-        children: arr(startWorkspace, workspaces).map((i) => Workspace(i, monitor, overviewTick, clientMap)),
+        children: arr(startWorkspace, workspaces).map((i) => Workspace(i, Hyprland.active.monitor.id, overviewTick, clientMap)),
         attribute: {
             workspaceGroup: Math.floor((Hyprland.active.workspace.id - 1) / NUM_OF_WORKSPACES_SHOWN),
             monitorMap: [],
