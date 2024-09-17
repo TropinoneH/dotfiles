@@ -1,4 +1,4 @@
-import Workspace from "./workspace.js"
+import Workspace from "./Workspace.js"
 
 const Hyprland = await Service.import("hyprland")
 

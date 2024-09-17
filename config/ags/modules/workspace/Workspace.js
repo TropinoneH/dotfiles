@@ -1,7 +1,7 @@
 const { Gtk, Gdk } = imports.gi
 
 import { monitors } from "../utils/hyprlandData.js"
-import Window from "./window.js"
+import Window from "./Window.js"
 
 const Hyprland = await Service.import("hyprland")
 

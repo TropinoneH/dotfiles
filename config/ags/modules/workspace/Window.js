@@ -3,8 +3,8 @@ const { Gravity } = imports.gi.Gdk
 
 import { iconExists, substitute, MaterialIcon } from "../utils/icon.js"
 import { monitors } from "../utils/hyprlandData.js"
-import { dumpToWorkspace, swapWorkspace } from "./action.js"
-import ContextMenuWorkspaceArray from "./contentMenuWorkspaceArray.js"
+import { dumpToWorkspace, swapWorkspace } from "./Action.js"
+import ContextMenuWorkspaceArray from "./ContentMenuWorkspaceArray.js"
 
 const Hyprland = await Service.import("hyprland")
 const TARGET = [Gtk.TargetEntry.new("text/plain", Gtk.TargetFlags.SAME_APP, 0)]
