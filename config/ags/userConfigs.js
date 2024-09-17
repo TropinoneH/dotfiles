@@ -37,6 +37,15 @@ const userConfigs = {
         durationSmall: 110,
         durationLarge: 180,
     },
+    bar: {
+        scripts: {
+            appLauncher: {
+                onClick: "rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi",
+                onScrollUp: "wpaperctl previous",
+                onScrollDown: "wpaperctl next",
+            },
+        },
+    },
 }
 
 globalThis["userConfigs"] = userConfigs
