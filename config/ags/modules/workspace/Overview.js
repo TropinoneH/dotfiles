@@ -1,4 +1,4 @@
-import OverviewRow from "./overviewRow.js"
+import OverviewRow from "./OverviewRow.js"
 
 const Hyprland = await Service.import("hyprland")
 const overviewTick = Variable(false)

@@ -1,10 +1,10 @@
-import PopupWidget from "../commonWidget/popupwidget.js"
-import clickCloseRegion from "../commonWidget/clickCloseRegion.js"
+import PopupWidget from "../commonWidget/PopupWidget.js"
+import ClickCloseRegion from "../commonWidget/ClickCloseRegion.js"
 
 const Hyprland = await Service.import("hyprland")
 
 const overviewContent = await (async () => {
-    return (await import("./overview.js")).default()
+    return (await import("./Overview.js")).default()
 })()
 
 export default () =>
@@ -16,15 +16,15 @@ export default () =>
         child: Widget.Box({
             vertical: true,
             children: [
-                clickCloseRegion({ name: "overview" }),
+                ClickCloseRegion({ name: "overview" }),
                 Widget.Box({
                     children: [
-                        clickCloseRegion({ name: "overview" }),
+                        ClickCloseRegion({ name: "overview" }),
                         overviewContent,
-                        clickCloseRegion({ name: "overview" }),
+                        ClickCloseRegion({ name: "overview" }),
                     ],
                 }),
-                clickCloseRegion({ name: "overview" }),
+                ClickCloseRegion({ name: "overview" }),
             ],
         }),
     })
