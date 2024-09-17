@@ -19,11 +19,16 @@ export default (
             put: (widget, x, y) => {
                 if (!widget.attribute) return
                 // Note: x and y are already multiplied by userConfigs.overview.scale
+                const activeMonitor = monitors[Hyprland.active.monitor.id]
+                const currentMonitor = monitors[widget.attribute.monitor]
+                let widthScale = activeMonitor.width / currentMonitor.width
+                let heightScale = activeMonitor.height / currentMonitor.height
+
                 const newCss = `
                         margin-left: ${Math.round(x)}px;
                         margin-top: ${Math.round(y)}px;
-                        margin-right: -${Math.round(x + widget.attribute.w * userConfigs.overview.scale)}px;
-                        margin-bottom: -${Math.round(y + widget.attribute.h * userConfigs.overview.scale)}px;
+                        margin-right: -${Math.round(x + widget.attribute.w * widthScale * userConfigs.overview.scale)}px;
+                        margin-bottom: -${Math.round(y + widget.attribute.h * heightScale * userConfigs.overview.scale)}px;
                     `
                 widget.css = newCss
                 fixed.pack_start(widget, false, false, 0)
@@ -92,13 +97,19 @@ export default (
                 }),
             }),
         ],
-        setup: self => self.hook(Hyprland.active.monitor, (self) => {
-            overviewMonitor = Hyprland.active.monitor.id
-            self.css = `
+        setup: (self) =>
+            self.hook(
+                App,
+                (self, className, visible) => {
+                    if (!visible || className != "overview") return self
+                    overviewMonitor = Hyprland.active.monitor.id
+                    self.css = `
                     min-width: ${1 + Math.round(monitors[overviewMonitor].width * userConfigs.overview.scale)}px;
                     min-height: ${1 + Math.round(monitors[overviewMonitor].height * userConfigs.overview.scale)}px;
                 `
-        })
+                },
+                "window-toggled",
+            ),
     })
     const offset = Math.floor((Hyprland.active.workspace.id - 1) / NUM_OF_WORKSPACES_SHOWN) * NUM_OF_WORKSPACES_SHOWN
     fixed.attribute.put(WorkspaceNumber({ index: offset + index }), 0, 0)

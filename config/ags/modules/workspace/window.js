@@ -52,6 +52,7 @@ export default (
             w,
             h,
             ws: id,
+            monitor: monitor,
             updateIconSize: (self) => {
                 appIcon.size = (Math.min(self.attribute.w, self.attribute.h) * userConfigs.overview.scale) / 2.5
             },
