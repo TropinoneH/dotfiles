@@ -1,0 +1,32 @@
+.bar {
+    border: none;
+    min-height: 35px;
+    font-family: "CodeNewRoman Nerd Font Mono";
+}
+
+.app-launcher {
+    border-radius: 10px;
+    background-color: #191a24;
+    color: #c0caf5;
+    /* margin-top: 15px; */
+    margin-right: 5px;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.clock-box {
+    border-radius: 10px;
+    background-color: #191a24;
+    color: #c0caf5;
+    /* margin-top: 15px; */
+    padding-left: 9px;
+    padding-right: 9px;
+    margin-right: 5px;
+}
+
+.clock-box .icon {
+    color: #b69bf1;
+}
