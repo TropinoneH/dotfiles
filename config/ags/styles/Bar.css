@@ -30,3 +30,28 @@
 .clock-box .icon {
     color: #b69bf1;
 }
+
+.workspaces-box {
+    border-radius: 10px;
+    background-color: #191a24;
+    color: #c0caf5;
+    /* margin-top: 15px; */
+    margin-right: 5px;
+    margin-left: 0;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.workspace-btn {
+    background: #191a24;
+    color: #c0caf5;
+}
+
+.workspace-label {
+    color: #c0caf5;
+}
+
+.workspace-label-active {
+    color: #2ac3de;
+}
