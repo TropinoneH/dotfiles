@@ -10,7 +10,7 @@ export default () => {
         // hpack to prevent unneeded expansion in overview-tasks-workspace:
         hpack: "center",
         transition: "slide_down",
-        transitionDuration: userConfigs.animations.durationLarge,
+        transitionDuration: userConfigs.overview.animations.durationLarge,
         child: Widget.Box({
             vertical: true,
             className: "overview-tasks",
