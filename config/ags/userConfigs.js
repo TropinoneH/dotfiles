@@ -31,11 +31,11 @@ const userConfigs = {
         scale: 0.18,
         wsNumScale: 0.09,
         wsNumMarginScale: 0.07,
-    },
-    animations: {
-        choreographyDelay: 35,
-        durationSmall: 110,
-        durationLarge: 180,
+        animations: {
+            choreographyDelay: 35,
+            durationSmall: 110,
+            durationLarge: 180,
+        },
     },
     bar: {
         scripts: {
@@ -44,6 +44,13 @@ const userConfigs = {
                 onScrollUp: "wpaperctl previous",
                 onScrollDown: "wpaperctl next",
             },
+            workspaces: {
+                onScrollUp: "hyprctl dispatch workspace m-1",
+                onScrollDown: "hyprctl dispatch workspace m+1",
+            },
+        },
+        icons: {
+            workspaces: ["", "", "", "", "", "", "", "", "", ""],
         },
     },
 }
