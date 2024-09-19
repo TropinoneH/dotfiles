@@ -5,6 +5,7 @@ const battery = await Service.import("battery")
 
 import AppLauncher from "./appLauncher.js"
 import Clock from "./clock.js"
+import Window from "./window.js"
 import Workspace from "./workspaces.js"
 
 // widgets can be only assigned as a child in one container
@@ -149,24 +150,27 @@ function SysTray() {
 // layout of the bar
 function Left(/**@type{number}*/ monitor) {
     return Widget.Box({
-        children: [AppLauncher(), Workspace(monitor)],
+        spacing: 0,
+        children: [AppLauncher(), Workspace(monitor), Window(monitor)],
     })
 }
 
 function Center() {
     return Widget.Box({
+        spacing: 0,
         children: [Clock()],
     })
 }
 
 function Right() {
     return Widget.Box({
+        spacing: 0,
         hpack: "end",
         // children: [Volume(), BatteryLabel(), Clock(), SysTray()],
     })
 }
 
-export default function Bar(monitor = 0) {
+export default (monitor = 0) => {
     return Widget.Window({
         name: `bar-${monitor}`, // name has to be unique
         monitor,
