@@ -3,11 +3,11 @@ const mpris = await Service.import("mpris")
 const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 
-import AppLauncher from "./appLauncher.js"
-import Clock from "./clock.js"
-import Powermenu from "./powermenu.js"
-import Window from "./window.js"
-import Workspace from "./workspaces.js"
+import AppLauncher from "./AppLauncher.js"
+import Clock from "./Clock.js"
+import Powermenu from "./Powermenu.js"
+import Window from "./Window.js"
+import Workspace from "./Workspaces.js"
 
 // widgets can be only assigned as a child in one container
 // so to make a reuseable widget, make it a function
@@ -131,22 +131,22 @@ function BatteryLabel() {
     })
 }
 
-function SysTray() {
-    const items = systemtray.bind("items").as((items) =>
-        items.map((item) =>
-            Widget.Button({
-                child: Widget.Icon({ icon: item.bind("icon") }),
-                on_primary_click: (_, event) => item.activate(event),
-                on_secondary_click: (_, event) => item.openMenu(event),
-                tooltip_markup: item.bind("tooltip_markup"),
-            }),
-        ),
-    )
-
-    return Widget.Box({
-        children: items,
-    })
-}
+// function SysTray() {
+//     const items = systemtray.bind("items").as((items) =>
+//         items.map((item) =>
+//             Widget.Button({
+//                 child: Widget.Icon({ icon: item.bind("icon") }),
+//                 on_primary_click: (_, event) => item.activate(event),
+//                 on_secondary_click: (_, event) => item.openMenu(event),
+//                 tooltip_markup: item.bind("tooltip_markup"),
+//             }),
+//         ),
+//     )
+//
+//     return Widget.Box({
+//         children: items,
+//     })
+// }
 
 // layout of the bar
 function Left(/**@type{number}*/ monitor) {
