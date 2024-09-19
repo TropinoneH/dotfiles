@@ -31,7 +31,7 @@ export default (curMonitor) =>
                                     Hyprland.active.workspace.id === ws.id,
                                 )
                             },
-                            "notify::workspaces",
+                            "notify::active",
                         ),
                         onScrollUp: () => Utils.exec(userConfigs.bar.scripts.workspaces.onScrollUp),
                         onScrollDown: () => Utils.exec(userConfigs.bar.scripts.workspaces.onScrollDown),
