@@ -1,38 +1,28 @@
 const Hyprland = await Service.import("hyprland")
 
+const title = Variable("")
+const tooltip = Variable("")
+
 export default (curMonitor = 0) => {
-    const clients = Hyprland.bind("clients")
-    /**
-     *@param {import("types/service/hyprland").Client[]} clients
-     *@param {number} curMonitor
-     *@paran {String} props
-     *@returns {string}
-     */
-    const getWindowInfo = (clients, curMonitor, props) => {
-        const window = clients
-            .filter((w) => w.monitor == curMonitor)
+    Hyprland.connect("notify::active", () => {
+        const clients = JSON.parse(Utils.exec("hyprctl clients -j"))
+        const win = clients
+            .filter((c) => c.monitor === curMonitor)
             .sort((a, b) => a.focusHistoryID - b.focusHistoryID)[0]
-        if (window === undefined) return ""
-        else return window[props]
-    }
+        title.setValue(
+            win.class.length >= userConfigs.bar.title.length
+                ? win.class.substring(0, userConfigs.bar.title.length - 1) + "…"
+                : win.class,
+        )
+        tooltip.setValue(`${win.class} | ${win.title} | ${win.pid}`)
+    })
 
     return Widget.EventBox({
         className: "window-title-box",
         child: Widget.Label({
             className: "window-title",
-            label: clients.as((c) => { 
-                let clazz = getWindowInfo(c, curMonitor, "class")
-                if (clazz.length >= userConfigs.bar.title.length) {
-                    clazz = clazz.substring(0, userConfigs.bar.title.length - 1) + "…"
-                }
-                return clazz
-            }),
+            label: title.bind(),
         }),
-        tooltip_text: clients.as((c) => {
-            const title = getWindowInfo(c, curMonitor, "title")
-            const clazz = getWindowInfo(c, curMonitor, "class")
-            const pid = getWindowInfo(c, curMonitor, "pid")
-            return `${clazz} -- ${title} -- ${pid}`
-        }),
+        tooltip_text: tooltip.bind(),
     })
 }
