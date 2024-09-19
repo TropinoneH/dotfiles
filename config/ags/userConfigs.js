@@ -48,6 +48,7 @@ const userConfigs = {
                 onScrollUp: "hyprctl dispatch workspace m-1",
                 onScrollDown: "hyprctl dispatch workspace m+1",
             },
+            powermenu: "wlogout"
         },
         icons: {
             workspaces: ["", "", "", "", "", "", "", "", "", ""],
