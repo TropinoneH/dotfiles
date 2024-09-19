@@ -31,13 +31,25 @@
     color: #b69bf1;
 }
 
+.window-title-box {
+    border-radius: 10px;
+    background-color: #191a24;
+    color: #c0caf5;
+    /* margin-top: 15px; */
+    margin-right: 5px;
+}
+
+.window-title-box .window-title {
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
 .workspaces-box {
     border-radius: 10px;
     background-color: #191a24;
     color: #c0caf5;
     /* margin-top: 15px; */
     margin-right: 5px;
-    margin-left: 0;
     padding-top: 1px;
     padding-left: 2px;
     padding-right: 2px;

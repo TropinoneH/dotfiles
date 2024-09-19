@@ -52,6 +52,9 @@ const userConfigs = {
         icons: {
             workspaces: ["", "", "", "", "", "", "", "", "", ""],
         },
+        title: {
+            length: 10,
+        }
     },
 }
 
