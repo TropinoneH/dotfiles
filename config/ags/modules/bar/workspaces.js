@@ -11,7 +11,7 @@ export default (curMonitor) =>
         children: Hyprland.bind("workspaces").as((ws) =>
             ws
                 .filter((ws) => ws.monitorID == curMonitor)
-                .sort((a, b) => a.id - b.id)
+                .sort((a, b) => a.id - b.id) // asensding order
                 .map((ws) =>
                     CursorClickWidget({
                         child: Widget.Button({
@@ -23,9 +23,16 @@ export default (curMonitor) =>
                             onClicked: () => {
                                 Hyprland.message(`dispatch workspace ${ws.id}`)
                             },
-                        }).hook(Hyprland, (self) => {
-                            self.child.toggleClassName("workspace-label-active", Hyprland.active.workspace.id === ws.id)
-                        }),
+                        }).hook(
+                            Hyprland,
+                            (self) => {
+                                self.child.toggleClassName(
+                                    "workspace-label-active",
+                                    Hyprland.active.workspace.id === ws.id,
+                                )
+                            },
+                            "notify::workspaces",
+                        ),
                         onScrollUp: () => Utils.exec(userConfigs.bar.scripts.workspaces.onScrollUp),
                         onScrollDown: () => Utils.exec(userConfigs.bar.scripts.workspaces.onScrollDown),
                     }),
