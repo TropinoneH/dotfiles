@@ -5,6 +5,7 @@ const battery = await Service.import("battery")
 
 import AppLauncher from "./appLauncher.js"
 import Clock from "./clock.js"
+import Powermenu from "./powermenu.js"
 import Window from "./window.js"
 import Workspace from "./workspaces.js"
 
@@ -166,7 +167,7 @@ function Right() {
     return Widget.Box({
         spacing: 0,
         hpack: "end",
-        // children: [Volume(), BatteryLabel(), Clock(), SysTray()],
+        children: [Powermenu()],
     })
 }
 
