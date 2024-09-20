@@ -17,6 +17,47 @@
     margin-left: 15px;
 }
 
+.bluetooth-box {
+    background-color: #191a24;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.bluetooth-box .bluetooth-icon {
+    color: #0087bd;
+}
+
+.bluetooth-box .bluetooth-label {
+    color: #c0caf5;
+}
+
+.bluetooth-menu {
+    background-color: #191a24;
+}
+
+.bluetooth-menu-item {
+    color: #c0caf5;
+}
+
+.switch {
+    background: #0087bd;
+}
+
+.disable-switch {
+    background: #555;
+}
+
+.switch slider {
+    background: #c0caf5;
+}
+
+.selected-menu-item {
+    background-color: #302b35;
+    margin: 0;
+}
+
 .clock-box {
     border-radius: 10px;
     background-color: #191a24;
@@ -39,6 +80,13 @@
     margin-right: 5px;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+.system-tray-box {
+    background-color: #191a24;
+    border-radius: 10px;
+    color: #c0caf5;
+    margin-left: 5px;
 }
 
 .window-title-box {

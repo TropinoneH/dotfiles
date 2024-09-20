@@ -44,18 +44,19 @@ const userConfigs = {
                 onScrollUp: "wpaperctl previous",
                 onScrollDown: "wpaperctl next",
             },
+            bluetooth: "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi",
             workspaces: {
                 onScrollUp: "hyprctl dispatch workspace m-1",
                 onScrollDown: "hyprctl dispatch workspace m+1",
             },
-            powermenu: "wlogout"
+            powermenu: "wlogout",
         },
         icons: {
             workspaces: ["", "", "", "", "", "", "", "", "", ""],
         },
         title: {
             length: 10,
-        }
+        },
     },
 }
 
