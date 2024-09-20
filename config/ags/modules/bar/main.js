@@ -4,8 +4,10 @@ const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 
 import AppLauncher from "./AppLauncher.js"
+import Bluetooth from "./Bluetooth.js"
 import Clock from "./Clock.js"
 import Powermenu from "./Powermenu.js"
+import SysTray from "./SysTray.js"
 import Window from "./Window.js"
 import Workspace from "./Workspaces.js"
 
@@ -167,7 +169,7 @@ function Right() {
     return Widget.Box({
         spacing: 0,
         hpack: "end",
-        children: [Powermenu()],
+        children: [Bluetooth(), SysTray(), Powermenu()],
     })
 }
 
