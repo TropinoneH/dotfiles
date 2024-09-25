@@ -55,14 +55,13 @@ export default () => {
 
     return CursorClickWidget({
         child: Widget.Box({
-            className: "bluetooth-box",
+            className: "bluetooth box",
             children: [
                 Widget.Label({
-                    className: "bluetooth-icon",
+                    className: "icon",
                     label: "",
                 }),
                 Widget.Label({
-                    className: "bluetooth-label",
                     label: Bluetooth.bind("connected_devices").as((d) => `${d.length !== 0 ? " " + d.length : ""}`),
                 }),
             ],

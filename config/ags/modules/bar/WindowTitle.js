@@ -41,7 +41,7 @@ export default (curMonitor = 0) => {
     }, 100)
 
     return Widget.EventBox({
-        className: "window-title-box",
+        className: "window-title box",
         child: Widget.Label({
             className: "window-title",
             label: title.bind(),

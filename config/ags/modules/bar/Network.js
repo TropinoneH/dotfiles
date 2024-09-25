@@ -107,13 +107,12 @@ const Wrapper = (widget) => {
 
 export default () => {
     return Widget.Stack({
-        className: "network-box",
+        className: "network box",
         children: {
             wifi: Wrapper(WifiIndicator()),
             wired: Wrapper(WiredIndicator()),
             disconnect: Wrapper(DisconnectIndicator()),
         },
         shown: Network.bind("primary").as((p) => p || "disconnect"),
-        // shown: Network.bind("primary").as((p) => "wifi"),
     })
 }
