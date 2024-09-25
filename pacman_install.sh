@@ -29,6 +29,8 @@ sudo pacman -S --noconfirm wlroots
 sudo pacman -S --noconfirm brightnessctl
 # man page
 sudo pacman -S --noconfirm man-db
+# gnome control center
+sudo pacman -S --noconfirm gnome-control-center
 
 # software
 # colorize
@@ -98,7 +100,9 @@ sudo pacman -S --noconfirm sshfs
 # shell
 sudo pacman -S --noconfirm fish
 # calculator
-sudo pacman -S -- noconfirm qalculate-qt
+sudo pacman -S --noconfirm qalculate-qt
+# docker
+sudo pacman -S --noconfirm docker
 
 # python env
 sudo pacman -S --noconfirm python-neovim
