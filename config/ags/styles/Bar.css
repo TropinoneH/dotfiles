@@ -24,6 +24,10 @@
     padding-right: 8px;
 }
 
+.battery .icon {
+    color: #a8cd76;
+}
+
 .bluetooth .icon {
     color: #0087bd;
 }

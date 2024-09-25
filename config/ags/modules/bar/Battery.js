@@ -1,19 +1,20 @@
 const Battery = await Service.import("battery")
 
-export default () => {
-    const value = Battery.bind("percent").as((p) => (p > 0 ? p / 100 : 0))
-    const icon = Battery.bind("percent").as((p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`)
-
-    return Widget.Box({
-        class_name: "battery",
-        visible: Battery.bind("available"),
-        children: [
-            Widget.Icon({ icon }),
-            Widget.LevelBar({
-                widthRequest: 140,
-                vpack: "center",
-                value,
-            }),
-        ],
-    })
+const timeFormat = (/**@type{number}*/ time) => {
+    const h = Math.round(time / 3600)
+    const m = Math.round(Math.round(time % 3600) / 60)
+    return `${h} h ${m} min`
 }
+
+export default () =>
+    Widget.Box({
+        className: "battery box",
+        children: [
+            Widget.Icon({ className: "icon", icon: Battery.bind("icon_name") }),
+            Widget.Label({ label: Battery.bind("percent").as((p) => ` ${p}%`) }),
+        ],
+    }).hook(Battery, (self) => {
+        const charging = Battery.charging ? "Charging " : ""
+        const time = Battery.charged ? "full" : timeFormat(Battery.time_remaining)
+        self.tooltip_markup = `<span background="#191a24">${charging}${time}</span>`
+    })
