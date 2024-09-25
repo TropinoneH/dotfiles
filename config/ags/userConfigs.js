@@ -45,6 +45,7 @@ const userConfigs = {
                 onScrollDown: "wpaperctl next",
             },
             bluetooth: "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi",
+            network: "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi",
             workspaces: {
                 onScrollUp: "hyprctl dispatch workspace m-1",
                 onScrollDown: "hyprctl dispatch workspace m+1",
@@ -56,6 +57,12 @@ const userConfigs = {
         },
         title: {
             length: 10,
+        },
+        network: {
+            device_type: {
+                wired: "enp",
+                wifi: "wlan",
+            },
         },
     },
 }

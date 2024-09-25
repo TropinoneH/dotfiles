@@ -2,25 +2,23 @@
     border: none;
     min-height: 35px;
     font-family: "CodeNewRoman Nerd Font Mono";
+    margin-left: 15px;
+    margin-right: 5px;
 }
 
 .app-launcher {
     border-radius: 10px;
     background-color: #191a24;
     color: #c0caf5;
-    /* margin-top: 15px; */
-    margin-right: 5px;
     padding-top: 1px;
     padding-left: 2px;
     padding-right: 2px;
     font-size: 20px;
-    margin-left: 15px;
 }
 
 .bluetooth-box {
     background-color: #191a24;
     border-radius: 10px;
-    margin-left: 5px;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -33,12 +31,16 @@
     color: #c0caf5;
 }
 
-.bluetooth-menu {
+.menu {
     background-color: #191a24;
 }
 
-.bluetooth-menu-item {
+.menu-item {
     color: #c0caf5;
+}
+
+.selected-menu-item {
+    background-color: #302b35;
 }
 
 .switch {
@@ -53,11 +55,6 @@
     background: #c0caf5;
 }
 
-.selected-menu-item {
-    background-color: #302b35;
-    margin: 0;
-}
-
 .clock-box {
     border-radius: 10px;
     background-color: #191a24;
@@ -65,7 +62,6 @@
     /* margin-top: 15px; */
     padding-left: 9px;
     padding-right: 9px;
-    margin-right: 5px;
 }
 
 .clock-box .icon {
@@ -76,17 +72,28 @@
     color: #f7768b;
     background-color: #191a24;
     border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+.network-box {
+    background-color: #191a24;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.network-box .connected {
+    color: #90cdfa;
+}
+.network-box .disconnected {
+    color: #ff005f;
 }
 
 .system-tray-box {
     background-color: #191a24;
     border-radius: 10px;
     color: #c0caf5;
-    margin-left: 5px;
 }
 
 .window-title-box {
@@ -94,7 +101,6 @@
     background-color: #191a24;
     color: #c0caf5;
     /* margin-top: 15px; */
-    margin-right: 5px;
 }
 
 .window-title-box .window-title {
@@ -107,7 +113,6 @@
     background-color: #191a24;
     color: #c0caf5;
     /* margin-top: 15px; */
-    margin-right: 5px;
     padding-top: 1px;
     padding-left: 2px;
     padding-right: 2px;

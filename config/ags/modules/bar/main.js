@@ -4,41 +4,18 @@ const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 
 import AppLauncher from "./AppLauncher.js"
+import Battery from "./Battery.js"
 import Bluetooth from "./Bluetooth.js"
 import Clock from "./Clock.js"
+import Network from "./Network.js"
 import Powermenu from "./Powermenu.js"
 import SysTray from "./SysTray.js"
-import Window from "./Window.js"
+import WindowTitle from "./WindowTitle.js"
 import Workspace from "./Workspaces.js"
 
 // widgets can be only assigned as a child in one container
 // so to make a reuseable widget, make it a function
 // then you can simply instantiate one by calling it
-
-function Workspaces() {
-    const activeId = hyprland.active.workspace.bind("id")
-    const workspaces = hyprland.bind("workspaces").as((ws) =>
-        ws.map(({ id }) =>
-            Widget.Button({
-                on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
-                child: Widget.Label(`${id}`),
-                class_name: activeId.as((i) => `${i === id ? "focused" : ""}`),
-            }),
-        ),
-    )
-
-    return Widget.Box({
-        class_name: "workspaces",
-        children: workspaces,
-    })
-}
-
-function ClientTitle() {
-    return Widget.Label({
-        class_name: "client-title",
-        label: hyprland.active.client.bind("title"),
-    })
-}
 
 // we don't need dunst or any other notification daemon
 // because the Notifications module is a notification daemon itself
@@ -115,46 +92,11 @@ function Volume() {
     })
 }
 
-function BatteryLabel() {
-    const value = battery.bind("percent").as((p) => (p > 0 ? p / 100 : 0))
-    const icon = battery.bind("percent").as((p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`)
-
-    return Widget.Box({
-        class_name: "battery",
-        visible: battery.bind("available"),
-        children: [
-            Widget.Icon({ icon }),
-            Widget.LevelBar({
-                widthRequest: 140,
-                vpack: "center",
-                value,
-            }),
-        ],
-    })
-}
-
-// function SysTray() {
-//     const items = systemtray.bind("items").as((items) =>
-//         items.map((item) =>
-//             Widget.Button({
-//                 child: Widget.Icon({ icon: item.bind("icon") }),
-//                 on_primary_click: (_, event) => item.activate(event),
-//                 on_secondary_click: (_, event) => item.openMenu(event),
-//                 tooltip_markup: item.bind("tooltip_markup"),
-//             }),
-//         ),
-//     )
-//
-//     return Widget.Box({
-//         children: items,
-//     })
-// }
-
 // layout of the bar
 function Left(/**@type{number}*/ monitor) {
     return Widget.Box({
-        spacing: 0,
-        children: [AppLauncher(), Workspace(monitor), Window(monitor)],
+        spacing: 5,
+        children: [AppLauncher(), Workspace(monitor), WindowTitle(monitor)],
     })
 }
 
@@ -167,9 +109,9 @@ function Center() {
 
 function Right() {
     return Widget.Box({
-        spacing: 0,
+        spacing: 5,
         hpack: "end",
-        children: [Bluetooth(), SysTray(), Powermenu()],
+        children: [Battery(), Network(), Bluetooth(), SysTray(), Powermenu()],
     })
 }
 
