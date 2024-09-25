@@ -71,6 +71,8 @@ paru -S --noconfirm yesplaymusic
 paru -S --noconfirm onlyoffice-bin
 # wlogout
 paru -S --noconfirm wlogout-git
+# ags
+paru -S --noconfirm aylur-gtk-shell-git
 # rofi
 paru -S --noconfirm rofi-wayland
 paru -S --noconfirm rofi-bluetooth-git
