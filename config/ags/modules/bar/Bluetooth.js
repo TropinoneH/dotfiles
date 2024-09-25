@@ -23,7 +23,7 @@ export default () => {
             ],
         })
         return Widget.MenuItem({
-            className: "bluetooth-menu-item",
+            className: "menu-item",
             child: itemBox,
             onActivate: (self) => {
                 device.setConnection(!device.connected)
@@ -39,11 +39,17 @@ export default () => {
                 self.toggleClassName("selected-menu-item", false)
                 self.window.set_cursor(null)
             },
+            tooltip_markup: device
+                .bind("device")
+                .as(
+                    (d) =>
+                        `<span background="#191a24">${d.address} ${d.name} ${d.battery_percentage}% ${d.connected ? "connected" : "disconnected"} ${d.paired ? "paired" : "unpaired"} ${d.trusted ? "trusted" : "untrusted"}</span>`,
+                ),
         })
     }
 
     const menu = Widget.Menu({
-        className: "bluetooth-menu",
+        className: "menu",
         children: Bluetooth.bind("devices").as((devices) => Array.from(devices.map((device) => deviceItem(device)))),
     })
 
