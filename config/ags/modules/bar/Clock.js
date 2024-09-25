@@ -49,7 +49,7 @@ const icon = Variable(" ")
 export default () => {
     // TODO: add calendar
     const clockBox = Widget.Box({
-        className: "clock-box",
+        className: "clock box",
         attribute: { alternative: false },
         children: [
             CursorClickArea({
