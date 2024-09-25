@@ -46,6 +46,6 @@ export default (curMonitor = 0) => {
             className: "window-title",
             label: title.bind(),
         }),
-        tooltip_markup: tooltip.bind().as((t) => `<span background="#191a24">${t}</span>`),
+        tooltip_markup: tooltip.bind().as((t) => `<span background="#191a24"> ${t} </span>`),
     })
 }
