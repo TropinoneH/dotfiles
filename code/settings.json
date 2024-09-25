@@ -7,6 +7,10 @@
     "editor.autoClosingDelete": "always",
     "editor.autoClosingOvertype": "always",
     "editor.autoClosingQuotes": "always",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
@@ -148,5 +152,12 @@
             "statusBarItem.remoteForeground": "#fff"
         }
     },
-    "terminal.integrated.inheritEnv": false
+    "terminal.integrated.inheritEnv": false,
+    "black-formatter.args": [
+        "--line-length",
+        "120",
+        "--quiet"
+    ],
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
 }
