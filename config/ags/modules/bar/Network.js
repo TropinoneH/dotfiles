@@ -27,7 +27,7 @@ const WifiIndicator = () => {
         child: Widget.Label({ className: "connected", label: "" }),
         tooltip_markup: Network.bind("wifi").as(
             (w) =>
-                `<span background="#191a24">${userConfigs.bar.network.device_type.wifi} ${w.ssid}(${w.strength}%)</span>`,
+                `<span background="#191a24"> ${userConfigs.bar.network.device_type.wifi} ${w.ssid}(${w.strength}%) </span>`,
         ),
         on_primary_click: (_, e) => {
             const curNet = JSON.parse(Utils.exec("ip -j addr")).filter((i) =>
@@ -85,7 +85,7 @@ const WiredIndicator = () => {
             menu.popup_at_pointer(e)
         },
         tooltip_markup: Network.bind("wired").as(
-            (n) => `<span background="#191a24">Wired ${n.state} ${n.internet}</span>`,
+            (n) => `<span background="#191a24"> Wired ${n.state} ${n.internet} </span>`,
         ),
     })
 }
