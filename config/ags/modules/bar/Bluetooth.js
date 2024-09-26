@@ -39,11 +39,11 @@ export default () => {
                 self.toggleClassName("selected-menu-item", false)
                 self.window.set_cursor(null)
             },
-            tooltip_markup: device
+            tooltip_text: device
                 .bind("device")
                 .as(
                     (d) =>
-                        `<span background="#191a24">${d.address} ${d.name} ${d.battery_percentage}% ${d.connected ? "connected" : "disconnected"} ${d.paired ? "paired" : "unpaired"} ${d.trusted ? "trusted" : "untrusted"}</span>`,
+                        `${d.address} ${d.name} ${d.battery_percentage}% ${d.connected ? "connected" : "disconnected"} ${d.paired ? "paired" : "unpaired"} ${d.trusted ? "trusted" : "untrusted"}`,
                 ),
         })
     }

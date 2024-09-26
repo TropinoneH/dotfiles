@@ -15,6 +15,6 @@ export default () =>
         ],
     }).hook(Battery, (self) => {
         const charging = Battery.charging ? "Charging " : ""
-        const time = Battery.charged ? "full" : timeFormat(Battery.time_remaining)
-        self.tooltip_markup = `<span background="#191a24"> ${charging}${time} </span>`
+        const time = Battery.charged ? "Full" : timeFormat(Battery.time_remaining)
+        self.tooltip_text = `${charging}${time}`
     })

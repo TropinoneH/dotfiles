@@ -25,9 +25,8 @@ const WifiIndicator = () => {
     return CursorClickWidget({
         attribute: {},
         child: Widget.Label({ className: "connected", label: "" }),
-        tooltip_markup: Network.bind("wifi").as(
-            (w) =>
-                `<span background="#191a24"> ${userConfigs.bar.network.device_type.wifi} ${w.ssid}(${w.strength}%) </span>`,
+        tooltip_text: Network.bind("wifi").as(
+            (w) => `${userConfigs.bar.network.device_type.wifi} ${w.ssid}(${w.strength}%)`,
         ),
         on_primary_click: (_, e) => {
             const curNet = JSON.parse(Utils.exec("ip -j addr")).filter((i) =>
@@ -58,11 +57,6 @@ const WiredIndicator = () => {
                             icon: Network.wired.bind("icon_name"),
                         }),
                         Widget.Label({
-                            label: Network.bind("wired").as((n) => {
-                                return ` ${n.state}`
-                            }),
-                        }),
-                        Widget.Label({
                             label: ipInfo.bind().as((ip) => ` ${ip.ifname}: ${ip.local}/${ip.prefixlen}`),
                         }),
                     ],
@@ -84,9 +78,7 @@ const WiredIndicator = () => {
             })
             menu.popup_at_pointer(e)
         },
-        tooltip_markup: Network.bind("wired").as(
-            (n) => `<span background="#191a24"> Wired ${n.state} ${n.internet} </span>`,
-        ),
+        tooltip_text: Network.bind("wired").as((n) => `Wired ${n.state} ${n.internet}`),
     })
 }
 
