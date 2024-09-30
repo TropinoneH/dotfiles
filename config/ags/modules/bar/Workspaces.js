@@ -11,6 +11,7 @@ export default (curMonitor) =>
         children: Hyprland.bind("workspaces").as((ws) =>
             ws
                 .filter((ws) => ws.monitorID == curMonitor)
+                .filter((ws) => !ws.name.startsWith("special"))
                 .sort((a, b) => a.id - b.id) // asensding order
                 .map((ws) =>
                     CursorClickWidget({
