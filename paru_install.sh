@@ -45,8 +45,6 @@ cd ~/Downloads/pkgs/pacman || exit
 paru -S --noconfirm upd72020x-fw
 # web browser
 paru -S --noconfirm google-chrome
-# latex
-paru -S miktex-git
 # color picker
 paru -S --noconfirm hyprpicker
 # email client

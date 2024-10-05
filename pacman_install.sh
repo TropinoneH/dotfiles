@@ -106,6 +106,8 @@ sudo pacman -S --noconfirm docker
 
 # python env
 sudo pacman -S --noconfirm python-neovim
+# latex
+sudo pacman -S --noconfirm texlive texlive-langchinese
 
 # font
 sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
