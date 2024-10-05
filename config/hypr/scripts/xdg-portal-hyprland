@@ -25,3 +25,7 @@ sleep 2
 # start xdg-desktop-portal
 /usr/lib/xdg-desktop-portal &
 sleep 1
+
+# start kde-authentication-agent
+/usr/lib/polkit-kde-authentication-agent-1 &
+sleep 1
