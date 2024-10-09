@@ -22,16 +22,17 @@ export default () => {
                             hpack: "start",
                             truncate: "end",
                             wrap: true,
-                            label: Network.bind("wired").as(
-                                () => {
-                                    const curNet = JSON.parse(Utils.exec("ip -j addr")).filter((i) =>
-                                        i["ifname"].includes(userConfigs.bar.network.device_type.wired),
-                                    )[0]
-                                    const netInfo = curNet["addr_info"].filter((i) => i["family"] === "inet")[0]
-                                    return `${curNet["ifname"].slice(0, 3)}: ${netInfo["local"]}/${netInfo["prefixlen"]}`
-                                },
+                            label: Network.bind("primary").as((net) => {
+                                if (net !== "wired") return Network.wired.state
+                                const curNet = JSON.parse(Utils.exec("ip -j addr")).filter((i) =>
+                                    i["ifname"].includes(userConfigs.bar.network.device_type.wired),
+                                )[0]
+                                const netInfo = curNet["addr_info"].filter((i) => i["family"] === "inet")[0]
+                                return `${curNet["ifname"].slice(0, 3)}: ${netInfo["local"]}/${netInfo["prefixlen"]}`
+                            }),
+                            tooltip_text: Utils.merge([Network.bind("primary"), Network.bind("wired")], (net, w) =>
+                                net === "wired" ? `${w.state} (${w.speed} Mbps)` : "",
                             ),
-                            tooltip_text: Network.bind("wired").as(w => `${w.state}(${w.speed} Mbps)`)
                         }),
                         Widget.Label({
                             hpack: "start",
