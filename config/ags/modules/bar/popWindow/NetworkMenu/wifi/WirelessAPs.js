@@ -53,9 +53,7 @@ export default (self, network, staging, connecting) => {
 
     self.hook(network, () => {
         Utils.merge([staging.bind("value"), connecting.bind("value")], () => {
-            // TODO: Remove @ts-ignore once AGS bug is fixed
-            // @ts-expect-error to fix AGS bug
-            let WAPs = network.wifi._device !== undefined ? network.wifi["access_points"] : []
+            let WAPs = network.wifi.access_points
 
             const dedupeWAPs = () => {
                 const dedupMap = {}
