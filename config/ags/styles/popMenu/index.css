@@ -1,6 +1,10 @@
 @import "./Audio.css";
 @import "./Network.css";
 
+.dim {
+    opacity: 0.5;
+}
+
 label.menu-active {
     font-size: 0.7rem;
     font-weight: bold;
@@ -40,6 +44,10 @@ label.menu-active-percentage {
 }
 .menu-button * {
     font-size: 0.4rem;
+}
+
+.txt-icon {
+    font-size: 1.3rem;
 }
 
 label.menu-button-icon.txt-icon {

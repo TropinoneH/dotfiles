@@ -1,0 +1,78 @@
+.network-element-item:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+.network-element-item.staging {
+    margin-bottom: 0.5em;
+}
+
+.network-element-item:hover .network-icon {
+    color: #90cdfa;
+    opacity: 1;
+}
+
+.network-element-item:hover .active-connection {
+    color: #bb9af7;
+}
+
+.network-element-item .connection-container {
+    margin-left: 1rem;
+}
+
+.network-element-item .connection-status {
+    color: #c0caf5;
+    font-size: 0.9rem;
+}
+.network-element-item .active-connection {
+    color: #c0caf5;
+}
+.network-element-item .active-connection.active {
+    color: #a3be8c;
+}
+.network-element-item .connection-status.active {
+    color: #a3be8c;
+}
+.network-element-item .network-icon {
+    font-size: 1.3rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    color: #565f89;
+}
+.network-element-item .network-icon.active {
+    color: #88c0d0;
+}
+
+.network-menu .menu-button-icon {
+    margin: 0.3rem;
+}
+.network-menu .menu-button-icon:hover {
+    color: #90cdfa;
+}
+.network-menu .menu-button-icon.disconnect {
+    margin: 0;
+    margin-top: -0.1rem;
+    margin-left: 0.8rem;
+}
+.network-menu .menu-button-icon.disconnect label {
+    font-size: 1.4rem;
+}
+.network-menu .menu-button-icon.disconnect:hover {
+    color: #f7768e;
+}
+.network-menu .network-password-input-container {
+    border-radius: 0.4rem;
+    margin: 0rem 2rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+}
+.network-menu .close-network-password-input-button {
+    margin: 0rem 0.5rem;
+}
+.network-menu .close-network-password-input-button:hover image {
+    color: #f7768e;
+    opacity: 0.5;
+}
+
+.waps-not-found {
+    font-size: 0.9rem;
+}
