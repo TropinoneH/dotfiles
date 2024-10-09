@@ -1,0 +1,159 @@
+@import "./Audio.css";
+@import "./Network.css";
+
+label.menu-active {
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin: 0rem 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-active-button {
+    padding: 0.4rem;
+    margin-bottom: -0.2rem;
+}
+.menu-active-button icon.menu-active-icon {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.menu-active-button label.menu-active-icon {
+    font-size: 1.4rem;
+}
+
+label.menu-active-percentage {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.menu-active-slider {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+.menu-active-slider * {
+    min-height: 0.6rem;
+    border-radius: 0.3rem;
+}
+
+.menu-button {
+    margin-bottom: 0.4rem;
+}
+.menu-button * {
+    font-size: 0.4rem;
+}
+
+label.menu-button-icon.txt-icon {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+label.menu-button-name {
+    color: #c0caf5;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-right: 1.2rem;
+}
+
+.menu-slider-container {
+    margin-bottom: 0.7rem;
+}
+
+.menu-slider trough {
+    background: #302d2e;
+}
+.menu-slider trough highlight {
+    border-radius: 0.3rem;
+}
+.menu-slider trough slider {
+    border-radius: 0.3rem;
+    background: transparent;
+    box-shadow: none;
+    min-height: 0.6rem;
+    min-width: 0.6rem;
+    border: 0rem solid transparent;
+}
+
+.menu-section-container {
+    margin: 0.6rem 0rem;
+    padding: 0.4rem;
+}
+.menu-section-container .menu-label {
+    color: #c0caf5;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.menu-section-container .menu-label-container {
+    background-color: #3b4252;
+    border-radius: 0.3rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    margin: 0rem 0.2rem;
+    min-height: 2rem;
+    padding-left: 0.4rem;
+}
+.menu-section-container:first-child {
+    margin-bottom: 0rem;
+}
+
+.menu-section-container:last-child {
+    margin-top: 0rem;
+}
+
+.menu-section-container:nth-child(2) {
+    margin-top: 0.8rem;
+}
+.menu-section-container .menu-items-section {
+    background: #3b4252;
+    border-radius: 0.3rem;
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+    padding: 0.6rem;
+    margin: 0rem 0.2rem;
+}
+
+.menu-switch {
+    font-size: 1.1rem;
+    background-color: #302d2e;
+    border-radius: 0.3rem;
+}
+.menu-switch:checked {
+    background: #81a1c1;
+}
+.menu-switch trough highlight,
+.menu-switch trough progress {
+    background-color: #ebcb8b;
+    border-radius: 0.3rem;
+}
+.menu-switch slider {
+    box-shadow: none;
+    background-color: #3b4252;
+    min-height: 1rem;
+    min-width: 1rem;
+    border: 0rem solid transparent;
+    border-radius: 0.2rem;
+    margin: 0.1rem 0.15rem;
+}
+.menu-switch:hover trough {
+    background: #302d2e;
+}
+.menu-switch:hover slider {
+    background: #3b4252;
+    box-shadow: none;
+}
+.menu-switch:active {
+    background-color: #81a1c1;
+}
+
+@keyframes spin {
+    to {
+        -gtk-icon-transform: rotate(1turn);
+    }
+}
+
+image.spinning {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
