@@ -7,6 +7,12 @@
     background: transparent;
 }
 
+.audio .icon, .mute {
+    color: #f7768b;
+}
+
+@import "./popMenu/index.css";
+
 .app-launcher {
     border-radius: 10px;
     background-color: #191a24;

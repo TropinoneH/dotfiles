@@ -1,6 +1,7 @@
 @import "./Overview.css";
 @import "./ClickCloseRegion.css";
 @import "./Bar.css";
+@import "./DropdownWindow.css";
 
 * {
     font-family: "CodeNewRoman Nerd Font Mono", "Symbols Only";

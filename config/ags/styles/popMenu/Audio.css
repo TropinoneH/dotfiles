@@ -1,0 +1,17 @@
+.audio-menu .menu-active-button.muted image,
+.audio-menu .menu-active-button.muted label {
+    color: #f7768b;
+}
+.audio-menu .menu-active-button:hover image,
+.audio-menu .menu-active-button:hover label {
+    color: #f7768b;
+}
+
+.audio-menu .menu-slider trough highlight {
+    background: #ebcb8b;
+    border-radius: 0.3rem;
+}
+
+.audio-menu .menu-label-container.selected label {
+    color: #d08770;
+}

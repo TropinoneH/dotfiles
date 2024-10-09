@@ -23,14 +23,12 @@ export default ({ name, child, showClassName = "", hideClassName = "", ...props 
             },
             child: child,
         }),
-        setup: (self) =>
-            self
-                .hook(
-                    App,
-                    (self, className, visible) => {
-                        if (visible && className == self.name) self.monitor = Hyprland.active.monitor.id
-                    },
-                    "window-toggled",
-                )
-                .keybind("Escape", () => self.set_visible(false)),
     })
+        .hook(
+            App,
+            (self, className, visible) => {
+                if (visible && className == self.name) self.monitor = Hyprland.active.monitor.id
+            },
+            "window-toggled",
+        )
+        .keybind("Escape", (self) => self.set_visible(false))

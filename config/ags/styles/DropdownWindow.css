@@ -1,0 +1,23 @@
+.event-box-container {
+    min-height: 0em;
+    margin-top: 0.2em;
+}
+
+.dropdown-menu-container {
+    min-height: 10em;
+}
+
+.dropdown-menu-items {
+    background: #191a24;
+    color: #c0caf5;
+    border: 0.15em solid #434c5e;
+    border-radius: 1em;
+}
+
+.dropdown-menu-items-container {
+    min-width: 20rem;
+}
+
+.dropdown-menu-items-container .dropdown-menu-items {
+    opacity: 0.7;
+}
