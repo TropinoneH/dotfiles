@@ -51,9 +51,52 @@ const userConfigs = {
                 onScrollDown: "hyprctl dispatch workspace m+1",
             },
             powermenu: "wlogout",
+            volume: {
+                onClick: "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                onRightClick: "pavucontrol-qt",
+                onScrollUp: "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+                onScrollDown: "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+            },
         },
         icons: {
             workspaces: ["", "", "", "", "", "", "", "", "", ""],
+            audio: {
+                speaker: {
+                    headphone: "",
+                    "hands-free": "",
+                    headset: "",
+                    phone: "",
+                    portable: "",
+                    car: "",
+                    mute: "",
+                    default: ["󰖀", "󰕾"],
+                },
+                microphone: [
+                    "microphone-disabled-symbolic",
+                    "microphone-sensitivity-low-symbolic",
+                    "microphone-sensitivity-medium-symbolic",
+                    "microphone-sensitivity-high-symbolic",
+                    "microphone-sensitivity-high-symbolic",
+                ],
+            },
+            bluetooth: {
+                battery: ["󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+            },
+            network: {
+                wifi: [
+                    ["network-wireless-acquiring", "󰤩"],
+                    ["network-wireless-connected", "󰤨"],
+                    ["network-wireless-encrypted", "󰤪"],
+                    ["network-wireless-hotspot", "󰤨"],
+                    ["network-wireless-no-route", "󰤩"],
+                    ["network-wireless-offline", "󰤮"],
+                    ["network-wireless-signal-excellent", "󰤨"],
+                    ["network-wireless-signal-good", "󰤥"],
+                    ["network-wireless-signal-ok", "󰤢"],
+                    ["network-wireless-signal-weak", "󰤟"],
+                    ["network-wireless-signal-none", "󰤯"],
+                ],
+            },
         },
         title: {
             length: 10,
