@@ -19,10 +19,6 @@
     margin-left: 1rem;
 }
 
-.network-element-item .connection-status {
-    color: #c0caf5;
-    font-size: 0.9rem;
-}
 .network-element-item .active-connection {
     color: #c0caf5;
 }

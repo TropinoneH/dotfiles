@@ -1,0 +1,53 @@
+.bluetooth-menu .controls-container {
+    margin: 0.5rem 1rem;
+}
+.bluetooth-menu .menu-button-icon {
+    color: #7dcfff;
+    margin-left: 0.2rem;
+}
+.bluetooth-menu .menu-button-icon.enable label {
+    color: #a3be8c;
+}
+.bluetooth-menu .menu-button-icon.dis label {
+    color: #bf616a;
+}
+.bluetooth-menu .menu-separator {
+    margin: 0rem 1rem;
+}
+
+.bluetooth-element-item {
+    margin-bottom: 0.4em;
+    min-width: 10rem;
+}
+.bluetooth-element-item:hover .menu-button-icon,
+.bluetooth-element-item:hover .menu-button-name,
+.bluetooth-element-item image.active {
+    color: #81a1c1;
+}
+
+.bluetooth-element-item image {
+    margin-right: 0em;
+    margin-top: 0em;
+    min-height: 1em;
+    min-width: 1em;
+}
+
+.bluetooth-element-item label {
+    color: #c0caf5;
+    font-size: 1em;
+}
+
+.bluetooth-element-item .menu-button-icon {
+    font-size: 1.5em;
+    color: #3b4252;
+}
+.bluetooth-element-item .menu-button-icon.active {
+    color: #81a1c1;
+}
+
+.bluetooth-element-item .connection-status {
+    font-size: 0.9em;
+    margin-left: 0.6rem;
+    opacity: 0.4;
+    color: #c0caf5;
+}
