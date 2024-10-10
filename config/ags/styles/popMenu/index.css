@@ -1,8 +1,14 @@
 @import "./Audio.css";
 @import "./Network.css";
+@import "./Bluetooth.css";
 
 .dim {
     opacity: 0.5;
+}
+
+.connection-status {
+    color: #c0caf5;
+    font-size: 0.9rem;
 }
 
 label.menu-active {
@@ -28,6 +34,11 @@ label.menu-active-percentage {
     font-size: 0.9rem;
     margin-right: 0.5rem;
     font-weight: bold;
+}
+
+.menu-separator {
+    margin: 0.6rem 1rem;
+    background-color: #4c566a;
 }
 
 .menu-active-slider {
@@ -122,16 +133,14 @@ label.menu-button-name {
 
 .menu-switch {
     font-size: 1.1rem;
-    background-color: #302d2e;
+    background-color: #81a1c1;
+    opacity: 0.5;
     border-radius: 0.3rem;
+    background-clip: border-box;
 }
 .menu-switch:checked {
     background: #81a1c1;
-}
-.menu-switch trough highlight,
-.menu-switch trough progress {
-    background-color: #ebcb8b;
-    border-radius: 0.3rem;
+    opacity: 1;
 }
 .menu-switch slider {
     box-shadow: none;
@@ -142,15 +151,12 @@ label.menu-button-name {
     border-radius: 0.2rem;
     margin: 0.1rem 0.15rem;
 }
-.menu-switch:hover trough {
-    background: #302d2e;
+.menu-switch:hover {
+    background: #88c0d0;
 }
 .menu-switch:hover slider {
-    background: #3b4252;
+    background: #4c566a;
     box-shadow: none;
-}
-.menu-switch:active {
-    background-color: #81a1c1;
 }
 
 @keyframes spin {
