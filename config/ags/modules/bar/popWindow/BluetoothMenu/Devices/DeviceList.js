@@ -104,6 +104,15 @@ export default (bluetooth, self) => {
                                                     }),
                                                 ],
                                             }),
+                                            Widget.Revealer({
+                                                hpack: "start",
+                                                reveal_child: device.connected || device.paired,
+                                                child: Widget.Label({
+                                                    vpack: "start",
+                                                    class_name: `menu-button-icon ${conDevNames.includes(device.address) ? "active" : ""} txt-icon`,
+                                                    label: device.bind("battery_percentage").as(p => getBluetoothIcon(Math.floor((p - 1) / 10).toString(), "battery")),
+                                                }),
+                                            }),
                                         ],
                                     }),
                                     Widget.Box({
