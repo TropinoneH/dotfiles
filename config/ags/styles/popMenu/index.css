@@ -1,6 +1,7 @@
 @import "./Audio.css";
-@import "./Network.css";
 @import "./Bluetooth.css";
+@import "./Calendar.css";
+@import "./Network.css";
 
 .dim {
     opacity: 0.5;
