@@ -1,4 +1,6 @@
 import CursorClickArea from "../commonWidget/CursorClickWidget.js"
+import openWindow from "../commonWidget/openWindow.js"
+
 /**
  *@param {number | String} n
  *@param {number} pad
@@ -47,7 +49,6 @@ const date = Variable("", {
 const icon = Variable(" ")
 
 export default () => {
-    // TODO: add calendar
     const clockBox = Widget.Box({
         className: "clock box",
         attribute: { alternative: false },
@@ -67,7 +68,12 @@ export default () => {
                 child: Widget.Label({
                     label: date.bind(),
                 }),
-                on_primary_click: () => {
+                on_primary_click: (self, e) => openWindow(self, e, "calendar-menu", () =>
+                    App.windows.forEach((w) => {
+                        if (w.name?.endsWith("-menu")) w.hide()
+                    }),
+                ),
+                on_secondary_click: () => {
                     alternative.setValue(!alternative.value)
                     date.setValue(format(new Date(), alternative.value))
                     icon.setValue(alternative.value ? " " : " ")
