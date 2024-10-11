@@ -60,7 +60,7 @@ paru -S --noconfirm ueberzugpp
 # music wave visualizer
 paru -S --noconfirm cava
 # screen recorder
-paru -S --noconfirm slurp-git
+paru -S --noconfirm slurp-git hyprshot-git
 # wechat
 paru -S --noconfirm wechat-universal-bwrap
 # music player
