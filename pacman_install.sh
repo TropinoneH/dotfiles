@@ -91,10 +91,6 @@ sudo pacman -S --noconfirm dart-sass
 sudo pacman -S --noconfirm pavucontrol-qt
 # image editor
 sudo pacman -S --noconfirm imagemagick
-# auto lock
-sudo pacman -S --noconfirm swayidle-git
-# screen locker
-sudo pacman -S --noconfirm swaylock-effects-git
 # ssh file system
 sudo pacman -S --noconfirm sshfs
 # shell
