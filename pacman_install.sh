@@ -89,12 +89,12 @@ sudo pacman -S --noconfirm jdk8-openjdk jdk17-openjdk
 sudo pacman -S --noconfirm dart-sass
 # audio
 sudo pacman -S --noconfirm pavucontrol-qt
-# auto lock
-sudo pacman -S --noconfirm hypridle
 # image editor
 sudo pacman -S --noconfirm imagemagick
+# auto lock
+sudo pacman -S --noconfirm swayidle-git
 # screen locker
-sudo pacman -S --noconfirm hyprlock
+sudo pacman -S --noconfirm swaylock-effects-git
 # ssh file system
 sudo pacman -S --noconfirm sshfs
 # shell

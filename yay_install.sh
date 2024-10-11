@@ -53,7 +53,7 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # yay install
-yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic onlyoffice-bin upd72020x-fw hyprpicker wlogout-git aylur-gtk-shell-git
+yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic onlyoffice-bin upd72020x-fw hyprpicker wlogout-git aylur-gtk-shell-git swayidle-git swaylock-effects-git
 yay -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip
 
 # fish plugin manager
