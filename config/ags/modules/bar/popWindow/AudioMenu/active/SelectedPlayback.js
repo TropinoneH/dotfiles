@@ -13,11 +13,10 @@ export default () =>
                 vexpand: false,
                 vpack: "end",
                 setup: (self) => {
-                    self.hook(Audio, () => {
-                        const spkr = Audio.speaker
-                        const className = `menu-active-button ${spkr.is_muted ? "muted" : ""}`
-                        return (self.class_name = className)
-                    })
+                    self.hook(
+                        Audio,
+                        () => (self.class_name = `menu-active-button ${Audio.speaker.is_muted ? "muted" : ""}`),
+                    )
                 },
                 on_primary_click: () => (Audio.speaker.is_muted = !Audio.speaker.is_muted),
                 child: Widget.Label({

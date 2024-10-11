@@ -13,18 +13,21 @@ export default () =>
                 vexpand: false,
                 vpack: "end",
                 setup: (self) => {
-                    self.hook(Audio, () => {
-                        const mic = Audio.microphone
-                        const className = `menu-active-button ${mic.is_muted ? "muted" : ""}`
-                        return (self.class_name = className)
-                    })
+                    self.hook(
+                        Audio,
+                        () => (self.class_name = `menu-active-button ${Audio.microphone.is_muted ? "muted" : ""}`),
+                    )
                 },
                 on_primary_click: () => (Audio.microphone.is_muted = !Audio.microphone.is_muted),
                 child: Widget.Icon({
                     class_name: "menu-active-icon",
                     setup: (self) => {
                         self.hook(Audio, () => {
-                            self.icon = getAudioIcon(Audio.microphone.stream?.port, "microphone", Audio.microphone.volume)
+                            self.icon = getAudioIcon(
+                                Audio.microphone.stream?.port,
+                                "microphone",
+                                Audio.microphone.volume,
+                            )
                         })
                     },
                 }),
