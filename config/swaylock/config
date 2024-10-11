@@ -1,0 +1,74 @@
+#  ____                     _            _     
+# / ___|_      ____ _ _   _| | ___   ___| | __ 
+# \___ \ \ /\ / / _` | | | | |/ _ \ / __| |/ / 
+#  ___) \ V  V / (_| | |_| | | (_) | (__|   <  
+# |____/ \_/\_/ \__,_|\__, |_|\___/ \___|_|\_\ 
+#                     |___/                    
+#  
+# by Stephan Raabe (2023) 
+# ----------------------------------------------------- 
+
+ignore-empty-password
+font="CodeNewRoman Nerd Font Mono"
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+# Add current screenshot as wallpaper
+screenshots
+
+# Add an image as a background 
+# image=$HOME/.config/hypr/bg/IMG_1721.PNG
+
+# Fade in time
+fade-in=0.3
+
+# Effect for background
+effect-blur=7x4
+effect-vignette=0.5:0.5
+# effect-greyscale
+# effect-pixelate=5
+
+# Show/Hide indicator circle
+indicator
+
+# smaller indicator
+indicator-radius=200
+
+indicator-thickness=20
+indicator-caps-lock
+
+# Define all colors
+
+key-hl-color=81a1c1
+separator-color=00000000
+
+inside-color=4c566a99
+inside-clear-color=ebcb8b77
+inside-ver-color=a3be8c77
+inside-wrong-color=bf616a77
+
+ring-color=3b4252D9
+ring-clear-color=3b4252D9
+ring-ver-color=3b4252D9
+ring-wrong-color=3b4252D9
+
+line-color=00000000
+line-clear-color=ebcb8bFF
+line-ver-color=d9d8d8FF
+line-wrong-color=bf616aFF
+
+text-color=5e81ac
+text-clear-color=ebcb8b
+text-ver-color=a3be8c
+text-wrong-color=bf616a
+
+bs-hl-color=bf616aFF
+disable-caps-lock-text
+caps-lock-key-hl-color=ebcb8bFF
+caps-lock-bs-hl-color=bf616aFF
+text-caps-lock-color=009ddc
+inside-caps-lock-color=88c0d030
+ring-caps-lock-color=3b4252D9
+line-caps-lock-color=009ddcFF

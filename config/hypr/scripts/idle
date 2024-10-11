@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+lock=swaylock
+dimTime=580
+lockTime=600
+suspendTime=650
+# dimTime=20
+# lockTime=21
+# suspendTime=22
+
+pkill swayidle
+
+while pgrep -x swayidle > /dev/null; do sleep 1; done
+
+swayidle -w timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off; fi' resume 'hyprctl dispatch dpms on'
+
+swayidle -w \
+    timeout $dimTime 'brightnessctl -s set 10' resume 'brightnessctl -r' \
+    timeout $lockTime "pidof $lock || $lock" \
+    lock $lock
+    # timeout $suspendTime 'hyprctl dispatch dpms on > /dev/null; sleep 1; echo suspend; systemctl suspend' \

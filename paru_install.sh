@@ -69,6 +69,10 @@ paru -S --noconfirm yesplaymusic
 paru -S --noconfirm onlyoffice-bin
 # wlogout
 paru -S --noconfirm wlogout-git
+# auto lock
+paru -S --noconfirm swayidle-git
+# screen locker
+paru -S --noconfirm swaylock-effects-git
 # ags
 paru -S --noconfirm aylur-gtk-shell-git
 # rofi
