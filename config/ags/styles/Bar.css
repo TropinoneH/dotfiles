@@ -31,6 +31,10 @@
     padding-right: 8px;
 }
 
+.backlight .icon {
+    color: #d9b172;
+}
+
 .battery .icon {
     color: #a8cd76;
 }

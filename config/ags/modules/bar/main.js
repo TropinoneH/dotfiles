@@ -5,6 +5,7 @@ import NetworkMenu from "./popWindow/NetworkMenu/main.js"
 
 import AppLauncher from "./AppLauncher.js"
 import Audio from "./Audio.js"
+import Backlight from "./Backlight.js"
 import Battery from "./Battery.js"
 import Bluetooth from "./Bluetooth.js"
 import Clock from "./Clock.js"
@@ -33,7 +34,7 @@ function Right() {
     return Widget.Box({
         spacing: 5,
         hpack: "end",
-        children: [Audio(), Battery(), Network(), Bluetooth(), SysTray(), Powermenu()],
+        children: [Backlight(), Audio(), Battery(), Network(), Bluetooth(), SysTray(), Powermenu()],
     })
 }
 

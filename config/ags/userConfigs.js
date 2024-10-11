@@ -44,6 +44,10 @@ const userConfigs = {
                 onScrollUp: "wpaperctl previous",
                 onScrollDown: "wpaperctl next",
             },
+            backlight: {
+                onScrollUp: "brightnessctl set 2%+",
+                onScrollDown: "brightnessctl set 2%-",
+            },
             bluetooth: "rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi",
             network: "networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi",
             workspaces: {
