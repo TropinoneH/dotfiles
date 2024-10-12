@@ -53,8 +53,9 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # yay install
+yay -S wl-clipboard-git cliphist
 yay -S google-chrome mailspring notion-app-electron visual-studio-code-bin clang-format-all-git ueberzugpp cava slurp-git wechat-universal-bwrap yesplaymusic onlyoffice-bin upd72020x-fw hyprpicker wlogout-git aylur-gtk-shell-git swayidle-git swaylock-effects-git
-yay -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git rofi-greenclip
+yay -S rofi-wayland rofi-bluetooth-git networkmanager-dmenu-git
 
 # fish plugin manager
 yay -S --noconfirm fisher
