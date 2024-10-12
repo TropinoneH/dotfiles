@@ -8,14 +8,14 @@ suspendTime=650
 # lockTime=21
 # suspendTime=22
 
-pkill swayidle
+kill -9 $(pidof swayidle) > /dev/null
 
 while pgrep -x swayidle > /dev/null; do sleep 1; done
 
-swayidle -w timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off; fi' resume 'hyprctl dispatch dpms on'
+swayidle -w timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off > /dev/null; fi' resume 'echo resume; hyprctl dispatch dpms on > /dev/null' &
 
-swayidle -w \
+swayidle -w
+    lock $lock \
     timeout $dimTime 'brightnessctl -s set 10' resume 'brightnessctl -r' \
-    timeout $lockTime "pidof $lock || $lock" \
-    lock $lock
+    timeout $lockTime "pidof $lock || $lock" &
     # timeout $suspendTime 'hyprctl dispatch dpms on > /dev/null; sleep 1; echo suspend; systemctl suspend' \
