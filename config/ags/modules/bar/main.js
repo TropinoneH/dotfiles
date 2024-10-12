@@ -25,7 +25,7 @@ function Left(/**@type{number}*/ monitor) {
 
 function Center() {
     return Widget.Box({
-        spacing: 0,
+        className: "center-bar",
         children: [Clock()],
     })
 }
