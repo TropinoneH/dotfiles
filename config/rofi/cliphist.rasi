@@ -1,0 +1,106 @@
+* {
+    main-bg:          #C5FFF8;
+    main-fg:          #5FBDFF;
+    main-br:          transparent;
+    selected-fg:      #3B4252CC;
+    separatorcolor:   #4c566a;
+    background-color: transparent;
+}
+
+// Config //
+configuration {
+    modi:             "drun";
+    show-icons:       true;
+    font:             "CodeNewRoman Nerd Font Mono Bold 14";
+}
+
+// Main //
+window {
+    height:           562px;
+    width:            1000px;
+    transparency:     "real";
+    fullscreen:       false;
+    enabled:          true;
+    cursor:           "default";
+    spacing:          0px;
+    padding:          0px;
+    border:           0px;
+    border-radius:    20px;
+    border-color:     @main-br;
+    background-color: @selected-fg;
+}
+mainbox {
+    enabled:          true;
+    spacing:          0px;
+    orientation:      vertical;
+    children:         [ "inputbar" , "listbox" ];
+    background-color: transparent;
+}
+
+
+// Inputs //
+inputbar {
+    enabled:          true;
+    padding:          0px;
+    children:         [ "entry" ];
+    background-color: transparent;
+}
+entry {
+    enabled:          true;
+    padding:          30px;
+    text-color:       @main-fg;
+    background-color: transparent;
+}
+
+
+// Lists //
+listbox {
+    spacing:          0px;
+    padding:          16px;
+    children:         [ "listview" ];
+    background-color: transparent;
+}
+listview {
+    enabled:          true;
+    columns:          1;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        false;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     false;
+    fixed-columns:    true;
+    cursor:           "default";
+    background-color: transparent;
+    text-color:       @main-fg;
+}
+
+// Elements //
+element {
+    enabled:          true;
+    padding:          10px;
+    margin:           2px;
+    border-radius:    30px;
+    cursor:           pointer;
+    background-color: transparent;
+    text-color:       @main-fg;
+}
+element normal.normal {
+    background-color: transparent;
+    text-color:       inherit;
+}
+element.alternate.normal {
+    background-color: transparent;
+    text-color:       inherit;
+}
+element selected.normal {
+    background-color: @main-fg;
+    text-color:       @selected-fg;
+}
+element-text {
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+    cursor:           inherit;
+    background-color: transparent;
+    text-color:       inherit;
+}
