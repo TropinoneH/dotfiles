@@ -7,6 +7,10 @@
     background: transparent;
 }
 
+.bar .center-bar {
+    margin-left: -15px;
+}
+
 .audio .icon, .mute {
     color: #f7768b;
 }
