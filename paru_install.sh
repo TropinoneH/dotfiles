@@ -46,7 +46,7 @@ paru -S --noconfirm upd72020x-fw
 # web browser
 paru -S --noconfirm google-chrome
 # color picker
-paru -S --noconfirm hyprpicker
+paru -S --noconfirm hyprpicker-git
 # email client
 paru -S --noconfirm mailspring
 # notion: note and collaboration
@@ -59,6 +59,9 @@ paru -S --noconfirm clang-format-all-git
 paru -S --noconfirm ueberzugpp
 # music wave visualizer
 paru -S --noconfirm cava
+# clipboard
+paru -S --noconfirm wl-clipboard-git
+paru -S --noconfirm cliphist
 # screen recorder
 paru -S --noconfirm slurp-git hyprshot-git
 # wechat
@@ -79,7 +82,6 @@ paru -S --noconfirm aylur-gtk-shell-git
 paru -S --noconfirm rofi-wayland
 paru -S --noconfirm rofi-bluetooth-git
 paru -S --noconfirm networkmanager-dmenu-git
-paru -S --noconfirm rofi-greenclip
 
 # fish plugin manager
 paru -S --noconfirm fisher
