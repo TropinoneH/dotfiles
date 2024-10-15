@@ -62,12 +62,17 @@ const getBluetoothDeviceIcon = (/**@type{String}*/ iconName) => {
 }
 
 export const getBluetoothIcon = (/**@type{String}*/ iconName, /**@type{String}*/ iconType = "device") => {
-    return iconType === "device"
-        ? getBluetoothDeviceIcon(iconName)
-        : userConfigs.bar.icons.bluetooth.battery[parseInt(iconName)]
+    if (iconType === "device") return getBluetoothDeviceIcon(iconName)
+    else if (iconType == "battery") {
+        const iconSet = userConfigs.bar.icons.bluetooth.battery
+        const battery = parseInt(iconName)
+        const idx = Math.floor((battery >= 100 ? 99 : battery) / (100 / iconSet.length))
+        return iconSet[idx]
+    }
+    return ""
 }
 
 export const getBacklightIcon = (/**@type{number}*/ light) => {
     const iconSet = userConfigs.bar.icons.backlight
-    return iconSet[Math.floor((light >= 100 ? 99 : light ) / (100 / iconSet.length))]
+    return iconSet[Math.floor((light >= 100 ? 99 : light) / (100 / iconSet.length))]
 }
