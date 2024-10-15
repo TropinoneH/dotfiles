@@ -110,7 +110,7 @@ export default (bluetooth, self) => {
                                                 child: Widget.Label({
                                                     vpack: "start",
                                                     class_name: `menu-button-icon ${conDevNames.includes(device.address) ? "active" : ""} txt-icon`,
-                                                    label: device.bind("device").as(d => d.connected ? getBluetoothIcon(d.battery_percentage, "battery") : ""),
+                                                    label: device.bind("device").as(d => d.connected ? getBluetoothIcon(d["battery-percentage"], "battery") : ""),
                                                 }),
                                             }),
                                         ],
