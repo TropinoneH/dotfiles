@@ -1,4 +1,5 @@
 import AudioMenu from "./popWindow/AudioMenu/main.js"
+import BacklightMenu from "./popWindow/Backlight/main.js"
 import BluetoothMenu from "./popWindow/BluetoothMenu/main.js"
 import Calendar from "./popWindow/Calendar/main.js"
 import NetworkMenu from "./popWindow/NetworkMenu/main.js"
@@ -38,7 +39,7 @@ function Right() {
     })
 }
 
-export const windows = [AudioMenu(), BluetoothMenu(), Calendar(), NetworkMenu()]
+export const windows = [AudioMenu(), BacklightMenu(), BluetoothMenu(), Calendar(), NetworkMenu()]
 
 /**
  *@param{number} monitor
