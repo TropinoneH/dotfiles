@@ -12,6 +12,8 @@
 # CTRL Del to delete an entry
 # ALT Del to wipe clipboard contents
 
+export XDG_CACHE_HOME=$HOME/.cache
+
 while true; do
     result=$(
         rofi -i -dmenu \
