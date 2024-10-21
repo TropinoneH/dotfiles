@@ -79,7 +79,7 @@
     "json.schemas": [],
     "latex-workshop.view.pdf.internal.synctex.keybinding": "ctrl-click",
     "files.autoSave": "afterDelay",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "workbench.editor.enablePreview": false,
     "security.workspace.trust.banner": "always",
     "security.workspace.trust.enabled": false,
@@ -111,5 +111,6 @@
         "--quiet"
     ],
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSaveMode": "modificationsIfAvailable"
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
