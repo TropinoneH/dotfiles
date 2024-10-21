@@ -1,5 +1,3 @@
-const { GLib } = imports.gi
-
 const userConfigs = {
     monitors: {
         scaleMethod: "gdk",
@@ -134,6 +132,11 @@ const userConfigs = {
             },
         },
     },
+    notifications: {
+        timeout: 1000,
+        doCache: true,
+        displayTotal: 5,
+    }
 }
 
 globalThis["userConfigs"] = userConfigs
