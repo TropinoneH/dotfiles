@@ -1,0 +1,110 @@
+.notifications-window {
+}
+
+.notifications-box {
+}
+
+.notification-card {
+    color: #c0caf5;
+    background: #3b4252;
+    margin: 0.45em;
+    border: 0.15em solid transparentize(#4c566a, 0.5);
+    min-width: 26em;
+    min-height: 6rem;
+    border-radius: 0.3rem;
+    opacity: 0.7;
+}
+
+.notification-card-container {
+    padding: 1px;
+}
+.notification-card-container * {
+    font-size: 1.3rem;
+}
+
+.notification-card-image-container {
+    margin: 0.65em 0.65em;
+    border-radius: 0.4em;
+}
+
+.notification-card-image {
+    border-radius: 0.4em;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    padding: 0.85em 0.85em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.notification-card-content {
+    min-width: 2.9em;
+    min-height: 2.9em;
+    padding: 0.5em 0.5em;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.notification-card-content.noimg {
+    margin-left: 0.5em;
+    margin-top: 0.15em;
+}
+
+.notification-card-header-label {
+    font-size: 0.95em;
+    margin-bottom: 0.5em;
+    color: #c0caf5;
+}
+
+.notification-card-body-label {
+    font-size: 0.84em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.notification-card-actions {
+    margin-top: 0.25em;
+    margin-bottom: 0.4em;
+}
+
+.notification-action-buttons {
+    color: #c0caf5;
+    background: #3b4252;
+    min-width: 4em;
+    min-height: 1.65em;
+    border-radius: 0.2em;
+}
+.notification-action-buttons:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.notification-action-buttons:hover {
+    background: transparentize(#3b4252, 0.6);
+}
+
+.notification-icon {
+    color: #c0caf5;
+    margin-bottom: 0.4em;
+    min-width: 1em;
+    min-height: 1em;
+    font-size: 1.3em;
+}
+
+.notification-time {
+    font-size: 0.85em;
+    color: #c0caf5;
+}
+
+.close-notification-button {
+    background: #3b4252;
+    color: #c0caf5;
+    min-width: 2.1em;
+    border-radius: 0rem 0.7rem 0.21rem 0rem;
+}
+.close-notification-button label {
+    font-size: 1.5em;
+}
+
+.close-notification-button:hover {
+    background: transparentize(#3b4252, 0.5);
+}
