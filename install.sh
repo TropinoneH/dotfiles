@@ -15,8 +15,6 @@ for file in $cwd/desktop/*; do
     sudo ln -sf $file /usr/share/applications/$(basename $file)
 done
 
-sudo ln -sf $cwd/eduroam.8021x /var/lib/iwd/eduroam.8021x
-
 sudo cp $cwd/fonts/* /usr/share/fonts/
 
 mkdir -p ~/.config/mpd/playlists
