@@ -2,6 +2,7 @@
 @import "./ClickCloseRegion.css";
 @import "./Bar.css";
 @import "./DropdownWindow.css";
+@import "./notifications/index.css";
 
 * {
     font-family: "CodeNewRoman Nerd Font Mono", "Symbols Only";
