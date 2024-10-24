@@ -19,8 +19,9 @@ export default () =>
         className: "notifications-window",
         monitor: Hyprland.active.monitor.bind("id"),
         layer: "overlay",
-        anchor: ["top", "bottom", "right"],
+        anchor: ["top", "right"],
         exclusivity: "normal",
+        visible: Notifications.bind("popups").as((popups) => popups.length > 0),
         child: Widget.Box({
             className: "notifications-box",
             vertical: true,
@@ -31,7 +32,7 @@ export default () =>
                     const displayTotal = userConfigs.notifications.displayTotal
                     self.children = filteredNotifications.slice(0, displayTotal).map((notify) =>
                         Widget.Box({
-                            class_name: "notification-card",
+                            class_name: `notification-card ${notify.urgency}`,
                             vpack: "start",
                             hexpand: true,
                             children: [

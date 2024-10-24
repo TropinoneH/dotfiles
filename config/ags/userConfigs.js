@@ -133,7 +133,7 @@ const userConfigs = {
         },
     },
     notifications: {
-        timeout: 1000,
+        timeout: 5000,
         doCache: true,
         displayTotal: 5,
     }
