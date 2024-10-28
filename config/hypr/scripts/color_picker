@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+picker=hyprpicker
+
+color=$($picker)
+
+if [[ $color == "" ]]; then
+    exit 0
+fi
+
+hex_to_rgb() {
+    hex_color="${1#'#'}"
+    r=$((16#${hex_color:0:2}))
+    g=$((16#${hex_color:2:2}))
+    b=$((16#${hex_color:4:2}))
+    echo "$r $g $b"
+}
+
+determine_foreground_color() {
+    read r g b <<< "$1"
+    # 计算亮度
+    y=$(( (299 * r + 587 * g + 114 * b) / 1000 ))  # 用整数运算避免浮点数
+    if [ "$y" -gt 128 ]; then
+        echo "#323b4d"
+    else
+        echo "#c0caf5"
+    fi
+}
+
+fg=$(determine_foreground_color "$(hex_to_rgb "$color")")
+
+notification="<span background='$color' color='$fg'>$color</span>"
+
+action=$(notify-send "Color Picker" "$notification" --action="copy=copy")
+
+if [[ $action == "copy" ]]; then
+    wl-copy < <(echo -n "$color")
+fi
