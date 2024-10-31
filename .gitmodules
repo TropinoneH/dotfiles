@@ -1,15 +1,18 @@
 [submodule "zsh"]
-	path = zsh
-	url = git@github.com:TropinoneH/zsh-configuration.git
+    path = zsh
+    url = git@github.com:TropinoneH/zsh-configuration.git
 [submodule "config/wezterm"]
-	path = config/wezterm
-	url = git@github.com:TropinoneH/wezterm-configuration.git
+    path = config/wezterm
+    url = git@github.com:TropinoneH/wezterm-configuration.git
 [submodule "config/nvim"]
-	path = config/nvim
-	url = git@github.com:TropinoneH/nvim-configuration.git
+    path = config/nvim
+    url = git@github.com:TropinoneH/nvim-configuration.git
 [submodule "config/fastfetch"]
-	path = config/fastfetch
-	url = git@github.com:TropinoneH/fastfetch-configuration.git
+    path = config/fastfetch
+    url = git@github.com:TropinoneH/fastfetch-configuration.git
 [submodule "config/tmux"]
-	path = config/tmux
-	url = git@github.com:TropinoneH/tmux-configuration.git
+    path = config/tmux
+    url = git@github.com:TropinoneH/tmux-configuration.git
+[submodule "typora/ocean-theme"]
+    path = typora/ocean-theme
+    url = git@github.com:TropinoneH/ocean-theme
