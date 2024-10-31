@@ -25,13 +25,16 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
             end
         end
     end
-    set cmd (string join -- ' ' $cmd)
 
-    set -l complist (complete -C$cmd)
+    set cmd (string join -- ' ' $cmd)
+    set complist (complete -C $cmd)
 
     set -l result
-    # TODO::把fzf显示的内容和可搜索的内容去掉description
-    string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" --with-nth=1 -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
+    if string match -r '^(sudo )?kill\b.*[^-]$' -- $cmd
+        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
+    else
+        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" --with-nth=1 -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
+    end
 
     set prefix (string sub -s 1 -l 1 -- (commandline -t))
     for i in (seq (count $result))
