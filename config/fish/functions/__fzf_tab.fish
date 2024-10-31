@@ -27,10 +27,12 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
     end
 
     set cmd (string join -- ' ' $cmd)
-    set complist (complete -C $cmd)
+    set -l complist (complete -C $cmd)
+
+    set -l is_kill (string match -r 'kill\b.*[^-]$' -- $cmd)
 
     set -l result
-    if string match -r '^(sudo )?kill\b.*[^-]$' -- $cmd
+    if [ $is_kill ]
         string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
     else
         string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" --with-nth=1 -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
