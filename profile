@@ -13,3 +13,4 @@ export PATH=$CARGO_HOME/bin:$GOROOT/bin:$DOTNET_PATH:$PATH
 export TERM=xterm-kitty
 # library
 export LD_LIBRARY_PATH=/usr/include:/usr/lib:/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig:/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
