@@ -7,7 +7,7 @@ linemode = "none"
 
 [opener]
 edit = [
-    { run = 'neovide "$@"', orphan = true, for = "unix" },
+    { run = 'kitty -T editor nvim "$@"', orphan = true, for = "unix" },
     { run = 'code "%*"', orphan = true, for = "windows" },
 ]
 open = [
