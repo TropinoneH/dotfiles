@@ -6,7 +6,7 @@ sudo pacman -S --noconfirm mesa
 # bluetooth
 sudo pacman -S --noconfirm bluedevil
 # audio
-sudo pacman -S --noconfirm alsa-utils
+sudo pacman -S --noconfirm alsa-utils pulseaudio pulseaudio-alsa
 # bluetooth audio
 sudo pacman -S --noconfirm pulseaudio-bluetooth
 #
