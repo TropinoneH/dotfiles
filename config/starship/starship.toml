@@ -182,7 +182,7 @@ Windows = "[󰍲](#C065DB)"
 
 [package]
 symbol = "󰏗 "
-format = "is [symbolversion](style) "
+format = "is [$symbol$version](style) "
 
 [python]
 symbol = " "
@@ -190,7 +190,7 @@ format = "[$symbol($version)]($style) "
 
 [rust]
 symbol = "󱘗 "
-format = "[$symbol($version)]($style) "
+format = "[$symbol$version]($style) "
 
 [sudo]
 format = "[$symbol]($style)"
