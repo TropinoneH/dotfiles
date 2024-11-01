@@ -99,6 +99,8 @@ sudo pacman -S --noconfirm fish
 sudo pacman -S --noconfirm qalculate-qt
 # docker
 sudo pacman -S --noconfirm docker
+# tauri dependency
+sudo pacman -S --noconfirm webkit2gtk-4.1
 
 # python env
 sudo pacman -S --noconfirm python-neovim
@@ -123,3 +125,4 @@ rustup default stable
 cargo install cmd-wrapped
 cargo install tree-sitter-cli
 cargo install wpaperd wpaperctl
+cargo install create-tauri-app
