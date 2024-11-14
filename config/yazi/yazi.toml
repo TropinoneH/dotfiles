@@ -24,7 +24,7 @@ play = [
     { run = 'mpv "%1"', orphan = true, for = "windows" },
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
-image = [{ run = 'feh "$@"', desc = "feh", for = "unix" }]
+image = [{ run = 'imv "$@"', desc = "image viewer", for = "unix" }]
 markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
 pdf = [
     { run = 'okular "$@"', orphan = true, for = "unix", desc = "pdf viewer" },

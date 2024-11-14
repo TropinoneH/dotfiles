@@ -81,7 +81,7 @@ sudo pacman -S --noconfirm okular
 # notification
 sudo pacman -S --noconfirm mako
 # image viewer
-sudo pacman -S --noconfirm feh
+sudo pacman -S --noconfirm imv
 # code
 sudo pacman -S --noconfirm go
 sudo pacman -S --noconfirm rustup
