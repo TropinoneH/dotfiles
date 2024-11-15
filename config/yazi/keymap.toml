@@ -3,9 +3,6 @@
 [manager]
 prepend_keymap = [
     { on = [
-        "h",
-    ], run = "hidden toggle", desc = "Toggle hidden files" },
-    { on = [
         "<Home>",
     ], run = "cd ~", desc = "Go to the home directory" },
     { on = [
@@ -19,6 +16,9 @@ prepend_keymap = [
     ], run = "plugin --sync smart-enter", desc = "Open or enter" },
     { on = [
         "<Right>",
+    ], run = "plugin --sync smart-enter", desc = "Open or enter" },
+    { on = [
+        "l",
     ], run = "plugin --sync smart-enter", desc = "Open or enter" },
 ]
 
