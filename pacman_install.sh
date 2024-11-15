@@ -7,10 +7,9 @@ sudo pacman -S --noconfirm mesa
 sudo pacman -S --noconfirm bluedevil
 # audio
 sudo pacman -S --noconfirm alsa-utils pulseaudio pulseaudio-alsa
+sudo pacman -S --noconfirm sof-firmware
 # bluetooth audio
 sudo pacman -S --noconfirm pulseaudio-bluetooth
-#
-sudo pacman -S --noconfirm sof-firmware
 # desktop environment
 sudo pacman -S --noconfirm plasma-framework5
 sudo pacman -S --noconfirm acpi
@@ -119,7 +118,7 @@ sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-s
 git clone git@github.com:tldr-pages/tldr ~/.cache/tldr
 
 # use npm
-sudo npm install -g n nrm figlet yarn vue prettier
+sudo npm install -g n nrm figlet pnpm prettier
 
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static

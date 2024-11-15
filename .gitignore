@@ -7,3 +7,5 @@ config/i3/mount.sh
 /config/ncmpcpp/lyrics
 .idea
 .vscode
+**/@girs/
+**/node_modules/
