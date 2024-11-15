@@ -14,7 +14,8 @@ sudo pacman -S --noconfirm sof-firmware
 # desktop environment
 sudo pacman -S --noconfirm plasma-framework5
 sudo pacman -S --noconfirm acpi
-sudo pacman -S --noconfirm xdg-desktop-portal-hyprland
+sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+sudo pacman -S --noconfirm pipewire wireplumber
 # qt style
 sudo pacman -S --noconfirm qt6ct
 # nas smb file system utils
@@ -59,6 +60,8 @@ sudo pacman -S --noconfirm nautilus
 sudo pacman -S --noconfirm xautolock
 # screen shot
 sudo pacman -S --noconfirm grim
+# screen record
+sudo pacman -S --noconfirm obs-studio
 # clipboard
 sudo pacman -S --noconfirm xclip
 # network manager

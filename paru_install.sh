@@ -62,8 +62,10 @@ paru -S --noconfirm cava
 # clipboard
 paru -S --noconfirm wl-clipboard-git
 paru -S --noconfirm cliphist
-# screen recorder
+# screen shot
 paru -S --noconfirm slurp-git hyprshot-git
+# screen recorder
+paru -S --noconfirm obs-vaapi
 # wechat
 paru -S --noconfirm wechat-universal-bwrap
 # music player
