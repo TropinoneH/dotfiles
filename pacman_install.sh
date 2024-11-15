@@ -33,6 +33,8 @@ sudo pacman -S --noconfirm man-db
 sudo pacman -S --noconfirm gnome-control-center
 
 # software
+# Input method
+sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord
 # colorize
 sudo pacman -S --noconfirm lolcat
 # better find

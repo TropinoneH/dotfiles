@@ -12,18 +12,18 @@ cd paru || exit
 makepkg -si
 cd .. || exit
 
-git clone https://aur.archlinux.org/fcitx-sogoupinyin.git
-cd fcitx-sogoupinyin || exit
+# git clone https://aur.archlinux.org/fcitx-sogoupinyin.git
+# cd fcitx-sogoupinyin || exit
 # curl -O https://ime-sec.gtimg.com/202407031906/962cda7d3d5a49ce5910c83f5c326ea2/pc/dl/gzindex/1680521603/sogoupinyin_4.2.1.145_amd64.deb
-makepkg -si
-sudo pacman -S fcitx-configtool
-echo "GTK_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-echo "QT_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-echo "XMODIFIERS=@im=fcitx" | sudo tee -a /etc/environment
-echo "SDL_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-echo "GLFW_IM_MODULE=ibus" | sudo tee -a /etc/environment
-cd .. || exit
-
+# makepkg -si
+# sudo pacman -S fcitx-configtool
+# echo "GTK_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+# echo "QT_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+# echo "XMODIFIERS=@im=fcitx" | sudo tee -a /etc/environment
+# echo "SDL_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+# echo "GLFW_IM_MODULE=ibus" | sudo tee -a /etc/environment
+# cd .. || exit
+#
 git clone https://aur.archlinux.org/linuxqq.git
 cd linuxqq || exit
 git checkout 0ba2ff0
