@@ -2,6 +2,7 @@ import { App, Astal, Gdk } from "astal/gtk3"
 import Date from "./Date"
 import AppLauncher from "./AppLauncher"
 import Workspace from "./Workspace"
+import Title from "./Title"
 
 export default (monitor: Gdk.Monitor) => {
     return (
@@ -16,6 +17,7 @@ export default (monitor: Gdk.Monitor) => {
                 <box>
                     <AppLauncher />
                     <Workspace monitor={monitor} />
+                    <Title />
                 </box>
                 <Date />
                 <box></box>

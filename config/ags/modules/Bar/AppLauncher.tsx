@@ -5,6 +5,7 @@ export default () => {
         <box
             css={`
                 margin-left: 1rem;
+                margin-right: 0.3rem;
                 padding: 0 0.8rem;
                 border-radius: 0.5rem;
                 color: ${config.theme.bar.appLauncher.color};

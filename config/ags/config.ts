@@ -17,6 +17,10 @@ export const theme = (scheme = defaultScheme) => ({
             bg: scheme.bg,
             iconColor: scheme.violet
         },
+        title: {
+            color: scheme.fg,
+            bg: scheme.bg
+        },
         workspace: {
             color: scheme.fg,
             bg: scheme.bg,

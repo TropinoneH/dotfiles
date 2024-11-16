@@ -20,7 +20,7 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => {
     const theme = config.theme.bar.workspace
 
     return (
-        <box css={`color: ${theme.color}; background: ${theme.bg}; margin: 0 0.3rem; border-radius: 0.5rem;`}>
+        <box css={`color: ${theme.color}; background: ${theme.bg}; margin-right: 0.3rem; border-radius: 0.5rem;`}>
             <eventbox onScroll={config.bar.workspace.onScroll}>
                 <box>
                     {bind(Hyprland, "workspaces").as((workspaces) =>
