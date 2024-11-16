@@ -1,4 +1,4 @@
-import { Astal, Gtk } from "astal/gtk3"
+import { Astal } from "astal/gtk3"
 import { exec } from "astal"
 import { defaultScheme } from "./themes"
 
@@ -16,6 +16,12 @@ export const theme = (scheme = defaultScheme) => ({
             color: scheme.fg,
             bg: scheme.bg,
             iconColor: scheme.violet
+        },
+        workspace: {
+            color: scheme.fg,
+            bg: scheme.bg,
+            hover: scheme.text1,
+            active: scheme.cyan
         }
     }
 })
@@ -26,6 +32,10 @@ export const config = {
         appLauncher: {
             onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("wpaperctl next") : exec("wpaperctl previous")),
             onPrimaryClick: () => exec("rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi")
+        },
+        workspace: {
+            onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1")),
+            icons: ["", "", "", "", "", "", "", "", "", ""]
         }
     }
 }

@@ -1,5 +1,6 @@
 import { bind, Variable } from "astal"
 import { config } from "../../config"
+import { DimButton as Button } from "../components/Button"
 
 const pad = (n: number, pad: number = 2) => n.toString().padStart(pad, "0")
 
@@ -37,18 +38,23 @@ export default () => {
                 color: ${config.theme.bar.date.color};
             `}
         >
-            <eventbox
-                onClick={() => alternative.set(!alternative.get())}
+            <Button
+                onClick={(_, e) => (e.button === 1 ? null : e.button === 3 ? alternative.set(!alternative.get()) : null)}
                 onDestroy={() => {
                     alternative.drop()
                     date.drop()
                 }}
             >
                 <box>
-                    <label css={`color: ${config.theme.bar.date.iconColor};`} label={bind(icon).as((v) => v)} />
+                    <label
+                        css={`
+                            color: ${config.theme.bar.date.iconColor};
+                        `}
+                        label={bind(icon).as((v) => v)}
+                    />
                     {bind(date).as((v) => v)}
                 </box>
-            </eventbox>
+            </Button>
         </box>
     )
 }
