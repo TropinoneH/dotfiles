@@ -7,15 +7,7 @@ import { PointerButton } from "../components/Button"
 const Hyprland = hyprland.get_default()
 
 export default ({ monitor }: { monitor: Gdk.Monitor }) => {
-    const monitorID = getMonitor(monitor)?.id ?? 0
-    Hyprland.get_workspaces()
-        .filter((w) => w.monitor.id == monitorID)
-        .sort((w1, w2) => (w1.name > w2.name ? 1 : -1))
-        .map((w) => {
-            console.log(`name: ${w.name}, monitor: ${w.monitor}, id: ${w.id}, last client: ${w.lastClient}, full screen: ${w.hasFullscreen}`)
-        })
-
-    console.log("--------------------------")
+    const monitorID = getMonitor(monitor).id
 
     const theme = config.theme.bar.workspace
 

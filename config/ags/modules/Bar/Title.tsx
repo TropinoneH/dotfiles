@@ -1,13 +1,35 @@
 import hyprland from "gi://AstalHyprland"
-import { bind } from "astal"
+import { bind, Variable } from "astal"
+import { Gdk } from "astal/gtk3"
 import { config } from "../../config"
+import { getMonitor } from "../../libs/monitor"
 const Hyprland = hyprland.get_default()
 
-export default () => {
+export default ({ monitor }: { monitor: Gdk.Monitor }) => {
+    const activeClient = Variable<{ initialClass: string; title: string; pid: number } | null>(null)
+    const activeChanged = bind(Hyprland, "focusedClient")
     const theme = config.theme.bar.title
+    const monitorID = getMonitor(monitor).id
+
     return (
-        <box css={`color: ${theme.color}; background: ${theme.bg}; padding: 0 0.5rem; margin-right: 0.3rem; border-radius: 0.5rem;`} tooltipText={bind(Hyprland, "focusedClient").as((client) => `${client.initialClass} | ${client.title} | ${client.pid}`)}>
-            <label label={bind(Hyprland, "focusedClient").as((client) => client.initialClass)} />
+        <box
+            css={`
+                color: ${theme.color};
+                background: ${theme.bg};
+                padding: 0 0.5rem;
+                margin-right: 0.3rem;
+                border-radius: 0.5rem;
+            `}
+            tooltipText={activeClient((a) => (a ? `${a.initialClass} | ${a.title} | ${a.pid}` : ""))}
+        >
+            <label
+                label={activeChanged.as((client) => {
+                    if (!client || client.monitor?.id === monitorID) activeClient.set(client)
+                    return activeClient?.get()?.initialClass ?? ""
+                })}
+                truncate
+                maxWidthChars={10}
+            />
         </box>
     )
 }

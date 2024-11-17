@@ -8,4 +8,5 @@ export const getMonitor = (gdkmonitor: Gdk.Monitor) => {
             return { id: i, name: screen?.get_monitor_plug_name(i) }
         }
     }
+    return { id: 0, name: "eDP-1" }
 }
