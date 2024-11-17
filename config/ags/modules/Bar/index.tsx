@@ -3,6 +3,7 @@ import Date from "./Date"
 import AppLauncher from "./AppLauncher"
 import Workspace from "./Workspace"
 import Title from "./Title"
+import Powermenu from "./Powermenu"
 
 export default (monitor: Gdk.Monitor) => {
     return (
@@ -20,7 +21,9 @@ export default (monitor: Gdk.Monitor) => {
                     <Title monitor={monitor} />
                 </box>
                 <Date />
-                <box halign={Gtk.Align.END}></box>
+                <box halign={Gtk.Align.END}>
+                    <Powermenu />
+                </box>
             </centerbox>
         </window>
     )

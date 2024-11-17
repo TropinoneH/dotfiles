@@ -17,6 +17,10 @@ export const theme = (scheme = defaultScheme) => ({
             bg: scheme.bg,
             iconColor: scheme.violet
         },
+        powermenu: {
+            iconColor: scheme.red,
+            bg: scheme.bg
+        },
         title: {
             color: scheme.fg,
             bg: scheme.bg
@@ -36,6 +40,9 @@ export const config = {
         appLauncher: {
             onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("wpaperctl next") : exec("wpaperctl previous")),
             onPrimaryClick: () => exec("rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi")
+        },
+        powermenu: {
+            onPrimaryClick: () => exec("wlogout")
         },
         workspace: {
             onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1")),
