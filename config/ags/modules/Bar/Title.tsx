@@ -25,7 +25,7 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => {
             <label
                 label={activeChanged.as((client) => {
                     if (!client || client.monitor?.id === monitorID) activeClient.set(client)
-                    return activeClient?.get()?.initialClass ?? ""
+                    return activeClient?.get()?.initialClass ?? "Desktop"
                 })}
                 truncate
                 maxWidthChars={10}
