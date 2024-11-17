@@ -6,12 +6,11 @@ import { config } from "../../config"
 const Tray = tray.get_default()
 
 export default () => (
-    <box css={`background: ${config.theme.bar.systray.bg}; margin-left: 0.3rem; border-radius: 0.5rem;`}>
+    <box css={`background: ${config.theme.bar.systray.bg}; color: ${config.theme.bar.systray.color}; margin-left: 0.3rem; border-radius: 0.5rem;`}>
         {bind(Tray, "items").as((items) =>
             items.map((item) => {
                 if (item.iconThemePath) App.add_icons(item.iconThemePath)
                 const menu = item.create_menu()
-                print(item.isMenu, item.status, item.itemId, item.id)
                 return (
                     <DimButton
                         tooltipMarkup={bind(item, "tooltipMarkup")}
