@@ -22,11 +22,18 @@ export const theme = (scheme = defaultScheme) => ({
             bg: scheme.bg,
             iconColor: scheme.violet
         },
+        network: {
+            color: scheme.fg,
+            bg: scheme.bg,
+            iconColor: scheme.sky,
+            iconDisconnectColor: scheme.magenta
+        },
         powermenu: {
             iconColor: scheme.red,
             bg: scheme.bg
         },
         systray: {
+            color: scheme.fg,
             bg: scheme.bg
         },
         title: {
