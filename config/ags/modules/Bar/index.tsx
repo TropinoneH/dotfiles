@@ -4,6 +4,7 @@ import AppLauncher from "./AppLauncher"
 import Workspace from "./Workspace"
 import Title from "./Title"
 import Powermenu from "./Powermenu"
+import SysTray from "./SysTray"
 
 export default (monitor: Gdk.Monitor) => {
     return (
@@ -22,6 +23,7 @@ export default (monitor: Gdk.Monitor) => {
                 </box>
                 <Date />
                 <box halign={Gtk.Align.END}>
+                    <SysTray />
                     <Powermenu />
                 </box>
             </centerbox>

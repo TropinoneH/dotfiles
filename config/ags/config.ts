@@ -21,6 +21,9 @@ export const theme = (scheme = defaultScheme) => ({
             iconColor: scheme.red,
             bg: scheme.bg
         },
+        systray: {
+            bg: scheme.bg
+        },
         title: {
             color: scheme.fg,
             bg: scheme.bg
