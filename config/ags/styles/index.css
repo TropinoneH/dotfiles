@@ -1,0 +1,11 @@
+@import "./Overview.css";
+@import "./ClickCloseRegion.css";
+@import "./Bar.css";
+@import "./DropdownWindow.css";
+@import "./notifications/index.css";
+
+* {
+    font-family: "CodeNewRoman Nerd Font Mono", "Symbols Only";
+    font-size: 16px;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}

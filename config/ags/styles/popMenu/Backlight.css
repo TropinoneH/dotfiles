@@ -1,0 +1,8 @@
+.backlight-menu .menu-slider trough highlight {
+    background: #81a1c1;
+    border-radius: 0.3rem;
+}
+
+.backlight-menu .menu-label-container.selected label {
+    color: #b48ead;
+}
