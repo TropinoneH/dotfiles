@@ -15,12 +15,16 @@ export const defaultScheme = {
     violet: "#b69bf1",
     /** red: #f7768b */
     red: "#f7768b",
+    /** reddish: #F44336 */
+    reddish: "#F44336",
     /** yellow: #ebcb8b */
     yellow: "#ebcb8b",
     /** peach: #d9b172 */
     peach: "#d9b172",
-    /** orange: #d08770 */
-    orange: "#d08770",
+    /** orange: #FBC02D */
+    orange: "#FBC02D",
+    /** brown: #d08770 */
+    brown: "#d08770",
     /** green: #a3be8c */
     green: "#a8cd76",
     /** blue: #0087bd */

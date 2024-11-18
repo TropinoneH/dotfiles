@@ -12,6 +12,13 @@ export const theme = (scheme = defaultScheme) => ({
             color: scheme.fg,
             bg: scheme.bg
         },
+        battery: {
+            bg: scheme.bg,
+            color: scheme.fg,
+            iconColor: scheme.green,
+            warningColor: scheme.orange,
+            criticalColor: scheme.reddish
+        },
         bluetooth: {
             color: scheme.fg,
             bg: scheme.bg,

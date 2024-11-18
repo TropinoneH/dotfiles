@@ -7,6 +7,7 @@ import Powermenu from "./Powermenu"
 import SysTray from "./SysTray"
 import Bluetooth from "./Bluetooth"
 import Network from "./Network"
+import Battery from "./Battery"
 
 export default (monitor: Gdk.Monitor) => {
     return (
@@ -25,6 +26,7 @@ export default (monitor: Gdk.Monitor) => {
                 </box>
                 <Date />
                 <box halign={Gtk.Align.END}>
+                    <Battery />
                     <Network />
                     <Bluetooth />
                     <SysTray />
