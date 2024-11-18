@@ -1,10 +1,15 @@
 import { App } from "astal/gtk3"
 import style from "./style.scss"
 import Bar from "./modules/Bar"
+import { getMonitor, mapAllMonitors } from "./libs/monitor"
 
 App.start({
     css: style,
     main() {
-        App.get_monitors().map(Bar)
+        const allMonitorsApps = [Bar]
+
+        mapAllMonitors(allMonitorsApps)
+        App.connect("monitor-added", () => mapAllMonitors(allMonitorsApps))
+        App.connect("monitor-removed", () => mapAllMonitors(allMonitorsApps))
     }
 })

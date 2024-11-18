@@ -1,4 +1,4 @@
-import { App, Astal, Gdk, Gtk } from "astal/gtk3"
+import { Gdk, Gtk } from "astal/gtk3"
 import Date from "./Date"
 import AppLauncher from "./AppLauncher"
 import Workspace from "./Workspace"
@@ -9,30 +9,20 @@ import Bluetooth from "./Bluetooth"
 import Network from "./Network"
 import Battery from "./Battery"
 
-export default (monitor: Gdk.Monitor) => {
-    return (
-        <window
-            gdkmonitor={monitor}
-            exclusivity={Astal.Exclusivity.EXCLUSIVE}
-            anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT | Astal.WindowAnchor.RIGHT}
-            application={App}
-            className="bar"
-        >
-            <centerbox>
-                <box halign={Gtk.Align.START}>
-                    <AppLauncher />
-                    <Workspace monitor={monitor} />
-                    <Title monitor={monitor} />
-                </box>
-                <Date />
-                <box halign={Gtk.Align.END}>
-                    <Battery />
-                    <Network />
-                    <Bluetooth />
-                    <SysTray />
-                    <Powermenu />
-                </box>
-            </centerbox>
-        </window>
-    )
-}
+export default ({ monitor }: { monitor: Gdk.Monitor }) => (
+    <centerbox>
+        <box halign={Gtk.Align.START}>
+            <AppLauncher />
+            <Workspace monitor={monitor} />
+            <Title monitor={monitor} />
+        </box>
+        <Date />
+        <box halign={Gtk.Align.END}>
+            <Battery />
+            <Network />
+            <Bluetooth />
+            <SysTray />
+            <Powermenu />
+        </box>
+    </centerbox>
+)

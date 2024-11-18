@@ -12,6 +12,12 @@ export const theme = (scheme = defaultScheme) => ({
             color: scheme.fg,
             bg: scheme.bg
         },
+        audio: {
+            color: scheme.fg,
+            bg: scheme.bg,
+            muteColor: scheme.red,
+            iconColorL: scheme.red
+        },
         battery: {
             bg: scheme.bg,
             color: scheme.fg,
@@ -63,6 +69,13 @@ export const config = {
             onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("wpaperctl next") : exec("wpaperctl previous")),
             onPrimaryClick: () => exec("rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi")
         },
+        audio: {
+            onClick: (_: any, e: Astal.ClickEvent) => {
+                if (e.button === 1) print("pop menu todo")
+                else if (e.button === 3) exec("pavucontrol-qt")
+            },
+            onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.delta_x + e.delta_y > 0 ? "+1%" : "-1%"}`)
+        },
         bluetooth: {
             onClick: (_: any, e: Astal.ClickEvent) => {
                 if (e.button === 1) print("pop menu todo")
@@ -77,13 +90,6 @@ export const config = {
         },
         powermenu: {
             onPrimaryClick: () => exec("wlogout")
-        },
-        volume: {
-            onClick: (_: any, e: Astal.ClickEvent) => {
-                if (e.button === 1) print("pop menu todo")
-                else if (e.button === 3) exec("pavucontrol-qt")
-            },
-            onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.delta_x + e.delta_y > 0 ? "+1%" : "-1%"}`)
         },
         workspace: {
             onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1")),
