@@ -1,31 +1,31 @@
 const Hyprland = await Service.import("hyprland")
 
+
+/** @type {import("types/widgets/window").Window<any, unknown>[]} */
+const windowList = []
+
 /**
- * @returns {Array}
- */
-export const forAllMonitors = (fn = print) => {
+* @param fn {(monitor: number) => import("types/widgets/window").Window<any, unknown>}
+* @returns {import("types/widgets/window").Window<any, unknown>[]}
+*/
+const addAllMonitors = (fn) => {
+    windowList.forEach((window) => {
+        window.destroy()
+    })
     const monitors = Hyprland.monitors
-    const length = monitors.length
-    const arr = []
-    for (let i = 0; i < length; i++) {
-        const win = fn(monitors[i].id)
-        arr.push(win)
-    }
-    Hyprland.connect("monitor-added", (_, /**@type{string}*/ name) => {
-        const monitor = Hyprland.monitors.find((mon) => mon.name === name)
-        if (monitor === undefined) return
-        const win = fn(monitor.id)
-        if (win !== undefined) {
-            App.addWindow(win)
-            arr.push(win)
-        }
+    monitors.forEach((monitor) => {
+        windowList.push(fn(monitor.id))
     })
-    Hyprland.connect("monitor-removed", (_, /**@type{string}*/ name) => {
-        const monitor = Hyprland.monitors.find((mon) => mon.name === name)
-        if (monitor === undefined) return
-        arr.forEach((item) => {
-            if (item.monitor == monitor.id) App.removeWindow(item)
-        })
-    })
-    return arr
+
+    return windowList
+}
+
+/**
+* @param fn {(monitor: number) => import("types/widgets/window").Window<any, unknown>}
+* @returns {import("types/widgets/window").Window<any, unknown>[]}
+*/
+export const forAllMonitors = (fn) => {
+    Hyprland.connect("monitor-added", () => addAllMonitors(fn))
+    Hyprland.connect("monitor-removed", () => addAllMonitors(fn))
+    return addAllMonitors(fn)
 }
