@@ -27,7 +27,7 @@ play = [
 image = [{ run = 'imv "$@"', desc = "image viewer", for = "unix" }]
 markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
 pdf = [
-    { run = 'okular "$@"', orphan = true, for = "unix", desc = "pdf viewer" },
+    { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice pdf viewer" },
 ]
 office = [
     { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice" },

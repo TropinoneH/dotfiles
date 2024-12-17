@@ -80,8 +80,6 @@ sudo pacman -S --noconfirm libmpdclient
 sudo pacman -S --noconfirm ncmpcpp mpd mpc
 # better cat
 sudo pacman -S --noconfirm bat
-# pdf viewer
-sudo pacman -S --noconfirm okular
 # notification
 sudo pacman -S --noconfirm mako
 # image viewer
