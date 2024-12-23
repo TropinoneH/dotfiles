@@ -43,6 +43,8 @@ cd ~/Downloads/pkgs/pacman || exit
 
 # firmware
 paru -S --noconfirm upd72020x-fw
+# hyprland qtutils
+paru -S --noconfirm hyprland-qtutils-git
 # web browser
 paru -S --noconfirm google-chrome
 # color picker
