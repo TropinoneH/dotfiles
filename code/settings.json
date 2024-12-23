@@ -112,5 +112,8 @@
     ],
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSaveMode": "modificationsIfAvailable",
-    "diffEditor.hideUnchangedRegions.enabled": true
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
