@@ -107,7 +107,7 @@
     "terminal.integrated.inheritEnv": false,
     "black-formatter.args": [
         "--line-length",
-        "120",
+        "160",
         "--quiet"
     ],
     "editor.defaultFormatter": "ms-python.black-formatter",
