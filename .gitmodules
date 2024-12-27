@@ -16,3 +16,6 @@
 [submodule "typora/ocean-theme"]
     path = typora/ocean-theme
     url = git@github.com:TropinoneH/ocean-theme
+[submodule "config/yazi/plugins/starship.yazi"]
+	path = config/yazi/plugins/starship.yazi
+	url = https://github.com/Rolv-Apneseth/starship.yazi.git
