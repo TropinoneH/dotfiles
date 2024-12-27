@@ -1,5 +1,15 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
+
 [manager]
 show_hidden = false
 show_symlink = true
@@ -25,7 +35,10 @@ play = [
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
 image = [{ run = 'imv "$@"', desc = "image viewer", for = "unix" }]
-markdown = [{ run = 'typora "$@"', orphan = true, desc = "markdown" }]
+markdown = [
+    { run = 'typora "$@"', orphan = true, desc = "markdown" },
+    { run = 'kitty -T editor nvim "$@"', orphan = true, for = "unix" },
+]
 pdf = [
     { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice pdf viewer" },
 ]
@@ -35,11 +48,6 @@ office = [
 
 [open]
 rules = [
-    # { name = "*/", use = [
-    #     "edit",
-    #     "open",
-    # ] },
-
     { name = "*.md", use = ["markdown"] },
     { name = "*.xls", use = ["office"] },
     { name = "*.xlsx", use = ["office"] },
@@ -68,7 +76,4 @@ rules = [
 
     { mime = "application/pdf", use = ["pdf"] },
     { mime = "application/epub+zip", use = ["pdf"] },
-
-
-    # { mime = "*", use = ["open"] },
 ]

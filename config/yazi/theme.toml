@@ -3,7 +3,6 @@ dark = "catppuccin-mocha"
 light = "catppuccin-mocha"
 
 [icon]
-
 rules = [
     # Programming
     { name = "*.c", text = "", fg = "#599eff" },
