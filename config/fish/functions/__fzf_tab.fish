@@ -14,16 +14,16 @@ end
 function __fzf_tab -d 'fzf completion and print selection back to commandline'
     set -l cmd (commandline -co) (commandline -ct)
     switch $cmd[1]
-    case env sudo
-        for i in (seq 2 (count $cmd))
-            switch $cmd[$i]
-            case '-*'
-            case '*=*'
-            case '*'
-                set cmd $cmd[$i..-1]
-                break
+        case env sudo
+            for i in (seq 2 (count $cmd))
+                switch $cmd[$i]
+                    case '-*'
+                    case '*=*'
+                    case '*'
+                        set cmd $cmd[$i..-1]
+                        break
+                end
             end
-        end
     end
 
     set cmd (string join -- ' ' $cmd)
@@ -42,18 +42,18 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
     for i in (seq (count $result))
         set -l r $result[$i]
         switch $prefix
-        case "'"
-            commandline -t -- (string escape -- $r)
-        case '"'
-            if string match '*"*' -- $r >/dev/null
-                commandline -t --  (string escape -- $r)
-            else
-                commandline -t -- '"'$r'"'
-            end
-        case '~'
-            commandline -t -- (string sub -s 2 (string escape -n -- $r))
-        case '*'
-            commandline -t -- (string escape -n -- $r)
+            case "'"
+                commandline -t -- (string escape -- $r)
+            case '"'
+                if string match '*"*' -- $r >/dev/null
+                    commandline -t --  (string escape -- $r)
+                else
+                    commandline -t -- '"'$r'"'
+                end
+            case '~'
+                commandline -t -- (string sub -s 2 (string escape -n -- $r))
+            case '*'
+                commandline -t -- (string escape -n -- $r)
         end
         [ $i -lt (count $result) ]; and commandline -i ' '
     end
