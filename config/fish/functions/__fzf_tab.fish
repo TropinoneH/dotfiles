@@ -33,9 +33,13 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
 
     set -l result
     if [ $is_kill ]
-        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
+        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r
+            set result $result $r
+        end
     else
-        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" --with-nth=1 -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r; set result $result $r; end
+        string join -- \n $complist | sort -u | eval (__fzfcmd) --delimiter "\t" --with-nth=1 -m --select-1 --exit-0 --header '(commandline)' | cut -f1 | while read -l r
+            set result $result $r
+        end
     end
 
     set prefix (string sub -s 1 -l 1 -- (commandline -t))
@@ -46,7 +50,7 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
                 commandline -t -- (string escape -- $r)
             case '"'
                 if string match '*"*' -- $r >/dev/null
-                    commandline -t --  (string escape -- $r)
+                    commandline -t -- (string escape -- $r)
                 else
                     commandline -t -- '"'$r'"'
                 end
