@@ -22,9 +22,17 @@ function proxy_off
 end
 
 function proxy_toggle
+    set server "127.0.0.1"
+    set port "7890"
+    if test (count $argv) -ge 1
+        set server $argv[1]
+    end
+    if test (count $argv) -ge 2
+        set port $argv[2]
+    end
     if set -q http_proxy; and set -q https_proxy
         proxy_off
     else
-        proxy_on
+        proxy_on $server $port
     end
 end
