@@ -100,7 +100,6 @@
         "workbench.action.tasks.configureTaskRunner",
         "workbench.action.tasks.runTask"
     ],
-    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "catppuccin-mocha",
     "window.menuBarVisibility": "toggle",
     "oneDarkPro.markdownStyle": false,
@@ -110,10 +109,13 @@
         "160",
         "--quiet"
     ],
-    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "ms-python.black-formatter"
 }
