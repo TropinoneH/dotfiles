@@ -43,8 +43,6 @@ cd ~/Downloads/pkgs/pacman || exit
 
 # firmware
 paru -S --noconfirm upd72020x-fw
-# hyprland qtutils
-paru -S --noconfirm hyprland-qtutils-git
 # web browser
 paru -S --noconfirm google-chrome
 # color picker
@@ -70,15 +68,12 @@ paru -S --noconfirm slurp-git hyprshot-git
 paru -S --noconfirm obs-vaapi
 # wechat
 paru -S --noconfirm wechat-universal-bwrap
-# music player
-paru -S --noconfirm yesplaymusic
 # office
 paru -S --noconfirm onlyoffice-bin
 # wlogout
 paru -S --noconfirm wlogout-git
-# auto lock
+# auto screen lock
 paru -S --noconfirm swayidle-git
-# screen locker
 paru -S --noconfirm swaylock-effects-git
 # ags
 paru -S --noconfirm aylur-gtk-shell-git

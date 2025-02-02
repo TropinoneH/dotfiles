@@ -6,15 +6,12 @@ sudo pacman -S --noconfirm mesa
 # bluetooth
 sudo pacman -S --noconfirm bluedevil
 # audio
-sudo pacman -S --noconfirm alsa-utils pulseaudio pulseaudio-alsa
 sudo pacman -S --noconfirm sof-firmware
-# bluetooth audio
-sudo pacman -S --noconfirm pulseaudio-bluetooth
+sudo pacman -S --noconfirm pipewire wireplumber
 # desktop environment
 sudo pacman -S --noconfirm plasma-framework5
 sudo pacman -S --noconfirm acpi
 sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-sudo pacman -S --noconfirm pipewire wireplumber
 # qt style
 sudo pacman -S --noconfirm qt6ct
 # nas smb file system utils
@@ -55,8 +52,6 @@ sudo pacman -S --noconfirm exa
 sudo pacman -S --noconfirm yazi
 # gui file manager
 sudo pacman -S --noconfirm nautilus
-# auto lock
-sudo pacman -S --noconfirm xautolock
 # screen shot
 sudo pacman -S --noconfirm grim
 # screen record
@@ -70,7 +65,7 @@ sudo pacman -S --noconfirm tldr
 # downloader
 sudo pacman -S --noconfirm wget
 # neovim editor
-sudo pacman -S --noconfirm neovim neovide
+sudo pacman -S --noconfirm neovim
 # npm package manager
 sudo pacman -S --noconfirm npm pnpm
 # web browser
@@ -80,14 +75,12 @@ sudo pacman -S --noconfirm libmpdclient
 sudo pacman -S --noconfirm ncmpcpp mpd mpc
 # better cat
 sudo pacman -S --noconfirm bat
-# notification
-sudo pacman -S --noconfirm mako
 # image viewer
 sudo pacman -S --noconfirm imv
 # code
 sudo pacman -S --noconfirm go
 sudo pacman -S --noconfirm rustup
-sudo pacman -S --noconfirm jdk8-openjdk jdk17-openjdk
+sudo pacman -S --noconfirm jdk17-openjdk
 sudo pacman -S --noconfirm dart-sass
 # audio
 sudo pacman -S --noconfirm pavucontrol-qt
@@ -116,7 +109,7 @@ sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-s
 git clone git@github.com:tldr-pages/tldr ~/.cache/tldr
 
 # use npm
-sudo npm install -g n nrm figlet pnpm prettier
+sudo npm install -g n nrm figlet prettier
 
 # rust
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
