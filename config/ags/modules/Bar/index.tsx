@@ -8,6 +8,7 @@ import SysTray from "./SysTray"
 import Bluetooth from "./Bluetooth"
 import Network from "./Network"
 import Battery from "./Battery"
+import Audio from "./Audio"
 
 export default ({ monitor }: { monitor: Gdk.Monitor }) => (
     <centerbox>
@@ -18,6 +19,7 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => (
         </box>
         <Date />
         <box halign={Gtk.Align.END}>
+            <Audio />
             <Battery />
             <Network />
             <Bluetooth />

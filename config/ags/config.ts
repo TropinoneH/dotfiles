@@ -16,7 +16,7 @@ export const theme = (scheme = defaultScheme) => ({
             color: scheme.fg,
             bg: scheme.bg,
             muteColor: scheme.red,
-            iconColorL: scheme.red
+            iconColor: scheme.red
         },
         battery: {
             bg: scheme.bg,
@@ -28,7 +28,7 @@ export const theme = (scheme = defaultScheme) => ({
         bluetooth: {
             color: scheme.fg,
             bg: scheme.bg,
-            iconColor: scheme.blue,
+            iconColor: scheme.blue
         },
         date: {
             color: scheme.fg,
@@ -74,7 +74,19 @@ export const config = {
                 if (e.button === 1) print("pop menu todo")
                 else if (e.button === 3) exec("pavucontrol-qt")
             },
-            onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.delta_x + e.delta_y > 0 ? "+1%" : "-1%"}`)
+            speaker: {
+                onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.delta_x + e.delta_y > 0 ? "-1%" : "+1%"}`),
+                icons: [
+                    [["head", "usb"], "󰋋 "],
+                    [["bluetooth"], "󰂰 "],
+                    [["hdmi"], "󰋌 "],
+                    [["pci", ""], " "]
+                ]
+            },
+            microphone: {
+                onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-source-volume @DEFAULT_SOURCE@ ${e.delta_x + e.delta_y > 0 ? "+1%" : "-1%"}`),
+                icons: []
+            }
         },
         bluetooth: {
             onClick: (_: any, e: Astal.ClickEvent) => {
@@ -92,7 +104,8 @@ export const config = {
             onPrimaryClick: () => exec("wlogout")
         },
         workspace: {
-            onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1")),
+            onScroll: (_: any, e: Astal.ScrollEvent) =>
+                e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1"),
             icons: ["", "", "", "", "", "", "", "", "", ""]
         }
     }
