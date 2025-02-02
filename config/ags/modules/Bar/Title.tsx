@@ -8,7 +8,6 @@ const Hyprland = hyprland.get_default()
 export default ({ monitor }: { monitor: Gdk.Monitor }) => {
     const activeClient = Variable<{ initialClass: string; title: string; pid: number } | null>(null)
     const activeChanged = bind(Hyprland, "focusedClient")
-    Hyprland.connect("client-added", (_, client) => { client.focus() })
 
     const theme = config.theme.bar.title
     const monitorID = getMonitor(monitor).id
