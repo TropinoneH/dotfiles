@@ -2,7 +2,7 @@ import hyprland from "gi://AstalHyprland"
 import { bind, Variable } from "astal"
 import { Gdk } from "astal/gtk3"
 import { config } from "../../config"
-import { getMonitor } from "../../libs/monitor"
+import { getMonitor } from "./index"
 const Hyprland = hyprland.get_default()
 
 export default ({ monitor }: { monitor: Gdk.Monitor }) => {

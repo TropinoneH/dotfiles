@@ -1,7 +1,7 @@
 import { Gdk } from "astal/gtk3"
 import { bind } from "astal"
 import hyprland from "gi://AstalHyprland"
-import { getMonitor } from "../../libs/monitor"
+import { getMonitor } from "./index"
 import { config } from "../../config"
 import { PointerButton } from "../components/Button"
 const Hyprland = hyprland.get_default()

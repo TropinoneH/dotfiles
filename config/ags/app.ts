@@ -1,15 +1,24 @@
-import { App } from "astal/gtk3"
+import { App, Gdk, Gtk } from "astal/gtk3"
 import style from "./style.scss"
 import Bar from "./modules/Bar"
-import { mapAllMonitors } from "./libs/monitor"
 
 App.start({
     css: style,
     main() {
-        const allMonitorsApps = [Bar]
+        const bars = new Map<Gdk.Monitor, Gtk.Widget>()
 
-        mapAllMonitors(allMonitorsApps)
-        App.connect("monitor-added", () => mapAllMonitors(allMonitorsApps))
-        App.connect("monitor-removed", () => mapAllMonitors(allMonitorsApps))
+        // initialize
+        for (const gdkmonitor of App.get_monitors()) {
+            bars.set(gdkmonitor, Bar(gdkmonitor))
+        }
+
+        App.connect("monitor-added", (_, gdkmonitor) => {
+            bars.set(gdkmonitor, Bar(gdkmonitor))
+        })
+
+        App.connect("monitor-removed", (_, gdkmonitor) => {
+            bars.get(gdkmonitor)?.destroy()
+            bars.delete(gdkmonitor)
+        })
     }
 })
