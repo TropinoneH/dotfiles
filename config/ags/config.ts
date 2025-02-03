@@ -30,6 +30,11 @@ export const theme = (scheme = defaultScheme) => ({
             bg: scheme.bg,
             iconColor: scheme.blue
         },
+        brightness: {
+            color: scheme.fg,
+            bg: scheme.bg,
+            iconColor: scheme.peach
+        },
         date: {
             color: scheme.fg,
             bg: scheme.bg,
@@ -84,7 +89,7 @@ export const config = {
                 ]
             },
             microphone: {
-                onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-source-volume @DEFAULT_SOURCE@ ${e.delta_x + e.delta_y > 0 ? "+1%" : "-1%"}`),
+                onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-source-volume @DEFAULT_SOURCE@ ${e.delta_x + e.delta_y > 0 ? "-1%" : "+1%"}`),
                 icons: []
             }
         },
@@ -93,6 +98,13 @@ export const config = {
                 if (e.button === 1) print("pop menu todo")
                 else if (e.button === 3) exec("rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi")
             }
+        },
+        brightness: {
+            onClick: (_: any, e: Astal.ClickEvent) => {
+                if (e.button === 1) print("pop menu todo")
+            },
+            onScroll: (_: any, e: Astal.ScrollEvent) => exec(`brightnessctl set 2%${e.delta_x + e.delta_y > 0 ? "-" : "+"}`),
+            icons: ["", "", "", "", "", "", "", "", ""]
         },
         network: {
             onClick: (_: any, e: Astal.ClickEvent) => {

@@ -9,6 +9,7 @@ import Bluetooth from "./Bluetooth"
 import Network from "./Network"
 import Battery from "./Battery"
 import Audio from "./Audio"
+import Brightness from "./Brightness"
 
 export default ({ monitor }: { monitor: Gdk.Monitor }) => (
     <centerbox>
@@ -19,6 +20,7 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => (
         </box>
         <Date />
         <box halign={Gtk.Align.END}>
+            <Brightness />
             <Audio />
             <Battery />
             <Network />
