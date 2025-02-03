@@ -1,24 +1,29 @@
 import { App, Gdk, Gtk } from "astal/gtk3"
 import style from "./style.scss"
 import Bar from "./modules/Bar"
+import NotificationPopups from "./modules/Notifications"
+
+const mapMonitor = (monitor: Gdk.Monitor) => {
+    return [Bar(monitor), NotificationPopups(monitor)]
+}
 
 App.start({
     css: style,
     main() {
-        const bars = new Map<Gdk.Monitor, Gtk.Widget>()
+        const bars = new Map<Gdk.Monitor, Gtk.Widget[]>()
 
         // initialize
-        for (const gdkmonitor of App.get_monitors()) {
-            bars.set(gdkmonitor, Bar(gdkmonitor))
+        for (const gdkMonitor of App.get_monitors()) {
+            bars.set(gdkMonitor, mapMonitor(gdkMonitor))
         }
 
-        App.connect("monitor-added", (_, gdkmonitor) => {
-            bars.set(gdkmonitor, Bar(gdkmonitor))
+        App.connect("monitor-added", (_, gdkMonitor) => {
+            bars.set(gdkMonitor, mapMonitor(gdkMonitor))
         })
 
-        App.connect("monitor-removed", (_, gdkmonitor) => {
-            bars.get(gdkmonitor)?.destroy()
-            bars.delete(gdkmonitor)
+        App.connect("monitor-removed", (_, gdkMonitor) => {
+            bars.get(gdkMonitor)?.map(item => item.destroy())
+            bars.delete(gdkMonitor)
         })
     }
 })
