@@ -12,18 +12,26 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => {
     const theme = config.theme.bar.workspace
 
     return (
-        <box css={`color: ${theme.color}; background: ${theme.bg}; margin-right: 0.3rem; border-radius: 0.5rem;`}>
+        <box
+            css={`
+                color: ${theme.color};
+                background: ${theme.bg};
+                margin-right: 0.3rem;
+                border-radius: 0.5rem;
+            `}
+        >
             <eventbox onScroll={config.bar.workspace.onScroll}>
                 <box>
                     {bind(Hyprland, "workspaces").as((workspaces) =>
                         workspaces
                             .filter((w) => w.monitor?.id === monitorID)
-                            .sort((w1, w2) => (w1.id - w2.id))
+                            .filter((w) => !w.name.startsWith("special"))
+                            .sort((w1, w2) => w1.id - w2.id)
                             .map((w) => (
                                 <PointerButton
                                     css={bind(Hyprland, "focusedWorkspace").as(
                                         (focused) => `
-                                        color: ${focused == w ? theme.active : theme.color};
+                                        color: ${focused === w ? theme.active : theme.color};
                                         background: transparent;
                                         border-radius: 0.5rem;
                                         `

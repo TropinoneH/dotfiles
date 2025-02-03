@@ -116,8 +116,7 @@ export const config = {
             onPrimaryClick: () => exec("wlogout")
         },
         workspace: {
-            onScroll: (_: any, e: Astal.ScrollEvent) =>
-                e.delta_x + e.delta_y > 0 ? exec("hyprctl dispatch workspace m+1") : exec("hyprctl dispatch workspace m-1"),
+            onScroll: (_: any, e: Astal.ScrollEvent) => exec(`hyprctl dispatch workspace m${e.delta_x + e.delta_y > 0 ? "+" : "-"}1`),
             icons: ["", "", "", "", "", "", "", "", "", ""]
         }
     }
