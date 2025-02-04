@@ -29,8 +29,7 @@ type Props = {
     notification: Notifd.Notification
 }
 
-export default function Notification(props: Props) {
-    const { notification: n, onHoverLost, setup } = props
+export default ({ notification: n, onHoverLost, setup }: Props) => {
     const { START, CENTER, END } = Gtk.Align
 
     return (

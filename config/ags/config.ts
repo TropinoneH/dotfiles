@@ -119,5 +119,10 @@ export const config = {
             onScroll: (_: any, e: Astal.ScrollEvent) => exec(`hyprctl dispatch workspace m${e.delta_x + e.delta_y > 0 ? "+" : "-"}1`),
             icons: ["", "", "", "", "", "", "", "", "", ""]
         }
+    },
+    notifications: {
+        timeout: 5000,
+        doCache: true,
+        displayTotal: 5
     }
 }

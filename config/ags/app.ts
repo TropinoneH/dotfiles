@@ -4,13 +4,15 @@ import Bar from "./modules/Bar"
 import NotificationPopups from "./modules/Notifications"
 
 const mapMonitor = (monitor: Gdk.Monitor) => {
-    return [Bar(monitor), NotificationPopups(monitor)]
+    return [Bar(monitor)]
 }
 
 App.start({
     css: style,
     main() {
         const bars = new Map<Gdk.Monitor, Gtk.Widget[]>()
+
+        NotificationPopups(App.get_monitors()[0])
 
         // initialize
         for (const gdkMonitor of App.get_monitors()) {
