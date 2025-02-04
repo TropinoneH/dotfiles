@@ -6,17 +6,12 @@ import { type Subscribable } from "astal/binding"
 import { bind, timeout } from "astal"
 import { config } from "../../config"
 
-// see comment below in constructor
 const TIMEOUT_DELAY = config.notifications.timeout
 const displayTotal = config.notifications.displayTotal
 
 const Hyprland = hyprland.get_default()
 
-// The purpose if this class is to replace Variable<Array<Widget>>
-// with a Map<number, Widget> type in order to track notification widgets
-// by their id, while making it conviniently bindable as an array
 class NotificationMap implements Subscribable {
-    // the underlying map to keep track of id widget pairs
     private var: Map<number, Notifd.Notification> = new Map()
     private subs: Set<(map: Map<number, Notifd.Notification>) => void> = new Set()
 
@@ -27,17 +22,11 @@ class NotificationMap implements Subscribable {
     constructor() {
         const notifd = Notifd.get_default()
 
-        notifd.connect("notified", (_, id) => {
-            const keys = [...this.var.keys()]
-            if (keys.length >= displayTotal) this.delete(keys.sort((a, b) => a - b)[0])
-            this.set(id, notifd.get_notification(id)!)
-        })
-
+        notifd.connect("notified", (_, id) => this.set(id, notifd.get_notification(id)!))
         notifd.connect("resolved", (_, id) => this.delete(id))
     }
 
     private set(key: number, value: Notifd.Notification) {
-        // in case of replacecment destroy previous widget
         this.var.set(key, value)
         this.notifiy()
     }
@@ -47,7 +36,6 @@ class NotificationMap implements Subscribable {
         this.notifiy()
     }
 
-    // needed by the Subscribable interface
     get() {
         return this.var
     }
@@ -72,19 +60,16 @@ export default function NotificationPopups(gdkmonitor: Gdk.Monitor) {
         >
             <box vertical>
                 {bind(notifs).as((notify) =>
-                    [...notify.values()].reverse().map((n) => {
-                        let timer: ReturnType<typeof timeout>
-                        return (
+                    [...notify.values()]
+                        .reverse()
+                        .slice(0, displayTotal)
+                        .map((n) => (
                             <Notification
                                 notification={n}
-                                setup={() => {
-                                    timer = timeout(TIMEOUT_DELAY, () => n.dismiss())
-                                }}
+                                setup={() => timeout(TIMEOUT_DELAY, () => notify.has(n.id) && n.dismiss())}
                                 onHoverLost={() => n.dismiss()}
-                                onHover={() => timer.cancel()}
                             />
-                        )
-                    })
+                        ))
                 )}
             </box>
         </window>
