@@ -20,13 +20,6 @@ class NotificationMap implements Subscribable {
     private var: Map<number, Notifd.Notification> = new Map()
     private subs: Set<(map: Map<number, Notifd.Notification>) => void> = new Set()
 
-    private static instance: NotificationMap
-
-    static get_default() {
-        if (!this.instance) this.instance = new NotificationMap()
-        return this.instance
-    }
-
     private notifiy() {
         for (const sub of this.subs) sub(this.var)
     }
@@ -49,7 +42,7 @@ class NotificationMap implements Subscribable {
         this.notifiy()
     }
 
-    delete(key: number) {
+    private delete(key: number) {
         this.var.delete(key)
         this.notifiy()
     }
@@ -68,23 +61,30 @@ class NotificationMap implements Subscribable {
 
 export default function NotificationPopups(gdkmonitor: Gdk.Monitor) {
     const { TOP, RIGHT } = Astal.WindowAnchor
-    const notifs = NotificationMap.get_default()
+    const notifs = new NotificationMap()
 
     return (
         <window
-            className="NotificationPopups"
+            css="all: unset;"
             gdkmonitor={bind(Hyprland, "focusedMonitor").as((m) => Gdk.Display.get_default()?.get_monitor(m.id) ?? gdkmonitor)}
             exclusivity={Astal.Exclusivity.EXCLUSIVE}
             anchor={TOP | RIGHT}
         >
             <box vertical>
                 {bind(notifs).as((notify) =>
-                    [...notify.values()].reverse().map((n) => (
-                        <Notification
-                            notification={n}
-                            setup={() => timeout(TIMEOUT_DELAY, () => notifs.delete(n.id))}
-                            onHoverLost={() => notifs.delete(n.id)} />
-                    ))
+                    [...notify.values()].reverse().map((n) => {
+                        let timer: ReturnType<typeof timeout>
+                        return (
+                            <Notification
+                                notification={n}
+                                setup={() => {
+                                    timer = timeout(TIMEOUT_DELAY, () => n.dismiss())
+                                }}
+                                onHoverLost={() => n.dismiss()}
+                                onHover={() => timer.cancel()}
+                            />
+                        )
+                    })
                 )}
             </box>
         </window>

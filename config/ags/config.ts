@@ -64,6 +64,15 @@ export const theme = (scheme = defaultScheme) => ({
             hover: scheme.text1,
             active: scheme.cyan
         }
+    },
+    notifications: {
+        fg: scheme.fg,
+        bg: scheme.overlay1,
+        critical: scheme.reddish,
+        warning: scheme.orange,
+        info: scheme.overlay2,
+        border: scheme.bg,
+        actionBg: scheme.overlay3
     }
 })
 
