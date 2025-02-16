@@ -48,7 +48,7 @@ paru -S --noconfirm google-chrome
 # color picker
 paru -S --noconfirm hyprpicker-git
 # email client
-paru -S --noconfirm mailspring
+paru -S --noconfirm mailspring-bin
 # notion: note and collaboration
 paru -S --noconfirm notion-app-electron
 # IDE
@@ -61,7 +61,7 @@ paru -S --noconfirm ueberzugpp
 paru -S --noconfirm cava
 # clipboard
 paru -S --noconfirm wl-clipboard-git
-paru -S --noconfirm cliphist
+paru -S --noconfirm cliphist-git
 # screen shot
 paru -S --noconfirm slurp-git hyprshot-git
 # screen recorder

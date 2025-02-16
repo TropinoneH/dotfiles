@@ -9,7 +9,6 @@ sudo pacman -S --noconfirm bluedevil
 sudo pacman -S --noconfirm sof-firmware
 sudo pacman -S --noconfirm pipewire wireplumber
 # desktop environment
-sudo pacman -S --noconfirm plasma-framework5
 sudo pacman -S --noconfirm acpi
 sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 # qt style
@@ -34,6 +33,8 @@ sudo pacman -S --noconfirm gnome-control-center
 sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord
 # colorize
 sudo pacman -S --noconfirm lolcat
+# console prompt
+sudo pacman -S --noconfirm starship
 # better find
 sudo pacman -S --noconfirm fd fzf ripgrep
 # uncompress
@@ -71,7 +72,6 @@ sudo pacman -S --noconfirm npm pnpm
 # web browser
 sudo pacman -S --noconfirm firefox
 # music player
-sudo pacman -S --noconfirm libmpdclient
 sudo pacman -S --noconfirm ncmpcpp mpd mpc
 # better cat
 sudo pacman -S --noconfirm bat
@@ -85,11 +85,11 @@ sudo pacman -S --noconfirm dart-sass
 # audio
 sudo pacman -S --noconfirm pavucontrol-qt
 # image editor
-sudo pacman -S --noconfirm imagemagick
+# sudo pacman -S --noconfirm imagemagick
 # ssh file system
 sudo pacman -S --noconfirm sshfs
 # shell
-sudo pacman -S --noconfirm fish
+sudo pacman -S --noconfirm fish zsh
 # calculator
 sudo pacman -S --noconfirm qalculate-qt
 # docker
