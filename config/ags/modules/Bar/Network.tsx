@@ -31,7 +31,7 @@ const Wired = (props: EventBoxProps) => (
         {...props}
         tooltipText={bind(Network, "wired").as((w) => `${w.device.interface}: ${deviceState(w.state)} | ${internet(w.internet)} | ${w.speed} Mbps`)}
     >
-        <label label="" css={`color: ${config.theme.bar.network.iconColor};`} />
+        <label label="" css={`color: ${config.theme.bar.network.iconColor};`} />
     </DimButton>
 )
 
