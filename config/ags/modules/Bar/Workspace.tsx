@@ -39,7 +39,7 @@ export default ({ monitor }: { monitor: Gdk.Monitor }) => {
                                     tooltipText={w.name}
                                     onClicked={() => w.focus()}
                                 >
-                                    <label label={w.id < 10 ? config.bar.workspace.icons[w.id - 1] : w.id.toString()} />
+                                    <label css="font-size: 1.5rem; margin: -0.5rem;" label={w.id < 10 ? config.bar.workspace.icons[w.id - 1] : w.id.toString()} />
                                 </PointerButton>
                             ))
                     )}
