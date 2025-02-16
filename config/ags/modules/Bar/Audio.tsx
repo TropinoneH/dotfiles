@@ -18,7 +18,6 @@ const IconMap = (iconName: string) => {
         }
         if (contain) break
     }
-    console.log(iconName, ret)
     return ret
 }
 
