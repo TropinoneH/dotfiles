@@ -11,6 +11,8 @@ sudo pacman -S --noconfirm pipewire wireplumber
 # desktop environment
 sudo pacman -S --noconfirm acpi
 sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+# xwayland
+sudo pacman -S --noconfirm xwayland-satellite
 # qt style
 sudo pacman -S --noconfirm qt6ct
 # nas smb file system utils
@@ -85,7 +87,7 @@ sudo pacman -S --noconfirm dart-sass
 # audio
 sudo pacman -S --noconfirm pavucontrol-qt
 # image editor
-# sudo pacman -S --noconfirm imagemagick
+sudo pacman -S --noconfirm imagemagick
 # ssh file system
 sudo pacman -S --noconfirm sshfs
 # shell
