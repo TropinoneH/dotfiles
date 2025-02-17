@@ -17,11 +17,11 @@ cd .. || exit
 # curl -O https://ime-sec.gtimg.com/202407031906/962cda7d3d5a49ce5910c83f5c326ea2/pc/dl/gzindex/1680521603/sogoupinyin_4.2.1.145_amd64.deb
 # makepkg -si
 # sudo pacman -S fcitx-configtool
-# echo "GTK_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-# echo "QT_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-# echo "XMODIFIERS=@im=fcitx" | sudo tee -a /etc/environment
-# echo "SDL_IM_MODULE=fcitx" | sudo tee -a /etc/environment
-# echo "GLFW_IM_MODULE=ibus" | sudo tee -a /etc/environment
+echo "GTK_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+echo "QT_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+echo "XMODIFIERS=@im=fcitx" | sudo tee -a /etc/environment
+echo "SDL_IM_MODULE=fcitx" | sudo tee -a /etc/environment
+echo "GLFW_IM_MODULE=ibus" | sudo tee -a /etc/environment
 # cd .. || exit
 #
 git clone https://aur.archlinux.org/linuxqq.git
@@ -42,7 +42,7 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # firmware
-paru -S --noconfirm upd72020x-fw
+# paru -S --noconfirm upd72020x-fw
 # web browser
 paru -S --noconfirm google-chrome
 # color picker
