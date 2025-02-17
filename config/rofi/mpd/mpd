@@ -16,15 +16,15 @@ list_col='6'
 list_row='1'
 
 if [[ ${status} == *"[playing]"* ]]; then
-    option_1=""
+    option_1=""
 else
-    option_1=""
+    option_1=""
 fi
-option_2=""
-option_3=""
-option_4=""
-option_5=""
-option_6=""
+option_2=""
+option_3="󰒮"
+option_4="󰒭"
+option_5="󰑗"
+option_6=""
 
 # Toggle Actions
 active=''
@@ -36,9 +36,9 @@ if [[ ${status} == *"repeat: on"* ]]; then
         option_5="󰑘"
     elif [[ ${status} == *"single: off"* ]]; then
         active="-a 4"
-        option_5=""
+        option_5="󰑖"
     else
-        option_5=" Parsing Error"
+        option_5=" Parsing Error"
     fi
 elif [[ ${status} == *"repeat: off"* ]]; then
     if [[ ${status} == *"single: off"* ]]; then
@@ -47,17 +47,17 @@ elif [[ ${status} == *"repeat: off"* ]]; then
         active="-a 4"
         option_5="󰲡"
     else
-        option_5=" Parsing Error"
+        option_5=" Parsing Error"
     fi
 else
-    option_5=" Parsing Error"
+    option_5=" Parsing Error"
 fi
 if [[ ${status} == *"repeat: on"* ]]; then
     active="-a 4"
 elif [[ ${status} == *"repeat: off"* ]]; then
     urgent="-u 4"
 else
-    option_5=" Parsing Error"
+    option_5=" Parsing Error"
 fi
 # Random
 if [[ ${status} == *"random: on"* ]]; then
@@ -65,7 +65,7 @@ if [[ ${status} == *"random: on"* ]]; then
 elif [[ ${status} == *"random: off"* ]]; then
     [ -n "$urgent" ] && urgent+=",5" || urgent="-u 5"
 else
-    option_6=" Parsing Error"
+    option_6=" Parsing Error"
 fi
 
 # Rofi CMD
