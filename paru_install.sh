@@ -58,7 +58,7 @@ paru -S --noconfirm clang-format-all-git
 # image protocol
 paru -S --noconfirm ueberzugpp
 # music wave visualizer
-paru -S --noconfirm cava
+# paru -S --noconfirm cava
 # clipboard
 paru -S --noconfirm wl-clipboard-git
 paru -S --noconfirm cliphist-git
