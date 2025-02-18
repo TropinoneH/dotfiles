@@ -31,6 +31,8 @@ sudo pacman -S --noconfirm man-db
 sudo pacman -S --noconfirm gnome-control-center
 
 # software
+# polkit agent
+sudo pacman -S --noconfirm polkit hyprpolkitagent
 # Input method
 sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord
 # colorize
