@@ -100,6 +100,8 @@ sudo pacman -S --noconfirm qalculate-qt
 sudo pacman -S --noconfirm docker
 # tauri dependency
 sudo pacman -S --noconfirm webkit2gtk-4.1
+# game
+sudo pacman -S --noconfirm steam
 
 # python env
 sudo pacman -S --noconfirm python-neovim
