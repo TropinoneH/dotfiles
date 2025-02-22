@@ -11,8 +11,6 @@ sudo pacman -S --noconfirm pipewire wireplumber
 # desktop environment
 sudo pacman -S --noconfirm acpi
 sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-# xwayland
-sudo pacman -S --noconfirm xwayland-satellite
 # qt style
 sudo pacman -S --noconfirm qt6ct
 # nas smb file system utils
@@ -34,7 +32,7 @@ sudo pacman -S --noconfirm gnome-control-center
 # polkit agent
 sudo pacman -S --noconfirm polkit hyprpolkitagent
 # Input method
-sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord
+sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord fcitx5-configtool
 # colorize
 sudo pacman -S --noconfirm lolcat
 # console prompt
@@ -109,7 +107,7 @@ sudo pacman -S --noconfirm python-neovim
 sudo pacman -S --noconfirm texlive texlive-langchinese
 
 # font
-sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts
+sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd otf-codenewroman-nerd adobe-source-code-pro-fonts adobe-source-han-sans-cn-fonts ttf-opensans ttf-roboto-mono-nerd otf-font-awesome ttf-meslo-nerd
 
 # init tldr
 git clone git@github.com:tldr-pages/tldr ~/.cache/tldr

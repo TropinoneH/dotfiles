@@ -42,11 +42,12 @@ sudo ~/Documents/go/ElectronInjector/main -i crack
 cd ~/Downloads/pkgs/pacman || exit
 
 # firmware
-# paru -S --noconfirm upd72020x-fw
+# vpn
+paru -S --noconfirm clash-verge
 # web browser
 paru -S --noconfirm google-chrome
 # color picker
-paru -S --noconfirm hyprpicker-git
+paru -S --noconfirm hyprpicker
 # email client
 paru -S --noconfirm mailspring-bin
 # notion: note and collaboration
@@ -61,13 +62,13 @@ paru -S --noconfirm ueberzugpp
 # paru -S --noconfirm cava
 # clipboard
 paru -S --noconfirm wl-clipboard-git
-paru -S --noconfirm cliphist-git
+paru -S --noconfirm cliphist
 # screen shot
 paru -S --noconfirm slurp-git hyprshot-git
 # screen recorder
 paru -S --noconfirm obs-vaapi
 # wechat
-paru -S --noconfirm wechat-universal-bwrap
+paru -S --noconfirm wechat
 # office
 paru -S --noconfirm onlyoffice-bin
 # wlogout
@@ -76,7 +77,7 @@ paru -S --noconfirm wlogout-git
 paru -S --noconfirm swayidle-git
 paru -S --noconfirm swaylock-effects-git
 # ags
-paru -S --noconfirm aylur-gtk-shell-git
+paru -S --noconfirm aylurs-gtk-shell-git
 # rofi
 paru -S --noconfirm rofi-wayland
 paru -S --noconfirm rofi-bluetooth-git
