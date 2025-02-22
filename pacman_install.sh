@@ -99,7 +99,7 @@ sudo pacman -S --noconfirm docker
 # tauri dependency
 sudo pacman -S --noconfirm webkit2gtk-4.1
 # game
-sudo pacman -S --noconfirm steam
+sudo pacman -S steam
 
 # python env
 sudo pacman -S --noconfirm python-neovim
