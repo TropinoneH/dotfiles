@@ -101,7 +101,6 @@
         "workbench.action.tasks.runTask"
     ],
     "workbench.iconTheme": "catppuccin-mocha",
-    "window.menuBarVisibility": "toggle",
     "oneDarkPro.markdownStyle": false,
     "terminal.integrated.inheritEnv": false,
     "black-formatter.args": [
@@ -117,5 +116,8 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "workbench.colorTheme": "Catppuccin Mocha",
     "editor.wordWrap": "on",
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "window.customTitleBarVisibility": "never",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native"
 }
