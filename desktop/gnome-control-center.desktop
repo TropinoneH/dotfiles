@@ -1,0 +1,12 @@
+
+[Desktop Entry]
+Name=Gnome Control Center
+Comment=Control Center for Gnome
+Exec=env XDG_CURRENT_DESKTOP=GNOME XDG_SESSION_DESKTOP=gnome gnome-control-center
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=control-center2
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Settings;
+Keywords=gnome;control;center;settings;
