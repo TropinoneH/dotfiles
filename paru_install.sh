@@ -72,7 +72,7 @@ paru -S --noconfirm wechat
 # office
 paru -S --noconfirm onlyoffice-bin
 # wlogout
-paru -S --noconfirm wlogout-git
+paru -S --noconfirm wlogout
 # auto screen lock
 paru -S --noconfirm swayidle-git
 paru -S --noconfirm swaylock-effects-git
