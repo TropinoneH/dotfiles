@@ -40,7 +40,7 @@ sudo pacman -S --noconfirm starship
 # better find
 sudo pacman -S --noconfirm fd fzf ripgrep
 # uncompress
-sudo pacman -S --noconfirm unzip unrar ark
+sudo pacman -S --noconfirm unzip zip unrar ark
 # git gui
 sudo pacman -S --noconfirm lazygit
 # toys
