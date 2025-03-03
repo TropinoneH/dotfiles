@@ -83,7 +83,7 @@ paru -S --noconfirm rofi-wayland
 paru -S --noconfirm rofi-bluetooth-git
 paru -S --noconfirm networkmanager-dmenu-git
 # Game
-paru -S --noconfirm osu-lazer-bin
+paru -S --noconfirm osu-lazer-extracted-bin
 
 # fish plugin manager
 paru -S --noconfirm fisher
