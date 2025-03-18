@@ -2,7 +2,7 @@
 Name=IntellIj
 Comment=Coding with Java
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/intellij/bin/idea.sh
+Exec=/usr/local/applications/jetbrains/intellij/bin/idea
 Icon=/usr/local/applications/jetbrains/intellij/bin/idea.svg
 Type=Application
 Terminal=false

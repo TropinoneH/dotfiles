@@ -2,7 +2,7 @@
 Name=GoLand
 Comment=Coding with golang
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/goland/bin/goland.sh
+Exec=/usr/local/applications/jetbrains/goland/bin/goland
 Icon=/usr/local/applications/jetbrains/goland/bin/goland.svg
 Type=Application
 Terminal=false

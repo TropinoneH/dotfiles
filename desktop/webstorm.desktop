@@ -2,7 +2,7 @@
 Name=WebStorm
 Comment=Coding with Web
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/webstorm/bin/webstorm.sh
+Exec=/usr/local/applications/jetbrains/webstorm/bin/webstorm
 Icon=/usr/local/applications/jetbrains/webstorm/bin/webstorm.svg
 Type=Application
 Terminal=false

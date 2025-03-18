@@ -2,7 +2,7 @@
 Name=Rider
 Comment=Coding with C#
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/rider/bin/rider.sh
+Exec=/usr/local/applications/jetbrains/rider/bin/rider
 Icon=/usr/local/applications/jetbrains/rider/bin/rider.svg
 Type=Application
 Terminal=false

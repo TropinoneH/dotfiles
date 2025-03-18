@@ -2,7 +2,7 @@
 Name=CLion
 Comment=Coding with C or C++
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/clion/bin/clion.sh
+Exec=/usr/local/applications/jetbrains/clion/bin/clion
 Icon=/usr/local/applications/jetbrains/clion/bin/clion.svg
 Type=Application
 Terminal=false

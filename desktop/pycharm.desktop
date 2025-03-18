@@ -2,7 +2,7 @@
 Name=PyCharm
 Comment=Coding with python
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/pycharm/bin/pycharm.sh
+Exec=/usr/local/applications/jetbrains/pycharm/bin/pycharm
 Icon=/usr/local/applications/jetbrains/pycharm/bin/pycharm.svg
 Type=Application
 Terminal=false

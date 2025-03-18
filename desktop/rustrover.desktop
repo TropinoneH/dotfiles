@@ -2,7 +2,7 @@
 Name=RustRover
 Comment=Coding with Rust
 GenericName=Text Editor
-Exec=/usr/local/applications/jetbrains/rustrover/bin/rustrover.sh
+Exec=/usr/local/applications/jetbrains/rustrover/bin/rustrover
 Icon=/usr/local/applications/jetbrains/rustrover/bin/rustrover.svg
 Type=Application
 Terminal=false
