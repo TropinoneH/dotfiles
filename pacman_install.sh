@@ -31,6 +31,8 @@ sudo pacman -S --noconfirm gnome-control-center
 # software
 # polkit agent
 sudo pacman -S --noconfirm polkit hyprpolkitagent
+# wallpaper
+sudo pacman -S --noconfirm hyprpaper
 # Input method
 sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord fcitx5-configtool
 # colorize
@@ -63,6 +65,8 @@ sudo pacman -S --noconfirm obs-studio
 sudo pacman -S --noconfirm xclip
 # network manager
 sudo pacman -S --noconfirm iwd net-tools
+# windows remote desktop(RDP)
+sudo pacman -S --noconfirm freerdp2
 # help message
 sudo pacman -S --noconfirm tldr
 # downloader
@@ -123,5 +127,4 @@ rustup default stable
 
 cargo install cmd-wrapped
 cargo install tree-sitter-cli
-cargo install wpaperd wpaperctl
 cargo install create-tauri-app
