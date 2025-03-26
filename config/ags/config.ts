@@ -1,6 +1,8 @@
-import { Astal } from "astal/gtk3"
+import { App, Astal } from "astal/gtk3"
 import { exec } from "astal"
 import { defaultScheme } from "./themes"
+import { EventBox } from "astal/gtk3/widget"
+import { setDropWindowOffset } from "./libs/utils"
 
 export const theme = (scheme = defaultScheme) => ({
     fg: scheme.fg,
@@ -73,6 +75,12 @@ export const theme = (scheme = defaultScheme) => ({
         info: scheme.overlay2,
         border: scheme.bg,
         actionBg: scheme.overlay3
+    },
+    dropMenu: {
+        fg: scheme.fg,
+        bg: scheme.overlay1,
+        active: scheme.sky,
+        overlay: scheme.overlay3,
     }
 })
 
@@ -80,45 +88,55 @@ export const config = {
     theme: theme(),
     bar: {
         appLauncher: {
-            onScroll: (_: any, e: Astal.ScrollEvent) => (e.delta_x + e.delta_y > 0 ? exec("wpaperctl next") : exec("wpaperctl previous")),
-            onPrimaryClick: () => exec("rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi")
+            onClick: () => exec("rofi -show drun -no-default-config -config ~/.config/rofi/full_screen.rasi")
         },
         audio: {
-            onClick: (_: any, e: Astal.ClickEvent) => {
-                if (e.button === 1) print("pop menu todo")
-                else if (e.button === 3) exec("pavucontrol-qt")
+            onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
+                if (e.button === 1) {
+                    setDropWindowOffset(clicked, "audio-menu")
+                    App.toggle_window("audio-menu")
+                } else if (e.button === 3) exec("pavucontrol-qt")
             },
             speaker: {
                 onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.delta_x + e.delta_y > 0 ? "-1%" : "+1%"}`),
                 icons: [
-                    [["head", "usb"], "󰋋 "],
-                    [["bluetooth"], "󰂰 "],
-                    [["hdmi"], "󰋌 "],
-                    [["pci", ""], " "]
-                ]
+                    ["head", "󰋋 "],
+                    ["usb", "󰋋 "],
+                    ["bluetooth", "󰂰 "],
+                    ["hdmi", "󰋌 "],
+                    ["pci", " "],
+                    ["", " "]
+                ] as [string, string][]
             },
             microphone: {
                 onScroll: (_: any, e: Astal.ScrollEvent) => exec(`pactl set-source-volume @DEFAULT_SOURCE@ ${e.delta_x + e.delta_y > 0 ? "-1%" : "+1%"}`),
-                icons: []
+                icons: [] as [string, string][]
             }
         },
         bluetooth: {
-            onClick: (_: any, e: Astal.ClickEvent) => {
-                if (e.button === 1) print("pop menu todo")
-                else if (e.button === 3) exec("rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi")
+            onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
+                if (e.button === 1) {
+                    setDropWindowOffset(clicked, "bluetooth-menu")
+                    App.toggle_window("bluetooth-menu")
+                } else if (e.button === 3) exec("rofi-bluetooth -no-default-config -config ~/.config/rofi/config.rasi")
             }
         },
         brightness: {
-            onClick: (_: any, e: Astal.ClickEvent) => {
-                if (e.button === 1) print("pop menu todo")
+            onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
+                if (e.button === 1) {
+                    setDropWindowOffset(clicked, "brightness-menu")
+                    App.toggle_window("brightness-menu")
+                }
             },
             onScroll: (_: any, e: Astal.ScrollEvent) => exec(`brightnessctl set 2%${e.delta_x + e.delta_y > 0 ? "-" : "+"}`),
             icons: ["", "", "", "", "", "", "", "", ""]
         },
         network: {
-            onClick: (_: any, e: Astal.ClickEvent) => {
-                if (e.button === 1) print("pop menu todo")
-                else if (e.button === 3) exec("networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi")
+            onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
+                if (e.button === 1) {
+                    setDropWindowOffset(clicked, "network-menu")
+                    App.toggle_window("network-menu")
+                } else if (e.button === 3) exec("networkmanager_dmenu -no-default-config -config ~/.config/rofi/config.rasi")
             }
         },
         powermenu: {

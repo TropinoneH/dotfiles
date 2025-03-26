@@ -3,13 +3,13 @@ import { Gtk, Gdk } from "astal/gtk3"
 
 export const DimButton = ({ child, ...props }: EventBoxProps) => {
     const setup = (box: EventBox) => {
-        box.connect("enter-notify-event", (self, event) => {
+        box.connect("enter-notify-event", (self, _event) => {
             self.set_state_flags(Gtk.StateFlags.PRELIGHT, false)
             const display = Gdk.Display.get_default()
             if (!display) return
             self.window.set_cursor(Gdk.Cursor.new_from_name(display, "pointer"))
         })
-        box.connect("leave-notify-event", (self, event) => {
+        box.connect("leave-notify-event", (self, _event) => {
             self.unset_state_flags(Gtk.StateFlags.PRELIGHT)
             self.window.set_cursor(null)
         })
@@ -24,12 +24,12 @@ export const DimButton = ({ child, ...props }: EventBoxProps) => {
 
 export const PointerButton = ({ child, ...props }: ButtonProps) => {
     const setup = (button: Button) => {
-        button.connect("enter-notify-event", (self, event) => {
+        button.connect("enter-notify-event", (self, _event) => {
             const display = Gdk.Display.get_default()
             if (!display) return
             self.window.set_cursor(Gdk.Cursor.new_from_name(display, "pointer"))
         })
-        button.connect("leave-notify-event", (self, event) => {
+        button.connect("leave-notify-event", (self, _event) => {
             self.window.set_cursor(null)
         })
     }

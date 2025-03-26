@@ -25,7 +25,9 @@ export const defaultScheme = {
     orange: "#FBC02D",
     /** brown: #d08770 */
     brown: "#d08770",
-    /** green: #a3be8c */
+    /** grass: #a3be8c */
+    grass: "#a3be8c",
+    /** green: #a8cd76 **/
     green: "#a8cd76",
     /** blue: #0087bd */
     blue: "#0087bd",

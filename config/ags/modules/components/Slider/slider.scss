@@ -1,0 +1,39 @@
+.menu-slider {
+    margin: 0 0.5rem;
+
+    trough {
+        background: #302d2e;
+        min-height: 0.6rem;
+        min-width: 0.6rem;
+    }
+    highlight {
+        border-radius: 0.3rem;
+        background: #b69bf1;
+        min-height: 0.6rem;
+        min-width: 0.6rem;
+    }
+    slider {
+        border-radius: 0.3rem;
+        background: transparent;
+        box-shadow: none;
+        border: 0 solid transparent;
+        min-height: 0.6rem;
+        min-width: 0.6rem;
+    }
+}
+
+.audio-menu {
+    .menu-slider {
+        highlight {
+            background: #ebcb8b;
+        }
+    }
+}
+
+.backlight-menu {
+    .menu-slider {
+        highlight {
+            background: #81b1c1;
+        }
+    }
+}
