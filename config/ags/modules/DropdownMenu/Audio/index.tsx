@@ -2,6 +2,7 @@ import { Gtk } from "astal/gtk3"
 import PopWindow from "../../components/PopWindow"
 import VolumeSlider from "./VolumeSlider"
 import { config } from "../../../config"
+import AvailableDevices from "./AvailableDevices"
 
 const theme = config.theme.dropMenu
 
@@ -22,6 +23,7 @@ export default () => (
             className={"audio-menu"}
         >
             <VolumeSlider />
+            <AvailableDevices />
         </box>
     </PopWindow>
 )
