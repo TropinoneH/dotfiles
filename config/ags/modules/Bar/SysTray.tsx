@@ -1,4 +1,4 @@
-import AstalTray from "gi://AstalTray?version=0.1"
+import AstalTray from "gi://AstalTray"
 import { bind, Gio, Variable } from "astal"
 import { Gdk, Gtk } from "astal/gtk3"
 import { config } from "../../config"

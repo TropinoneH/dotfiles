@@ -3,7 +3,7 @@ import { DimButton } from "../components/Button"
 
 export default () => {
     return (
-        <DimButton onScroll={config.bar.appLauncher.onScroll} onClick={config.bar.appLauncher.onPrimaryClick}>
+        <DimButton onClick={config.bar.appLauncher.onClick}>
             <box
                 css={`
                     margin-left: 1rem;

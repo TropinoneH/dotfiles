@@ -4,19 +4,14 @@ import { DimButton } from "../components/Button"
 import { bind } from "astal"
 
 const IconMap = (iconName: string) => {
-    const iconSet = config.bar.audio.speaker.icons as [string[], string][]
+    const iconSet = config.bar.audio.speaker.icons as [string, string][]
     let ret = " "
     for (const iconIdx in iconSet) {
-        const [names, icon] = iconSet[iconIdx]
-        let contain = false
-        for (const name of names) {
-            if (iconName.includes(name)) {
-                ret = icon
-                contain = true
-                break
-            }
+        const [name, icon] = iconSet[iconIdx]
+        if (iconName.includes(name)) {
+            ret = icon
+            break
         }
-        if (contain) break
     }
     return ret
 }

@@ -1,4 +1,4 @@
-import { Astal, Gdk, Gtk } from "astal/gtk3"
+import { App, Astal, Gdk, Gtk } from "astal/gtk3"
 import Date from "./Date"
 import AppLauncher from "./AppLauncher"
 import Workspace from "./Workspace"
@@ -29,6 +29,7 @@ export default (monitor: Gdk.Monitor) => (
         anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT | Astal.WindowAnchor.RIGHT}
         className="bar"
         name={"Bar-" + getMonitor(monitor).id}
+        application={App}
     >
         <centerbox>
             <box halign={Gtk.Align.START}>
