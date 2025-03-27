@@ -7,7 +7,7 @@ import AvailableDevices from "./AvailableDevices"
 const theme = config.theme.dropMenu
 
 export default () => (
-    <PopWindow name="audio-menu">
+    <PopWindow name="audio-menu" transition={Gtk.RevealerTransitionType.SLIDE_DOWN}>
         <box
             halign={Gtk.Align.FILL}
             valign={Gtk.Align.FILL}
@@ -18,7 +18,7 @@ export default () => (
                 background-color: ${theme.bg};
                 color: ${theme.fg};
                 padding: 0.5rem;
-                border-radius: 0.5rem;
+                border-radius: 0.65rem;
             `}
             className={"audio-menu"}
         >

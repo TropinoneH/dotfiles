@@ -53,7 +53,7 @@ export default () => (
             margin-top: 0.5rem;
             background-color: ${theme.overlay};
             padding: 0.5rem;
-            border-radius: 0.65rem;
+            border-radius: 0.5rem;
         `}
     >
         <Header label="Playback Devices" />

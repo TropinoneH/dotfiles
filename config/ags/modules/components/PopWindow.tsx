@@ -6,9 +6,16 @@ export type PopWindowProps = {
     child?: JSX.Element | JSX.Element[]
     exclusivity?: Astal.Exclusivity
     transition?: Gtk.RevealerTransitionType | Binding<Gtk.RevealerTransitionType>
+    transitionDuration?: number
 }
 
-export default ({ name, child, exclusivity = Astal.Exclusivity.NORMAL, transition = Gtk.RevealerTransitionType.SLIDE_DOWN }: PopWindowProps): JSX.Element => (
+export default ({
+    name,
+    child,
+    exclusivity = Astal.Exclusivity.NORMAL,
+    transition = Gtk.RevealerTransitionType.CROSSFADE,
+    transitionDuration = 300
+}: PopWindowProps): JSX.Element => (
     <window
         name={name}
         namespace={name}
@@ -31,7 +38,7 @@ export default ({ name, child, exclusivity = Astal.Exclusivity.NORMAL, transitio
             <revealer
                 revealChild={false}
                 transitionType={transition}
-                transitionDuration={200}
+                transitionDuration={transitionDuration}
                 setup={(self) => {
                     App.connect("window-toggled", (_src, window) => {
                         if (window.name === name) self.set_reveal_child(window.visible)

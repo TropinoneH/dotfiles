@@ -42,7 +42,7 @@ export default () => (
         css={`
             background-color: ${theme.overlay};
             padding: 0.5rem;
-            border-radius: 0.65rem;
+            border-radius: 0.5rem;
         `}
     >
         <box halign={Gtk.Align.FILL} css="margin-bottom: 0.5rem;">

@@ -25,7 +25,7 @@ export default () => (
             vertical
             css={`
                 padding: 0.5rem;
-                border-radius: 0.5rem;
+                border-radius: 0.65rem;
                 background-color: ${theme.bg};
                 color: ${theme.fg};
                 min-width: 20rem;
