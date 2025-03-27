@@ -1,4 +1,4 @@
-import { bind, Binding, exec, Variable } from "astal"
+import { bind, Binding, Variable } from "astal"
 import { Gdk, Gtk } from "astal/gtk3"
 import AstalWp from "gi://AstalWp"
 import { SliderIcon } from "./SliderIcon"
@@ -29,8 +29,12 @@ const Slider = ({ device, raise }: { device: AstalWp.Endpoint; raise: boolean })
                     }
                 }}
                 setup={(self) => {
-                    self.connect("scroll-event", (_, e: Gdk.Event) => {
-                        exec(`pactl set-sink-volume @DEFAULT_SINK@ ${e.get_scroll_direction()[1] === Gdk.ScrollDirection.DOWN ? "-1%" : "+1%"}`)
+                    self.connect("scroll-event", (_, event: Gdk.Event) => {
+                        const [dirOk, dir] = event.get_scroll_direction()
+                        const [deltaOk, , yDelta] = event.get_scroll_deltas()
+                        if ((dirOk && dir === Gdk.ScrollDirection.UP) || (deltaOk && yDelta < 0))
+                            device.set_volume(Math.min(device.volume + 0.02, raise ? 1.5 : 1))
+                        if ((dirOk && dir === Gdk.ScrollDirection.DOWN) || (deltaOk && yDelta > 0)) device.set_volume(device.volume - 0.02)
                     })
                 }}
             />
@@ -42,18 +46,21 @@ export default ({
     device,
     iconBinding,
     raise = false,
-    css = ""
+    css = "",
+    onDestroy = () => {}
 }: {
     device: AstalWp.Endpoint
     iconBinding: Variable<string> | Binding<string>
     raise?: boolean
     css?: string
+    onDestroy?: () => void
 }) => (
     <box
         css={`
             margin-bottom: 0.7rem;
             ${css}
         `}
+        onDestroy={onDestroy}
     >
         <SliderIcon iconBinding={iconBinding} device={device} />
         <Slider device={device} raise={raise} />

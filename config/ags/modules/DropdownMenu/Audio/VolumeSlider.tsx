@@ -31,6 +31,11 @@ export const getIcon = (audioVol: number, isMuted: boolean, iconSet: Record<numb
 
 const theme = config.theme.dropMenu
 
+const DefaultSlider = ({ device, iconSet, raise = false }: { raise?: boolean, device: AstalWp.Endpoint; iconSet: Record<number, string> }) => {
+    const icon = Variable.derive([bind(device, "volume"), bind(device, "mute")], (vol, mute) => getIcon(vol, mute, iconSet))
+    return <Slider raise={raise} device={device} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
+}
+
 export default () => (
     <box
         vertical
@@ -72,21 +77,8 @@ export default () => (
                     padding: 1rem 0.3rem 0.4rem 0.3rem;
                 `}
             >
-                <Slider
-                    raise={true}
-                    device={audioDevices.defaultSpeaker}
-                    iconBinding={Variable.derive(
-                        [bind(audioDevices.defaultSpeaker, "volume"), bind(audioDevices.defaultSpeaker, "mute")], //
-                        (volume, isMute) => getIcon(volume, isMute, speakerIcons)
-                    )}
-                />
-                <Slider
-                    device={audioDevices.defaultMicrophone}
-                    iconBinding={Variable.derive(
-                        [bind(audioDevices.defaultMicrophone, "volume"), bind(audioDevices.defaultMicrophone, "mute")], //
-                        (volume, isMute) => getIcon(volume, isMute, inputIcons)
-                    )}
-                />
+                <DefaultSlider raise device={audioDevices.defaultSpeaker} iconSet={speakerIcons} />
+                <DefaultSlider device={audioDevices.defaultMicrophone} iconSet={inputIcons} />
             </box>
         </revealer>
         <revealer transitionType={Gtk.RevealerTransitionType.NONE} revealChild={bind(activeMenu).as((menu) => menu === "playbacks")}>

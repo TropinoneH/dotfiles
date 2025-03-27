@@ -32,7 +32,7 @@ const Wired = (props: EventBoxProps) => {
         (deviceInterface, state, internet, speed) => `${deviceInterface}: ${getDeviceState(state)} | ${getInternet(internet)} | ${speed} Mbps`
     )
     return (
-        <DimButton {...props} tooltipText={bind(tooltip)} onDestroy={() => tooltip?.drop()}>
+        <DimButton {...props} tooltipText={bind(tooltip)} onDestroy={() => tooltip.drop()}>
             <label
                 label=""
                 css={`
@@ -49,7 +49,7 @@ const WIFI = (props: EventBoxProps) => {
         (ssid, internet, strength) => `${ssid}: ${getInternet(internet)} | ${strength}%`
     )
     return (
-        <DimButton {...props} tooltipText={bind(tooltip)} onDestroy={() => tooltip?.drop()}>
+        <DimButton {...props} tooltipText={bind(tooltip)} onDestroy={() => tooltip.drop()}>
             <label
                 label=""
                 css={`

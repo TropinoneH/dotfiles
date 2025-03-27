@@ -3,10 +3,16 @@ import { config } from "../../../config"
 import { bind, Variable } from "astal"
 import Slider from "../../components/Slider"
 import { getIcon, speakerIcons } from "./VolumeSlider"
+import { Gtk } from "astal/gtk3"
 
 const audioDevices = AstalWp.get_default()!.audio
 
 const theme = config.theme.dropMenu
+
+const SliderWrapper = ({ stream }: { stream: AstalWp.Endpoint }) => {
+    const icon = Variable.derive([bind(stream, "volume"), bind(stream, "mute")], (vol, mute) => getIcon(vol, mute, speakerIcons))
+    return <Slider css="margin-top: 0.5rem;" device={stream} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
+}
 
 export default () => (
     <box
@@ -19,28 +25,14 @@ export default () => (
     >
         {bind(audioDevices, "streams").as((streams) =>
             !streams || streams.length === 0 ? (
-                <label css="opacity: 0.5;" label={"No active playbacks found."} expand />
-            ) : streams.length <= 3 ? (
-                <box vertical css="background: transparent; min-height: 9rem;">
-                    {streams.map((s) => (
-                        <Slider
-                            css="margin-top: 0.5rem;"
-                            device={s}
-                            iconBinding={Variable.derive([bind(s, "volume"), bind(s, "mute")], (vol, mute) => getIcon(vol, mute, speakerIcons))}
-                        />
-                    ))}
+                <label css="opacity: 0.5; min-height: 7rem;" valign={Gtk.Align.CENTER} label={"No active playbacks found."} expand />
+            ) : streams.length <= 2 ? (
+                <box vertical css="background: transparent; min-height: 7rem;">
+                    {streams.map((s) => s && <SliderWrapper stream={s} />)}
                 </box>
             ) : (
-                <scrollable css="background: transparent; min-height: 9rem;">
-                    <box vertical>
-                        {streams.map((s) => (
-                            <Slider
-                                css="margin-top: 0.5rem;"
-                                device={s}
-                                iconBinding={Variable.derive([bind(s, "volume"), bind(s, "mute")], (vol, mute) => getIcon(vol, mute, speakerIcons))}
-                            />
-                        ))}
-                    </box>
+                <scrollable css="background: transparent; min-height: 7rem;">
+                    <box vertical>{streams.map((s) => s && <SliderWrapper stream={s} />)}</box>
                 </scrollable>
             )
         )}
