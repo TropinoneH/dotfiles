@@ -27,6 +27,8 @@ sudo pacman -S --noconfirm brightnessctl
 sudo pacman -S --noconfirm man-db
 # gnome control center
 sudo pacman -S --noconfirm gnome-control-center
+# power profile daemon
+sudo pacman -S --noconfirm tuned-ppd
 
 # software
 # polkit agent
