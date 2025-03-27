@@ -2,6 +2,7 @@ import battery from "gi://AstalBattery"
 import { bind } from "astal"
 import { Box } from "astal/gtk3/widget"
 import { config } from "../../config"
+import { DimButton } from "../components/Button"
 const Battery = battery.get_default()
 
 const timeFormat = (time: number) => {
@@ -28,23 +29,25 @@ export default () => {
     }
 
     return (
-        <box
-            css={`
-                background: ${theme.bg};
-                color: ${theme.color};
-                padding: 0 0.5rem;
-                margin-left: 0.3rem;
-                border-radius: 0.5rem;
-            `}
-            setup={setup}
-        >
-            <icon
-                icon={bind(Battery, "batteryIconName")}
-                css={percentage.as((p) =>
-                    p * 100 <= 20 ? `color: ${theme.criticalColor};` : p * 100 <= 30 ? `color: ${theme.warningColor};` : `color: ${theme.iconColor};`
-                )}
-            />
-            <label label={percentage.as((p) => ` ${Math.floor(p * 100)}%`)} />
-        </box>
+        <DimButton onClick={config.bar.battery.onClick}>
+            <box
+                css={`
+                    background: ${theme.bg};
+                    color: ${theme.color};
+                    padding: 0 0.5rem;
+                    margin-left: 0.3rem;
+                    border-radius: 0.5rem;
+                `}
+                setup={setup}
+            >
+                <icon
+                    icon={bind(Battery, "batteryIconName")}
+                    css={percentage.as((p) =>
+                        p * 100 <= 20 ? `color: ${theme.criticalColor};` : p * 100 <= 30 ? `color: ${theme.warningColor};` : `color: ${theme.iconColor};`
+                    )}
+                />
+                <label label={percentage.as((p) => ` ${Math.floor(p * 100)}%`)} />
+            </box>
+        </DimButton>
     )
 }

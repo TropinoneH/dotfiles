@@ -1,5 +1,5 @@
 import { App, Gdk, Gtk } from "astal/gtk3"
-import style from "./style.scss"
+import style from "./styles/style.scss"
 import Bar from "./modules/Bar"
 import NotificationPopups from "./modules/Notifications"
 import DropdownMenu from "./modules/DropdownMenu"

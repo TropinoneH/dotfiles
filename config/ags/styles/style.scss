@@ -2,7 +2,7 @@
 $theme_fg_color: "@theme_fg_color";
 $theme_bg_color: "@theme_bg_color";
 
-@use "./modules/components/Slider/slider.scss" as *;
+@use "./slider.scss" as *;
 
 * {
     font-family: "CodeNewRoman Nerd Font Mono";

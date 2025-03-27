@@ -1,5 +1,5 @@
-import AudioMenu from "./Audio";
+import AudioMenu from "./Audio"
+import BacklightMenu from "./Backlight"
+import BatteryMenu from "./Battery"
 
-export default [
-    AudioMenu
-]
+export default [AudioMenu, BacklightMenu, BatteryMenu]

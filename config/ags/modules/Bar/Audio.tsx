@@ -37,7 +37,7 @@ export default () => {
                         <eventbox onScroll={config.bar.audio.speaker.onScroll}>
                             <box>
                                 <label css={"color: " + theme.iconColor + ";"} label={bind(speaker, "icon").as((i) => IconMap(i))} />
-                                <label css={"color: " + theme.color + ";"} label={bind(speaker, "volume").as((v) => Math.floor(v * 100).toString())} />
+                                <label css={"color: " + theme.color + ";"} label={bind(speaker, "volume").as((v) => Math.round(v * 100).toString())} />
                             </box>
                         </eventbox>
                     )

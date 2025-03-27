@@ -80,7 +80,7 @@ export const theme = (scheme = defaultScheme) => ({
         fg: scheme.fg,
         bg: scheme.overlay1,
         active: scheme.sky,
-        overlay: scheme.overlay3,
+        overlay: scheme.overlay3
     }
 })
 
@@ -113,6 +113,14 @@ export const config = {
                 icons: [] as [string, string][]
             }
         },
+        battery: {
+            onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
+                if (e.button === 1) {
+                    setDropWindowOffset(clicked, "battery-menu")
+                    App.toggle_window("battery-menu")
+                }
+            }
+        },
         bluetooth: {
             onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
                 if (e.button === 1) {
@@ -124,8 +132,8 @@ export const config = {
         brightness: {
             onClick: (clicked: EventBox, e: Astal.ClickEvent) => {
                 if (e.button === 1) {
-                    setDropWindowOffset(clicked, "brightness-menu")
-                    App.toggle_window("brightness-menu")
+                    setDropWindowOffset(clicked, "backlight-menu")
+                    App.toggle_window("backlight-menu")
                 }
             },
             onScroll: (_: any, e: Astal.ScrollEvent) => exec(`brightnessctl set 2%${e.delta_x + e.delta_y > 0 ? "-" : "+"}`),

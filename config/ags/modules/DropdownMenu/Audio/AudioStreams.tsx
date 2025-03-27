@@ -1,9 +1,9 @@
 import AstalWp from "gi://AstalWp"
 import { config } from "../../../config"
 import { bind, Variable } from "astal"
-import Slider from "../../components/Slider"
 import { getIcon, speakerIcons } from "./VolumeSlider"
 import { Gtk } from "astal/gtk3"
+import AudioSlider from "./AudioSlider"
 
 const audioDevices = AstalWp.get_default()!.audio
 
@@ -11,7 +11,7 @@ const theme = config.theme.dropMenu
 
 const SliderWrapper = ({ stream }: { stream: AstalWp.Endpoint }) => {
     const icon = Variable.derive([bind(stream, "volume"), bind(stream, "mute")], (vol, mute) => getIcon(vol, mute, speakerIcons))
-    return <Slider css="margin-top: 0.5rem;" device={stream} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
+    return <AudioSlider css="margin-top: 0.5rem;" device={stream} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
 }
 
 export default () => (

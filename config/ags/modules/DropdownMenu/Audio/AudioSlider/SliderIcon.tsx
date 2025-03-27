@@ -1,7 +1,7 @@
 import { bind, Binding, Variable } from "astal"
 import { Gdk, Gtk } from "astal/gtk3"
 import AstalWp from "gi://AstalWp"
-import { config } from "../../../config"
+import { config } from "../../../../config";
 
 
 export const SliderIcon = ({ device, iconBinding }: { device: AstalWp.Endpoint; iconBinding: Variable<string> | Binding<string> }): JSX.Element => {

@@ -1,9 +1,9 @@
 import { bind, Variable } from "astal"
 import { Astal, Gtk } from "astal/gtk3"
 import AstalWp from "gi://AstalWp"
-import Slider from "../../components/Slider"
 import { config } from "../../../config"
 import AudioStreams from "./AudioStreams"
+import AudioSlider from "./AudioSlider"
 
 const Wireplumber = AstalWp.get_default() as AstalWp.Wp
 const audioDevices = Wireplumber.audio
@@ -31,9 +31,9 @@ export const getIcon = (audioVol: number, isMuted: boolean, iconSet: Record<numb
 
 const theme = config.theme.dropMenu
 
-const DefaultSlider = ({ device, iconSet, raise = false }: { raise?: boolean, device: AstalWp.Endpoint; iconSet: Record<number, string> }) => {
+const DefaultSlider = ({ device, iconSet, raise = false }: { raise?: boolean; device: AstalWp.Endpoint; iconSet: Record<number, string> }) => {
     const icon = Variable.derive([bind(device, "volume"), bind(device, "mute")], (vol, mute) => getIcon(vol, mute, iconSet))
-    return <Slider raise={raise} device={device} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
+    return <AudioSlider raise={raise} device={device} iconBinding={bind(icon)} onDestroy={() => icon.drop()} />
 }
 
 export default () => (
