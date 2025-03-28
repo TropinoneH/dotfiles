@@ -80,7 +80,7 @@ sudo pacman -S --noconfirm npm pnpm
 # web browser
 sudo pacman -S --noconfirm firefox
 # music player
-sudo pacman -S --noconfirm ncmpcpp mpd mpc
+sudo pacman -S --noconfirm ncmpcpp mpd mpd-mpris playerctl
 # better cat
 sudo pacman -S --noconfirm bat
 # image viewer
