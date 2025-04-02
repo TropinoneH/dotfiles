@@ -100,6 +100,9 @@ sudo pacman -S --noconfirm sshfs
 sudo pacman -S --noconfirm fish zsh
 # calculator
 sudo pacman -S --noconfirm qalculate-qt
+# pdf viewer
+sudo pacman -S --noconfirm tesseract-data-eng
+sudo pacman -S --noconfirm zathura zathura-pdf-mupdf
 # docker
 sudo pacman -S --noconfirm docker
 # tauri dependency
