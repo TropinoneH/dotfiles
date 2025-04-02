@@ -40,6 +40,7 @@ markdown = [
     { run = 'kitty -T editor nvim "$@"', orphan = true, for = "unix" },
 ]
 pdf = [
+    { run = 'zathura "$@"', orphan = true, for = "unix", desc = "Zathura pdf viewer" },
     { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice pdf viewer" },
 ]
 office = [
