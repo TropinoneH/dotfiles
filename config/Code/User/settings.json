@@ -92,7 +92,6 @@
     "editor.fontFamily": "'CodeNewRoman Nerd Font Mono', 'monospace', monospace",
     "jupyter.askForKernelRestart": false,
     "window.zoomLevel": 1,
-    "terminal.external.linuxExec": "wezterm",
     "git.autofetch": true,
     "git.confirmSync": false,
     "terminal.integrated.fontFamily": "'CodeNewRoman Nerd Font Mono', 'monospace', monospace",
