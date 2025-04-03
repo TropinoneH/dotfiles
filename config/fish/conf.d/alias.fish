@@ -1,18 +1,12 @@
 # System command
-alias ls="exa --group-directories-first --icons=always --color=always"
-alias ll="ls -alH --git"
+alias ls="eza --group-directories-first --icons=always --color=always"
+alias ll="eza --group-directories-first --icons=always --color=always -alH --git"
 alias cls="clear"
 alias t="exa --group-directories-first --icons=always --color=always --tree"
 alias cat="bat"
 alias rm="rm -i"
-# apt command
-alias update="sudo pacman -Syy"
-alias upgrade="sudo pacman -Syyu"
-alias uninstall="sudo pacman -Rs"
-alias i="sudo pacman -S"
 # core command
 alias core="sudo uname -r"
-alias neofetch="fastfetch"
 alias fetch="fastfetch"
 # utils
 alias untar="tar -zxvf"
