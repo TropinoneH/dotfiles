@@ -41,6 +41,7 @@ markdown = [
 ]
 pdf = [
     { run = 'zathura "$@"', orphan = true, for = "unix", desc = "Zathura pdf viewer" },
+    { run = 'google-chrome-stable --incognito "$@"', orphan = true, desc = "Open with Chrome in incognito mode" },
     { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix", desc = "OnlyOffice pdf viewer" },
 ]
 office = [
