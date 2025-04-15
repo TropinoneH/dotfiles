@@ -13,3 +13,9 @@
 [submodule "config/yazi/plugins/starship.yazi"]
 	path = config/yazi/plugins/starship.yazi
 	url = https://github.com/Rolv-Apneseth/starship.yazi.git
+[submodule "config/yazi/plugins/lazygit.yazi"]
+	path = config/yazi/plugins/lazygit.yazi
+	url = https://github.com/Lil-Dank/lazygit.yazi.git
+[submodule "config/yazi/plugins/compress.yazi"]
+	path = config/yazi/plugins/compress.yazi
+	url = https://github.com/KKV9/compress.yazi.git
