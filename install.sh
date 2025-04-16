@@ -6,10 +6,10 @@ for file in $cwd/config/*; do
     ln -sf "$file" $HOME/.config/$(basename $file)
 done
 
-ln -sf $cwd/zsh $HOME/.zsh
-ln -sf $cwd/zshrc $HOME/.zshrc
+sudo ln -sf $cwd/typora/ocean-theme/ocean ~/.config/Typora/themes/ocean
+sudo ln -sf $cwd/typora/ocean-theme/ocean.css ~/.config/Typora/themes/ocean.css
+
 sudo ln -sf $cwd/profile /etc/profile.d/env_path.sh
-ln -sf $cwd/p10k.zsh $HOME/.p10k.zsh
 
 for file in $cwd/desktop/*; do
     sudo ln -sf $file /usr/share/applications/$(basename $file)
