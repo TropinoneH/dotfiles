@@ -11,6 +11,7 @@ alias fetch="fastfetch"
 # utils
 alias untar="tar -zxvf"
 alias untarxz="tar -xvf"
+alias vim="nvim"
 # directory
 abbr ... --position anywhere '../..'
 abbr .... --position anywhere '../../..'

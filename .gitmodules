@@ -1,15 +1,15 @@
 [submodule "config/nvim"]
     path = config/nvim
-    url = git@github.com:TropinoneH/nvim-configuration.git
+    url = git@github.com:eniverz/nvim-configuration.git
 [submodule "config/fastfetch"]
     path = config/fastfetch
-    url = git@github.com:TropinoneH/fastfetch-configuration.git
+    url = git@github.com:eniverz/fastfetch-configuration.git
 [submodule "config/tmux"]
     path = config/tmux
-    url = git@github.com:TropinoneH/tmux-configuration.git
+    url = git@github.com:eniverz/tmux-configuration.git
 [submodule "typora/ocean-theme"]
     path = typora/ocean-theme
-    url = git@github.com:TropinoneH/ocean-theme
+    url = git@github.com:eniverz/ocean-theme
 [submodule "config/yazi/plugins/starship.yazi"]
 	path = config/yazi/plugins/starship.yazi
 	url = https://github.com/Rolv-Apneseth/starship.yazi.git
