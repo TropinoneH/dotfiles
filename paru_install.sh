@@ -84,6 +84,8 @@ paru -S --noconfirm rofi-bluetooth-git
 paru -S --noconfirm networkmanager-dmenu-git
 # Game
 paru -S --noconfirm osu-lazer-extracted-bin
+# font
+paru -S --noconfirm ttf-material-design-icons-desktop-git
 
 # fish plugin manager
 paru -S --noconfirm fisher
