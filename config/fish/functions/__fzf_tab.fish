@@ -63,7 +63,4 @@ function __fzf_tab -d 'fzf completion and print selection back to commandline'
     end
 
     commandline -f repaint
-    if type -q kitten
-        kitten icat --clear --stdin=no --transfer-mode=file --place $FZF_PREVIEW_COLUMNS"x"$FZF_PREVIEW_LINES"@0x0"
-    end
 end
