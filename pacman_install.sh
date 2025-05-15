@@ -34,7 +34,8 @@ sudo pacman -S --noconfirm tuned-ppd
 # polkit agent
 sudo pacman -S --noconfirm polkit hyprpolkitagent
 # wallpaper
-sudo pacman -S --noconfirm hyprpaper
+# sudo pacman -S --noconfirm hyprpaper
+sudo pacman -S --noconfirm swaybg
 # Input method
 sudo pacman -S --noconfirm fcitx5 fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-nord fcitx5-configtool
 # colorize
