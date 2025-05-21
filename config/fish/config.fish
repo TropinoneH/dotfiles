@@ -6,6 +6,8 @@ end
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 starship init fish | source
 
+zoxide init fish | source
+
 # greeting message
 function fish_greeting
     figlet "Hi, eniverz!" | lolcat
