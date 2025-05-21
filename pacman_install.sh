@@ -99,6 +99,7 @@ sudo pacman -S --noconfirm imagemagick
 sudo pacman -S --noconfirm sshfs
 # shell
 sudo pacman -S --noconfirm fish zsh
+sudo pacman -S --noconfirm zoxide
 # calculator
 sudo pacman -S --noconfirm qalculate-qt
 # pdf viewer
