@@ -62,6 +62,10 @@ rules = [
     { mime = "image/*", use = ["image", "open"] },
     { mime = "video/*", use = ["play"] },
     { mime = "audio/*", use = ["play"] },
+    { name = "*.mp3", use = ["play"] },
+    { name = "*.flac", use = ["play"] },
+    { name = "*.ogg", use = ["play"] },
+    { name = "*.wav", use = ["play"] },
     { mime = "inode/x-empty", use = ["edit"] },
 
     { mime = "application/json", use = ["edit"] },
@@ -72,9 +76,9 @@ rules = [
     { mime = "application/x-tar", use = ["extract"] },
     { mime = "application/x-bzip", use = ["extract"] },
     { mime = "application/x-bzip2", use = ["extract"] },
-    { mime = "application/x-7z-compressed", use = ["extract"] },
-    { mime = "application/x-rar", use = ["extract"] },
     { mime = "application/x-xz", use = ["extract"] },
+    { name = "*.7z", use = ["extract"] },
+    { name = "*.rar", use = ["extract"] },
 
     { mime = "application/pdf", use = ["pdf"] },
     { mime = "application/epub+zip", use = ["pdf"] },
