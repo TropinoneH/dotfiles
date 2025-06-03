@@ -10,7 +10,7 @@ id = "git"
 name = "*/"
 run = "git"
 
-[manager]
+[mgr]
 show_hidden = false
 show_symlink = true
 linemode = "none"

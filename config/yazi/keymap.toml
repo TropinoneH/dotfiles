@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 keymap = [
     { on = "<Esc>", run = [
         "unyank",
@@ -96,7 +96,6 @@ keymap = [
     ], run = "linemode none", desc = "Set linemode to none" },
 
     # Filter
-    { on = "f", run = "filter --smart", desc = "Filter files" },
     { on = "F", run = "plugin fzf", desc = "Jump to a directory or reveal a file using fzf" },
     { on = "s", run = "search fd", desc = "Search files by name using fd" },
     { on = "S", run = "search rg", desc = "Search files by content using ripgrep" },
@@ -137,14 +136,15 @@ keymap = [
     # Help
     { on = "<F1>", run = "help", desc = "Open help" },
 
-    # preview
-    { on = "T", run = "plugin max-preview", desc = "Toggle maximum preview" },
-
     # git
     { on = [
         "g",
         "l",
     ], run = "plugin lazygit", desc = "Toggle lazygit" },
+    { on = [
+        "g",
+        "c",
+    ], run = "plugin vcs-files", desc = "Show Git files changes" },
 ]
 
 [tasks]
