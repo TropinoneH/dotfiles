@@ -61,10 +61,10 @@ paru -S --noconfirm ueberzugpp
 # music wave visualizer
 # paru -S --noconfirm cava
 # clipboard
-paru -S --noconfirm wl-clipboard-git
-paru -S --noconfirm cliphist
+# paru -S --noconfirm wl-clipboard-git
+# paru -S --noconfirm cliphist
 # screen shot
-paru -S --noconfirm slurp-git hyprshot-git
+paru -S --noconfirm slurp-git
 # screen recorder
 paru -S --noconfirm obs-vaapi
 # wechat

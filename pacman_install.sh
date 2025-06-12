@@ -66,6 +66,7 @@ sudo pacman -S --noconfirm grim
 sudo pacman -S --noconfirm obs-studio
 # clipboard
 sudo pacman -S --noconfirm xclip
+sudo pacman -S --noconfirm copyq
 # network manager
 sudo pacman -S --noconfirm iwd net-tools
 # windows remote desktop(RDP)
