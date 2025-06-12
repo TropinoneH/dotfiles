@@ -1,7 +1,7 @@
 # System command
 alias ls="eza --group-directories-first --icons=always --color=always"
 alias ll="eza --group-directories-first --icons=always --color=always -alH --git"
-alias cls="clear"
+alias cls="/bin/clear"
 alias t="exa --group-directories-first --icons=always --color=always --tree"
 alias cat="bat"
 alias rm="rm -i"
