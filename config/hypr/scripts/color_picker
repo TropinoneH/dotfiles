@@ -34,5 +34,5 @@ notification="<span background='$color' color='$fg'>$color</span>"
 action=$(notify-send "Color Picker" "$notification" --action="copy=copy")
 
 if [[ $action == "copy" ]]; then
-    wl-copy < <(echo -n "$color")
+    copyq add - <(echo -n "$color")
 fi
