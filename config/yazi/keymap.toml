@@ -12,12 +12,10 @@ keymap = [
     { on = "j", run = "arrow 1", desc = "Move cursor down" },
     { on = "K", run = "arrow -5", desc = "Move cursor up 5 unit" },
     { on = "J", run = "arrow 5", desc = "Move cursor down 5 unit" },
-
     { on = "<Up>", run = "arrow -1", desc = "Move cursor up" },
     { on = "<Down>", run = "arrow 1", desc = "Move cursor down" },
-
-    { on = "<PageUp>", run = "arrow -30%", desc = "Move cursor up one page" },
-    { on = "<PageDown>", run = "arrow 30%", desc = "Move cursor down one page" },
+    { on = "<PageUp>", run = "arrow -5", desc = "Move cursor up one page" },
+    { on = "<PageDown>", run = "arrow 5", desc = "Move cursor down one page" },
 
     { on = [
         "g",
