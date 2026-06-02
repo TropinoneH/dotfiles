@@ -1,0 +1,9 @@
+[submodule "config/nvim"]
+    path = config/nvim
+    url = git@github.com:eniverz/nvim-configuration.git
+[submodule "config/fastfetch"]
+    path = config/fastfetch
+    url = git@github.com:eniverz/fastfetch-configuration.git
+[submodule "config/tmux"]
+    path = config/tmux
+    url = git@github.com:eniverz/tmux-configuration.git
