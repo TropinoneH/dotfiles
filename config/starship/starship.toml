@@ -30,8 +30,7 @@ $container\
 $docker_context\
 $time
 [╰─](#7e726d)\
-$character
-"""
+$character"""
 
 [c]
 symbol = " "
